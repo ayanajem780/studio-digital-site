@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Digital — Sites web, marketing &amp; contenu</title>
+<meta name="description" content="Création de sites web, marketing digital, réseaux sociaux, publicité et branding pour entrepreneurs, TPE et PME. Basée à Agadir, Maroc.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   STUDIO DIGITAL — STYLESHEET
+   Organisation : Variables > Reset > Utilitaires > Composants > Sections
+   Chaque section du site correspond à un bloc commenté ci-dessous.
+   ================================================================= */
+
+/* -----------------------------------------------------------------
+   1. VARIABLES — modifiez ici pour changer toute l'identité visuelle
+   ----------------------------------------------------------------- */
+:root{
+  /* Couleurs de marque */
+  --green: #1F7A5C;
+  --green-dark: #14503C;
+  --green-light: #E4F1EC;
+  --pink: #E85D8E;
+  --pink-light: #FCE7ED;
+  --yellow: #F4C542;
+  --yellow-light: #FEF6DE;
+
+  /* Fond & texte */
+  --bg: #FFFDF8;
+  --bg-alt: #FBF7EF;
+  --ink: #17201C;
+  --ink-soft: #4B564F;
+  --ink-faint: #8A9089;
+  --white: #FFFFFF;
+
+  /* Typographie */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Grotesk", var(--font-body);
+
+  /* Rayons & ombres */
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-l: 28px;
+  --shadow-soft: 0 20px 50px -25px rgba(23, 32, 28, 0.25);
+  --shadow-card: 0 12px 30px -18px rgba(23, 32, 28, 0.22);
+
+  /* Rythme */
+  --section-pad: clamp(72px, 9vw, 140px);
+  --container-w: 1200px;
+
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+/* -----------------------------------------------------------------
+   1bis. SYSTÈME SVG — classes utilitaires pour les graphismes maison
+   Toutes les icônes, formes et illustrations custom utilisent ces
+   classes (jamais de couleur en dur) pour rester modifiables depuis
+   les variables ci-dessus.
+   ----------------------------------------------------------------- */
+.svg-stroke-green{ stroke: var(--green); }
+.svg-stroke-green-soft{ stroke: rgba(31,122,92,0.28); }
+.svg-stroke-pink{ stroke: var(--pink); }
+.svg-stroke-ink-soft{ stroke: rgba(23,32,28,0.16); }
+.svg-fill-green{ fill: var(--green); }
+.svg-fill-pink{ fill: var(--pink); }
+.svg-fill-yellow{ fill: var(--yellow); }
+
+.signal-label{
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: var(--ink-faint);
+}
+
+/* -----------------------------------------------------------------
+   2. RESET & BASE
+   ----------------------------------------------------------------- */
+*, *::before, *::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+ul{ margin: 0; padding: 0; list-style: none; }
+h1,h2,h3,h4,p{ margin: 0; }
+button{ font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+input, textarea, select{ font: inherit; color: inherit; }
+
+.container{
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Focus visible for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* -----------------------------------------------------------------
+   3. UTILITAIRES / TYPO PARTAGÉE
+   ----------------------------------------------------------------- */
+.section-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.section-title--light{ color: var(--white); }
+
+.section-desc{
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+.section-head{
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+.section-head--light{ margin-bottom: 48px; }
+
+/* Boutons */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 28px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease, color .3s ease, border-color .3s ease;
+  white-space: nowrap;
+}
+.btn--primary{
+  background: var(--green);
+  color: var(--white);
+  box-shadow: 0 14px 30px -14px rgba(31,122,92,0.55);
+}
+.btn--primary:hover{ transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(31,122,92,0.6); }
+.btn--ghost{
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(23,32,28,0.18);
+}
+.btn--ghost:hover{ border-color: var(--ink); transform: translateY(-2px); }
+.btn--outline{
+  background: transparent;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+}
+.btn--outline:hover{ background: var(--green); color: var(--white); }
+.btn--small{ padding: 11px 20px; font-size: 14px; }
+.btn--full{ width: 100%; }
+
+/* Reveal on scroll */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+[data-reveal].is-visible{ opacity: 1; transform: translateY(0); }
+[data-reveal-delay="1"]{ transition-delay: .12s; }
+
+/* -----------------------------------------------------------------
+   4. HEADER / NAVIGATION
+   ----------------------------------------------------------------- */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: padding .4s ease, box-shadow .4s ease, background .4s ease;
+  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+}
+.site-header.is-scrolled{
+  padding: 12px 0;
+  box-shadow: 0 12px 30px -18px rgba(0,0,0,0.45);
+}
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand{ display: flex; align-items: center; gap: 9px; }
+.brand-mark{ display: block; flex-shrink: 0; }
+.brand-name{
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.brand-name em{ font-style: normal; color: var(--pink); }
+
+.main-nav{ display: flex; align-items: center; gap: 32px; }
+.nav-link{
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  position: relative;
+  padding-left: 14px;
+  transition: color .25s ease;
+}
+.nav-link:hover{ color: var(--white); }
+.nav-link::before{
+  content: "";
+  position: absolute; left: 0; top: 50%;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--pink);
+  transform: translateY(-50%) scale(0);
+  transition: transform .25s var(--ease);
+}
+.nav-link:hover::before{ transform: translateY(-50%) scale(1); }
+
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+.nav-toggle span{
+  width: 22px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* -----------------------------------------------------------------
+   5. HERO — fond sombre, texture réseau, bloc média + carte contact
+   ----------------------------------------------------------------- */
+.hero{
+  position: relative;
+  overflow: hidden;
+  padding: clamp(120px, 15vw, 168px) 0 0;
+  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+}
+.hero-network{
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  opacity: .7;
+}
+.hero-inner{
+  position: relative;
+  z-index: 1;
+  padding-bottom: 64px;
+}
+
+/* Utilitaire d'accessibilité : masque visuellement, garde pour les lecteurs d'écran */
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.section-kicker--onDark{ color: rgba(255,255,255,0.6); }
+
+.hero-title{
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(30px, 4.6vw, 54px);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+}
+.hero-title-line{ display: block; color: var(--white); }
+.hero-title-line--accent{ color: var(--green); }
+.hero-title-highlight{ color: var(--yellow); }
+
+.hero-split{
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Bloc média (gauche) — cadre sombre avec composition signal + légende */
+.hero-media{
+  position: relative;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signal-graphic--framed{ width: 88%; height: auto; }
+.svg-stroke-ink-soft-onDark{ stroke: rgba(255,255,255,0.16); }
+.hero-media-caption{
+  position: absolute;
+  left: 20px; right: 20px; bottom: 20px;
+  padding: 12px 16px;
+  border-radius: var(--radius-s);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+
+/* Carte flottante (droite) — formulaire rapide */
+.hero-card{
+  background: var(--white);
+  border-radius: var(--radius-l);
+  padding: 32px;
+  box-shadow: 0 30px 60px -25px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+.hero-card-title{
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.hero-card-tabs{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.hero-tab{
+  padding: 10px 16px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(23,32,28,0.14);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+.hero-tab.is-active{
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+.hero-tab:not(.is-active):hover{ border-color: var(--ink); color: var(--ink); }
+
+.contact-form--compact label{ margin-bottom: 14px; }
+.hero-phone-field{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-radius: var(--radius-s);
+  border: 1.5px solid rgba(23,32,28,0.14);
+  background: var(--bg);
+}
+.hero-phone-code{
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+.hero-phone-field input{
+  border: none;
+  padding: 13px 0;
+  background: transparent;
+}
+.hero-phone-field input:focus{ outline: none; }
+.contact-form--compact .btn{ margin-top: 4px; }
+
+/* Kicker : icône + texte */
+.section-kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.kicker-mark{ flex-shrink: 0; }
+
+.signal-graphic{ width: 100%; height: 100%; }
+.signal-line{ stroke-dasharray: 2 5; stroke-linecap: round; }
+.signal-pulse{
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: signal-pulse 3s ease-out infinite;
+}
+.signal-pulse--delay{ animation-delay: 1.5s; }
+
+@keyframes signal-pulse{
+  0%{ opacity: .55; transform: scale(0.6); }
+  75%{ opacity: 0; transform: scale(2); }
+  100%{ opacity: 0; transform: scale(2); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .signal-pulse{ animation: none; opacity: 0; }
+}
+
+/* -----------------------------------------------------------------
+   6. TICKER — bandeau défilant sous le Hero
+   ----------------------------------------------------------------- */
+.ticker{
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(23,32,28,0.08);
+  overflow: hidden;
+  padding: 18px 0;
+  background: var(--bg-alt);
+}
+.ticker-track{
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  animation: ticker-scroll 32s linear infinite;
+}
+.ticker-sep{ color: var(--pink); margin: 0 20px; }
+@keyframes ticker-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .ticker-track{ animation: none; }
+}
+
+/* -----------------------------------------------------------------
+   7. LE CONSTAT — déclaration + problèmes/solutions
+   ----------------------------------------------------------------- */
+.statement{ padding: var(--section-pad) 0; }
+.statement-lead{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 18ch;
+  margin-bottom: 56px;
+}
+.statement-lead em{ font-style: italic; color: var(--green); }
+
+.problems-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.problem-card{
+  background: var(--white);
+  border: 1.5px solid rgba(23,32,28,0.08);
+  border-radius: var(--radius-m);
+  padding: 28px 30px;
+  transition: border-color .35s ease, transform .35s var(--ease);
+}
+.problem-card:hover{ border-color: var(--green); transform: translateY(-4px); }
+.problem-issue{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.problem-solution{
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.problem-solution span{ color: var(--pink); margin-right: 8px; }
+
+/* Kicker numéroté ("01 — Le constat") */
+.section-kicker--num{ gap: 12px; }
+.section-kicker--num span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--pink-light);
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: 700;
+}
+.section-kicker--light{ color: rgba(255,255,255,0.65); }
+.section-kicker--light span{ background: rgba(244,197,66,0.16); color: var(--yellow); }
+
+/* -----------------------------------------------------------------
+   8. SERVICES — liste éditoriale numérotée
+   ----------------------------------------------------------------- */
+.services{ padding: var(--section-pad) 0; }
+.service-rows{ border-top: 1.5px solid rgba(23,32,28,0.12); }
+.service-row{ border-bottom: 1.5px solid rgba(23,32,28,0.12); }
+.service-row-link{
+  display: grid;
+  grid-template-columns: 56px 56px 1fr 24px;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 6px;
+  transition: background .3s ease, padding-left .3s var(--ease);
+}
+.service-row-link:hover{
+  background: var(--bg-alt);
+  padding-left: 14px;
+}
+.service-row-num{
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+.service-row-icon{
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+  flex-shrink: 0;
+}
+.service-row:nth-child(4n+2) .service-row-icon{ color: var(--pink); }
+.service-row:nth-child(4n+3) .service-row-icon{ color: #B8860B; }
+.service-row-icon svg{ width: 24px; height: 24px; }
+.service-row-body{ display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.service-row-title{
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.service-row-desc{
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+.service-row-arrow{
+  color: var(--ink-faint);
+  transition: transform .3s var(--ease), color .3s ease;
+  justify-self: end;
+}
+.service-row-link:hover .service-row-arrow{ transform: translateX(4px); color: var(--pink); }
+
+/* -----------------------------------------------------------------
+   9. MÉTHODE — process clair, zéro blabla
+   ----------------------------------------------------------------- */
+.method{
+  padding: var(--section-pad) 0;
+  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  color: var(--white);
+}
+.method .section-title--light{ margin-bottom: 48px; max-width: 20ch; }
+.process-list{ border-top: 1px solid rgba(255,255,255,0.14); }
+.process-row{
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  transition: padding-left .3s var(--ease);
+}
+.process-row:hover{ padding-left: 10px; }
+.process-num{
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--yellow);
+}
+.process-title{
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.process-desc{ font-size: 15px; color: rgba(255,255,255,0.65); max-width: 56ch; }
+
+/* -----------------------------------------------------------------
+   9bis. RÉALISATIONS
+   ----------------------------------------------------------------- */
+.portfolio{ padding: var(--section-pad) 0; background: var(--bg-alt); }
+.portfolio-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 260px;
+  gap: 20px;
+}
+.portfolio-card{
+  position: relative;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  grid-column: span 2;
+  box-shadow: var(--shadow-card);
+}
+.portfolio-card--large{ grid-column: span 4; grid-row: span 1; height: 340px; }
+.portfolio-card:nth-child(2), .portfolio-card:nth-child(3){ grid-column: span 4; }
+@media(min-width: 900px){
+  .portfolio-card:nth-child(2), .portfolio-card:nth-child(3), .portfolio-card:nth-child(4), .portfolio-card:nth-child(5){ grid-column: span 2; }
+}
+.portfolio-media{
+  position: absolute; inset: 0;
+  transition: transform .6s var(--ease);
+}
+.portfolio-card:hover .portfolio-media{ transform: scale(1.06); }
+.portfolio-media--green{ background: linear-gradient(135deg, var(--green), #2E9B75); }
+.portfolio-media--pink{ background: linear-gradient(135deg, var(--pink), #F290AF); }
+.portfolio-media--yellow{ background: linear-gradient(135deg, var(--yellow), #F9DD8B); }
+.portfolio-media--dark{ background: linear-gradient(135deg, var(--ink), #38453E); }
+.portfolio-media--green-light{ background: linear-gradient(135deg, #2E9B75, var(--green-light)); }
+.portfolio-info{
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  color: var(--white);
+}
+.portfolio-cat{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+.portfolio-title{
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 6px 0 10px;
+}
+.portfolio-link{
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .3s ease, transform .3s ease;
+  display: inline-flex;
+}
+.portfolio-card:hover .portfolio-link{ opacity: 1; transform: translateY(0); }
+
+.portfolio-see-all{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  position: relative;
+  padding-bottom: 3px;
+}
+.portfolio-see-all::after{
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1.5px;
+  background: var(--ink);
+  opacity: .35;
+  transform: scaleX(.3);
+  transform-origin: left;
+  transition: transform .35s var(--ease), opacity .35s ease;
+}
+.portfolio-see-all:hover::after{ transform: scaleX(1); opacity: 1; }
+.portfolio-see-all span{ transition: transform .3s var(--ease); }
+.portfolio-see-all:hover span{ transform: translateX(4px); }
+
+/* -----------------------------------------------------------------
+   10. OFFRES / PACKS
+   ----------------------------------------------------------------- */
+.pricing{ padding: var(--section-pad) 0; }
+.pricing-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.pricing-card{
+  background: var(--white);
+  border: 1.5px solid rgba(23,32,28,0.09);
+  border-radius: var(--radius-m);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.pricing-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-card); }
+.pricing-card--featured{
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+  position: relative;
+}
+.pricing-badge{
+  position: absolute; top: -13px; left: 30px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+.pricing-name{ font-family: var(--font-display); font-size: 24px; font-weight: 600; margin-bottom: 10px; }
+.pricing-for{ font-size: 14.5px; color: var(--ink-soft); margin-bottom: 20px; min-height: 44px; }
+.pricing-card--featured .pricing-for{ color: rgba(255,255,255,0.7); }
+.pricing-price{ font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--green); margin-bottom: 24px; }
+.pricing-card--featured .pricing-price{ color: var(--yellow); }
+.pricing-price span{ font-weight: 600; }
+.pricing-features{ flex: 1; margin-bottom: 28px; }
+.pricing-features li{
+  font-size: 14.5px;
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.pricing-features li::before{
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 13px;
+}
+.pricing-card--featured .pricing-features li::before{ color: var(--yellow); }
+
+/* -----------------------------------------------------------------
+   11. POURQUOI TRAVAILLER AVEC MOI
+   ----------------------------------------------------------------- */
+.why{ padding: var(--section-pad) 0; background: var(--bg-alt); }
+.why-inner{ display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: start; }
+.why-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.why-card{
+  background: var(--white);
+  border-radius: var(--radius-m);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+.why-icon{
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--yellow-light);
+  color: #B8860B;
+  margin-bottom: 16px;
+}
+.why-icon svg{ width: 20px; height: 20px; }
+.why-card h3{ font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.why-card p{ font-size: 14px; color: var(--ink-soft); }
+
+/* -----------------------------------------------------------------
+   12. FAQ
+   ----------------------------------------------------------------- */
+.faq{ padding: var(--section-pad) 0; }
+.faq-list{ max-width: 780px; }
+.faq-item{
+  border-bottom: 1.5px solid rgba(23,32,28,0.12);
+}
+.faq-question{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 4px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+}
+.faq-toggle{
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--pink);
+  transition: transform .35s var(--ease);
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+.faq-item.is-open .faq-toggle{ transform: rotate(45deg); }
+.faq-answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s var(--ease);
+}
+.faq-answer p{
+  padding: 0 4px 22px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+/* -----------------------------------------------------------------
+   13. LE BRIEF EXPRESS — section de conversion + formulaire
+   ----------------------------------------------------------------- */
+.brief{
+  padding: var(--section-pad) 0;
+  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  color: var(--white);
+}
+.brief-inner{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+.brief-desc{
+  margin-top: 18px;
+  font-size: 17px;
+  color: rgba(255,255,255,0.72);
+  max-width: 42ch;
+}
+.brief-benefits{
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.brief-benefits li{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.brief-benefit-icon{
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(244,197,66,0.14);
+  color: var(--yellow);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.brief-benefits strong{ display: block; font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+.brief-benefits span{ font-size: 14px; color: rgba(255,255,255,0.6); }
+
+.contact-channels{
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.contact-channel{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  width: fit-content;
+  transition: background .3s ease, transform .3s ease, border-color .3s ease;
+}
+.contact-channel:hover{ background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); transform: translateX(4px); }
+.cc-icon{ width: 20px; height: 20px; display: flex; }
+.cc-icon svg{ width: 100%; height: 100%; }
+
+.contact-form{
+  background: var(--white);
+  border-radius: var(--radius-l);
+  padding: 40px;
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+.form-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.contact-form label{ display: block; margin-bottom: 18px; }
+.contact-form label span{
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  color: var(--ink-soft);
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-s);
+  border: 1.5px solid rgba(23,32,28,0.14);
+  background: var(--bg);
+  font-size: 14.5px;
+  transition: border-color .25s ease;
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  border-color: var(--green);
+  outline: none;
+}
+.brief-privacy{
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------
+   13bis. CTA DE FERMETURE
+   ----------------------------------------------------------------- */
+.closing-cta{ padding: calc(var(--section-pad) * 0.7) 0; }
+.closing-cta-inner{
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.closing-cta-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 36px;
+}
+.btn--large{ padding: 18px 36px; font-size: 16px; }
+
+/* -----------------------------------------------------------------
+   14. FOOTER
+   ----------------------------------------------------------------- */
+.site-footer{ background: var(--ink); color: rgba(255,255,255,0.6); padding-top: 56px; }
+.footer-inner{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand .brand-name{ color: var(--white); }
+.footer-tagline{ margin-top: 14px; font-size: 14px; max-width: 30ch; }
+.footer-col-title{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+.footer-col{ display: flex; flex-direction: column; gap: 11px; font-size: 14px; }
+.footer-col a:hover{ color: var(--white); }
+.footer-static{ color: rgba(255,255,255,0.5); }
+.footer-bottom{
+  padding: 22px 24px calc(22px + env(safe-area-inset-bottom));
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Barre CTA sticky mobile */
+.mobile-cta-bar{
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 90;
+  gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255,253,248,0.92);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-top: 1px solid rgba(23,32,28,0.1);
+}
+.mobile-cta{
+  flex: 1;
+  text-align: center;
+  padding: 13px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14.5px;
+}
+.mobile-cta--primary{ background: var(--green); color: var(--white); }
+.mobile-cta--ghost{ background: transparent; color: var(--ink); border: 1.5px solid rgba(23,32,28,0.18); }
+
+/* -----------------------------------------------------------------
+   15. RESPONSIVE
+   ----------------------------------------------------------------- */
+@media (max-width: 1080px){
+  .why-inner{ grid-template-columns: 1fr; }
+  .footer-inner{ grid-template-columns: 1.2fr 1fr 1fr; }
+  .footer-col:last-child{ grid-column: span 2; }
+}
+
+@media (max-width: 900px){
+  .main-nav{
+    position: fixed;
+    top: 68px; left: 16px; right: 16px;
+    background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+    gap: 4px;
+    transform-origin: top center;
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .main-nav.is-open{ transform: scaleY(1); opacity: 1; pointer-events: auto; }
+  .nav-link{ padding: 12px 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .main-nav .btn{ margin-top: 10px; }
+  .nav-toggle{ display: flex; }
+
+  .hero-split{ grid-template-columns: 1fr; }
+  .hero-media{ min-height: 260px; order: -1; }
+
+  .problems-grid{ grid-template-columns: 1fr; }
+  .pricing-grid{ grid-template-columns: 1fr; }
+  .brief-inner{ grid-template-columns: 1fr; }
+  .footer-inner{ grid-template-columns: 1fr; gap: 28px; }
+  .footer-col:last-child{ grid-column: auto; }
+
+  .service-row-link{ grid-template-columns: 40px 40px 1fr; }
+  .service-row-arrow{ display: none; }
+  .process-row{ grid-template-columns: 1fr; gap: 6px; }
+
+  .mobile-cta-bar{ display: flex; }
+  .site-footer{ padding-bottom: 72px; }
+}
+
+@media (max-width: 640px){
+  .why-grid{ grid-template-columns: 1fr; }
+  .portfolio-grid{ grid-template-columns: 1fr; grid-auto-rows: 260px; }
+  .portfolio-card{ grid-column: span 1 !important; }
+  .form-row{ grid-template-columns: 1fr; }
+  .contact-form{ padding: 26px; }
+  .statement-lead{ max-width: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- HEADER / NAVIGATION                            -->
+<!-- ============================================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#accueil" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+        <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
+      </svg>
+      <span class="brand-name">STUDIO<em>DIGITAL</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Réalisations</a>
+      <a href="#methode" class="nav-link">Méthode</a>
+      <a href="#offres" class="nav-link">Offres</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#brief" class="btn btn--small btn--primary">Audit digital offert</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================= -->
+<!-- HERO                                           -->
+<!-- ============================================= -->
+<section class="hero" id="accueil">
+
+  <!-- Texture réseau décorative — prolonge le motif "signal" en arrière-plan -->
+  <svg class="hero-network" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
+    <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
+    <circle cx="360" cy="480" r="3" class="svg-fill-green"/>
+    <circle cx="760" cy="560" r="3" class="svg-fill-green"/>
+    <circle cx="1100" cy="340" r="4" class="svg-fill-pink"/>
+    <circle cx="520" cy="700" r="3" class="svg-fill-green"/>
+    <circle cx="900" cy="780" r="4" class="svg-fill-yellow"/>
+    <circle cx="1440" cy="260" r="3" class="svg-fill-green"/>
+  </svg>
+
+  <div class="container hero-inner">
+    <p class="section-kicker section-kicker--onDark" data-reveal>
+      <svg class="kicker-mark" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path d="M4 12h13M12 6l7 6-7 6" fill="none" class="svg-stroke-pink" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Agence digitale — Agadir, Maroc
+    </p>
+
+    <h1 class="hero-title" data-reveal>
+      <span class="hero-title-line hero-title-line--accent">Agence digitale Agadir</span>
+      <span class="hero-title-line">Sites web, marketing digital</span>
+      <span class="hero-title-line">et <span class="hero-title-highlight">réseaux sociaux</span> sur-mesure</span>
+    </h1>
+
+    <div class="hero-split">
+      <div class="hero-media" data-reveal data-reveal-delay="1">
+        <svg class="signal-graphic signal-graphic--framed" viewBox="0 0 520 420" role="img" aria-label="Illustration représentant une présence digitale qui rayonne vers plusieurs canaux : site, réseaux sociaux, publicité, SEO et branding.">
+          <circle cx="240" cy="210" r="130" fill="none" class="svg-stroke-ink-soft-onDark" stroke-width="1" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <path d="M240 210 Q 240 110 245 46" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
+          <path d="M240 210 Q 330 190 400 130" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
+          <path d="M240 210 Q 330 260 390 330" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
+          <path d="M240 210 Q 210 310 196 374" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
+          <path d="M240 210 Q 150 200 80 174" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
+          <circle cx="240" cy="210" r="18" fill="none" class="svg-stroke-green signal-pulse" stroke-width="1.4"/>
+          <circle cx="240" cy="210" r="18" fill="none" class="svg-stroke-green signal-pulse signal-pulse--delay" stroke-width="1.4"/>
+          <circle cx="240" cy="210" r="7" class="svg-fill-green"/>
+          <circle cx="245" cy="46" r="5" class="svg-fill-green"/>
+          <circle cx="400" cy="130" r="6" class="svg-fill-pink"/>
+          <circle cx="390" cy="330" r="5" class="svg-fill-green"/>
+          <circle cx="196" cy="374" r="6" class="svg-fill-yellow"/>
+          <circle cx="80" cy="174" r="5" class="svg-fill-green"/>
+        </svg>
+        <div class="hero-media-caption">
+          <span>Studio Digital — Agadir, Maroc</span>
+        </div>
+      </div>
+
+      <div class="hero-card" data-reveal data-reveal-delay="2">
+        <h2 class="hero-card-title">Parlez-nous de votre projet</h2>
+
+        <div class="hero-card-tabs" role="tablist" aria-label="Sujet de votre message">
+          <button type="button" class="hero-tab is-active" role="tab" aria-selected="true">Devis</button>
+          <button type="button" class="hero-tab" role="tab" aria-selected="false">Collaboration</button>
+          <button type="button" class="hero-tab" role="tab" aria-selected="false">Autre</button>
+        </div>
+
+        <form class="contact-form contact-form--compact">
+          <label>
+            <span class="sr-only">Nom</span>
+            <input type="text" name="name" placeholder="Nom" required>
+          </label>
+          <label>
+            <span class="sr-only">Email</span>
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+          <label class="hero-phone-field">
+            <span class="sr-only">Téléphone</span>
+            <span class="hero-phone-code">🇲🇦 +212</span>
+            <input type="tel" name="phone" placeholder="Téléphone">
+          </label>
+          <label>
+            <span class="sr-only">Votre projet</span>
+            <textarea name="message" rows="3" placeholder="Décrivez votre projet en quelques mots…"></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full">
+            Envoyer
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bandeau défilant — texture de conversion, sans faux logos clients -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Sites web</span><span class="ticker-sep">·</span>
+      <span>Réseaux sociaux</span><span class="ticker-sep">·</span>
+      <span>Publicité digitale</span><span class="ticker-sep">·</span>
+      <span>SEO &amp; visibilité</span><span class="ticker-sep">·</span>
+      <span>Branding</span><span class="ticker-sep">·</span>
+      <span>Agadir</span><span class="ticker-sep">·</span>
+      <span>Marrakech</span><span class="ticker-sep">·</span>
+      <span>Casablanca</span><span class="ticker-sep">·</span>
+      <span>Sites web</span><span class="ticker-sep">·</span>
+      <span>Réseaux sociaux</span><span class="ticker-sep">·</span>
+      <span>Publicité digitale</span><span class="ticker-sep">·</span>
+      <span>SEO &amp; visibilité</span><span class="ticker-sep">·</span>
+      <span>Branding</span><span class="ticker-sep">·</span>
+      <span>Agadir</span><span class="ticker-sep">·</span>
+      <span>Marrakech</span><span class="ticker-sep">·</span>
+      <span>Casablanca</span><span class="ticker-sep">·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 01 — LE CONSTAT                                 -->
+<!-- ============================================= -->
+<section class="statement" id="constat">
+  <div class="container">
+    <p class="section-kicker section-kicker--num" data-reveal><span>01</span> Le constat</p>
+    <p class="statement-lead" data-reveal>
+      Être invisible en ligne, c'est fermer boutique sans le savoir.<br>
+      <em>Je vous installe sur le boulevard le plus fréquenté du web.</em>
+    </p>
+
+    <div class="problems-grid">
+      <div class="problem-card" data-reveal>
+        <p class="problem-issue">« Vous n'avez pas encore de site web. »</p>
+        <p class="problem-solution"><span>→</span> Je crée une présence professionnelle.</p>
+      </div>
+      <div class="problem-card" data-reveal>
+        <p class="problem-issue">« Vos réseaux sociaux ne sont pas réguliers. »</p>
+        <p class="problem-solution"><span>→</span> Je crée et organise votre contenu.</p>
+      </div>
+      <div class="problem-card" data-reveal>
+        <p class="problem-issue">« Vous avez du mal à attirer des clients en ligne. »</p>
+        <p class="problem-solution"><span>→</span> Je construis une stratégie d'acquisition.</p>
+      </div>
+      <div class="problem-card" data-reveal>
+        <p class="problem-issue">« Vous ne savez pas par où commencer. »</p>
+        <p class="problem-solution"><span>→</span> Je vous accompagne étape par étape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 02 — SERVICES (liste éditoriale numérotée)      -->
+<!-- ============================================= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="section-kicker section-kicker--num"><span>02</span> Ce que je fais</p>
+      <h2 class="section-title">Huit expertises, <em>une seule</em> obsession : votre croissance.</h2>
+      <p class="section-desc">Cliquez sur un service pour en discuter directement — chaque projet combine ce dont vous avez vraiment besoin.</p>
+    </div>
+
+    <ol class="service-rows">
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">01</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><path d="M8 13l2.5 2.5L8 18M14 13l2.5 2.5L14 18"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Création de sites web</span>
+            <span class="service-row-desc">Site vitrine, landing page, site professionnel ou e-commerce, pensé pour convertir.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">02</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Gestion des réseaux sociaux</span>
+            <span class="service-row-desc">Instagram, Facebook, TikTok, LinkedIn : un calendrier éditorial et une présence régulière.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">03</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Marketing digital</span>
+            <span class="service-row-desc">Stratégie, acquisition, génération de leads et tunnel de conversion.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">04</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Création de contenu</span>
+            <span class="service-row-desc">Posts, carrousels, reels, vidéos promotionnelles et visuels publicitaires.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">05</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Publicité digitale</span>
+            <span class="service-row-desc">Meta Ads, Google Ads : campagnes ciblées, suivies et optimisées.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">06</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">SEO &amp; visibilité Google</span>
+            <span class="service-row-desc">SEO local, Google Business Profile, mots-clés, suivi de visibilité.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">07</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l3 6 6 1-4.5 4.3L17.5 21 12 17.8 6.5 21l1-6.7L3 10l6-1z"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Branding</span>
+            <span class="service-row-desc">Identité visuelle, logo, palette, typographie et supports de communication.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="#brief" class="service-row-link">
+          <span class="service-row-num">08</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Accompagnement digital</span>
+            <span class="service-row-desc">De l'idée à la mise en ligne, un suivi personnalisé étape par étape.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 03 — MÉTHODE                                    -->
+<!-- ============================================= -->
+<section class="method" id="methode">
+  <div class="container">
+    <p class="section-kicker section-kicker--num section-kicker--light" data-reveal><span>03</span> Comment ça fonctionne</p>
+    <h2 class="section-title section-title--light" data-reveal>Un processus clair. Zéro blabla.</h2>
+
+    <ol class="process-list">
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°01</span>
+        <h3 class="process-title">Échange</h3>
+        <p class="process-desc">Nous discutons de votre activité, vos besoins et vos objectifs.</p>
+      </li>
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°02</span>
+        <h3 class="process-title">Analyse</h3>
+        <p class="process-desc">J'analyse votre présence digitale actuelle et vos opportunités.</p>
+      </li>
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°03</span>
+        <h3 class="process-title">Stratégie</h3>
+        <p class="process-desc">Je construis une solution adaptée à votre activité et votre budget.</p>
+      </li>
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°04</span>
+        <h3 class="process-title">Création</h3>
+        <p class="process-desc">Je crée les éléments nécessaires : site, contenu, réseaux sociaux, campagnes.</p>
+      </li>
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°05</span>
+        <h3 class="process-title">Mise en ligne</h3>
+        <p class="process-desc">Votre présence digitale est prête et visible.</p>
+      </li>
+      <li class="process-row" data-reveal>
+        <span class="process-num">n°06</span>
+        <h3 class="process-title">Optimisation</h3>
+        <p class="process-desc">Nous analysons les résultats et améliorons progressivement la stratégie.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 04 — RÉALISATIONS                               -->
+<!-- ============================================= -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="section-kicker section-kicker--num"><span>04</span> Réalisations</p>
+      <h2 class="section-title">Mes preuves parlent mieux que mes mots.</h2>
+      <p class="section-desc">Quelques exemples de projets — à remplacer par vos futures réalisations.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="portfolio-card portfolio-card--large" data-reveal>
+        <div class="portfolio-media portfolio-media--green"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Site web</span>
+          <h3 class="portfolio-title">Site vitrine — Maison Atlas</h3>
+          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-reveal>
+        <div class="portfolio-media portfolio-media--pink"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Réseaux sociaux</span>
+          <h3 class="portfolio-title">Stratégie Instagram — Nour Café</h3>
+          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-reveal>
+        <div class="portfolio-media portfolio-media--yellow"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Branding</span>
+          <h3 class="portfolio-title">Identité visuelle — Lumière Studio</h3>
+          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-reveal>
+        <div class="portfolio-media portfolio-media--dark"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Campagne marketing</span>
+          <h3 class="portfolio-title">Lancement produit — Ora Cosmetics</h3>
+          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-reveal>
+        <div class="portfolio-media portfolio-media--green-light"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">E-commerce</span>
+          <h3 class="portfolio-title">Boutique en ligne — Terra Argan</h3>
+          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+
+    <a href="#portfolio" class="portfolio-see-all">Voir tout le portfolio <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 05 — OFFRES / PACKS                             -->
+<!-- ============================================= -->
+<section class="pricing" id="offres">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="section-kicker section-kicker--num"><span>05</span> Les offres</p>
+      <h2 class="section-title">Des formules adaptées à chaque étape</h2>
+      <p class="section-desc">Chaque accompagnement est personnalisé selon votre activité — voici les trois grandes formules de départ.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="pricing-card" data-reveal>
+        <h3 class="pricing-name">Pack Starter</h3>
+        <p class="pricing-for">Pour les entreprises qui veulent commencer leur présence digitale.</p>
+        <p class="pricing-price">À partir de <span>...</span></p>
+        <ul class="pricing-features">
+          <li>Site vitrine one-page</li>
+          <li>Identité visuelle simple</li>
+          <li>Mise en place réseaux sociaux</li>
+          <li>Accompagnement au lancement</li>
+        </ul>
+        <a href="#brief" class="btn btn--outline btn--full">Demander un devis</a>
+      </article>
+
+      <article class="pricing-card pricing-card--featured" data-reveal>
+        <span class="pricing-badge">Le plus choisi</span>
+        <h3 class="pricing-name">Pack Growth</h3>
+        <p class="pricing-for">Pour les entreprises qui souhaitent développer leur visibilité.</p>
+        <p class="pricing-price">À partir de <span>...</span></p>
+        <ul class="pricing-features">
+          <li>Site professionnel complet</li>
+          <li>Gestion des réseaux sociaux</li>
+          <li>Création de contenu mensuelle</li>
+          <li>SEO de base &amp; suivi des résultats</li>
+        </ul>
+        <a href="#brief" class="btn btn--primary btn--full">Demander un devis</a>
+      </article>
+
+      <article class="pricing-card" data-reveal>
+        <h3 class="pricing-name">Pack Premium</h3>
+        <p class="pricing-for">Pour les entreprises qui souhaitent une prise en charge digitale complète.</p>
+        <p class="pricing-price">Sur devis</p>
+        <ul class="pricing-features">
+          <li>Site web sur mesure</li>
+          <li>Stratégie marketing complète</li>
+          <li>Publicité digitale &amp; SEO avancé</li>
+          <li>Accompagnement continu</li>
+        </ul>
+        <a href="#brief" class="btn btn--outline btn--full">Demander un devis</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 06 — POURQUOI TRAVAILLER AVEC MOI               -->
+<!-- ============================================= -->
+<section class="why">
+  <div class="container why-inner">
+    <div class="why-copy" data-reveal>
+      <p class="section-kicker section-kicker--num"><span>06</span> Pourquoi travailler avec moi</p>
+      <h2 class="section-title">Une présence digitale qui a du sens</h2>
+      <p class="section-desc">Mon objectif n'est pas seulement de créer quelque chose de joli. Je veux créer une présence digitale qui a du sens pour votre activité et qui vous aide à atteindre vos objectifs.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-reveal>
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+        </span>
+        <h3>Créativité</h3>
+        <p>Des solutions visuelles qui sortent des modèles tout faits.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        </span>
+        <h3>Stratégie</h3>
+        <p>Chaque action est reliée à un objectif business concret.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </span>
+        <h3>Personnalisation</h3>
+        <p>Rien n'est standard : tout est pensé pour votre activité.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <h3>Accompagnement</h3>
+        <p>Un suivi réel, pas juste une livraison ponctuelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 07 — FAQ                                        -->
+<!-- ============================================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="section-kicker section-kicker--num"><span>07</span> Questions fréquentes</p>
+      <h2 class="section-title">Vous vous posez des questions ?</h2>
+    </div>
+
+    <div class="faq-list" data-reveal>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Combien coûte la création d'un site ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Cela dépend de vos besoins : une landing page simple n'a pas le même coût qu'un site e-commerce complet. Chaque devis est établi sur mesure, après un premier échange gratuit.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Combien de temps faut-il pour créer un site ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>En général entre 1 et 3 semaines selon la complexité du projet et la rapidité des retours. Un calendrier précis est défini ensemble dès le début.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Est-ce que vous gérez les réseaux sociaux sur le long terme ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Oui, c'est même une part importante de mon accompagnement : calendrier éditorial, publications régulières et suivi des performances mois après mois.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Est-ce que je dois fournir les photos et vidéos ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ce n'est pas obligatoire. Si vous avez déjà des visuels, on les utilise avec plaisir ; sinon, je peux vous accompagner pour en produire de nouveaux.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Travaillez-vous avec des petites entreprises ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Oui, j'accompagne aussi bien des entrepreneurs individuels que des TPE et des PME, avec des formules adaptées à chaque taille de projet.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Peut-on commencer avec un petit budget ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Oui, le Pack Starter est justement conçu pour poser des bases solides avec un budget maîtrisé, avec la possibilité d'évoluer ensuite.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Proposez-vous des services sur mesure ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Bien sûr. Les packs sont des points de départ : chaque accompagnement est ajusté à votre activité, vos objectifs et votre budget.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 08 — LE BRIEF EXPRESS (lead-gen + contact)      -->
+<!-- ============================================= -->
+<section class="brief" id="brief">
+  <div class="container brief-inner">
+    <div class="brief-copy" data-reveal>
+      <p class="section-kicker section-kicker--num section-kicker--light"><span>08</span> Le brief express</p>
+      <h2 class="section-title section-title--light">60 secondes pour lancer votre projet.</h2>
+      <p class="brief-desc">Remplissez le brief ci-contre : je regarde votre présence en ligne et je vous recontacte avec un premier avis concret.</p>
+
+      <ul class="brief-benefits">
+        <li>
+          <span class="brief-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <div><strong>Premier échange offert</strong><span>Un avis concret sur votre présence en ligne actuelle.</span></div>
+        </li>
+        <li>
+          <span class="brief-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <div><strong>Réponse sous 24h ouvrées</strong><span>Par moi directement, pas par un formulaire automatique.</span></div>
+        </li>
+        <li>
+          <span class="brief-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <div><strong>Sans engagement</strong><span>Vous restez libre de donner suite ou non.</span></div>
+        </li>
+      </ul>
+
+      <div class="contact-channels">
+        <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="contact-channel">
+          <span class="cc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/></svg>
+          </span>
+          WhatsApp
+        </a>
+        <a href="mailto:contact@studio-digital.com" class="contact-channel">
+          <span class="cc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          Email
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" data-reveal>
+      <div class="form-row">
+        <label>
+          <span>Nom</span>
+          <input type="text" name="name" placeholder="Votre nom" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="vous@exemple.com" required>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Téléphone</span>
+          <input type="tel" name="phone" placeholder="+212 6 00 00 00 00">
+        </label>
+        <label>
+          <span>Entreprise</span>
+          <input type="text" name="company" placeholder="Nom de votre entreprise">
+        </label>
+      </div>
+      <label>
+        <span>Service souhaité</span>
+        <select name="service">
+          <option value="">Sélectionnez un service</option>
+          <option>Création de site web</option>
+          <option>Gestion des réseaux sociaux</option>
+          <option>Marketing digital</option>
+          <option>Création de contenu</option>
+          <option>Publicité digitale</option>
+          <option>SEO &amp; visibilité</option>
+          <option>Branding</option>
+          <option>Accompagnement digital</option>
+        </select>
+      </label>
+      <label>
+        <span>Votre projet en une phrase</span>
+        <textarea name="message" rows="4" placeholder="Parlez-moi de votre projet..."></textarea>
+      </label>
+      <button type="submit" class="btn btn--primary btn--full">Lancer mon audit gratuit</button>
+      <p class="brief-privacy">Vos données restent entre nous. Jamais revendues, jamais de spam.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CTA DE FERMETURE                                -->
+<!-- ============================================= -->
+<section class="closing-cta">
+  <div class="container closing-cta-inner" data-reveal>
+    <h2 class="closing-cta-title">Pendant que vous hésitez,<br>vos concurrents avancent.</h2>
+    <a href="#brief" class="btn btn--primary btn--large">Réclamer mon audit gratuit</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================= -->
+<!-- FOOTER                                         -->
+<!-- ============================================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#accueil" class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
+        </svg>
+        <span class="brand-name">Studio<em>.</em></span>
+      </a>
+      <p class="footer-tagline">Agence digitale à Agadir — sites web, marketing digital et création de contenu pour entrepreneurs et PME.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Contact</h4>
+      <a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:contact@studio-digital.com">contact@studio-digital.com</a>
+      <span class="footer-static">Agadir, Maroc</span>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Navigation</h4>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Réalisations</a>
+      <a href="#offres">Offres</a>
+      <a href="#faq">FAQ</a>
+      <a href="#brief">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Suivez-moi</h4>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="TikTok">TikTok</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Studio. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Barre CTA sticky mobile -->
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="mobile-cta mobile-cta--ghost">WhatsApp</a>
+  <a href="#brief" class="mobile-cta mobile-cta--primary">Audit gratuit</a>
+</div>
+
+<script>
+/* =================================================================
+   STUDIO DIGITAL — SCRIPT
+   1. Header au scroll
+   2. Menu mobile
+   3. Apparitions au scroll (reveal)
+   4. Accordéon FAQ
+   5. Formulaire de contact
+   6. Année du footer
+   ================================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ---------- 1. Header au scroll ---------- */
+  const header = document.getElementById("siteHeader");
+  const onScroll = () => {
+    if (window.scrollY > 12) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---------- 2. Menu mobile ---------- */
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* ---------- 3. Apparitions au scroll ---------- */
+  const revealEls = document.querySelectorAll("[data-reveal]");
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Repli si IntersectionObserver n'est pas supporté
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  /* ---------- 4. Accordéon FAQ ---------- */
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    question.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
+
+      // Ferme les autres questions ouvertes
+      faqItems.forEach((other) => {
+        if (other !== item) {
+          other.classList.remove("is-open");
+          other.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          other.querySelector(".faq-answer").style.maxHeight = null;
+        }
+      });
+
+      if (isOpen) {
+        item.classList.remove("is-open");
+        question.setAttribute("aria-expanded", "false");
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add("is-open");
+        question.setAttribute("aria-expanded", "true");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ---------- 5. Formulaires de contact (hero + brief) ---------- */
+  const contactForms = document.querySelectorAll(".contact-form");
+
+  contactForms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // TODO : brancher cet envoi sur votre service d'emailing / CRM
+      // (ex : Formspree, EmailJS, Google Apps Script, etc.)
+      const submitBtn = form.querySelector("button[type='submit']");
+      const originalHTML = submitBtn.innerHTML;
+      submitBtn.textContent = "Message envoyé ✓";
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = originalHTML;
+        submitBtn.disabled = false;
+        form.reset();
+      }, 2500);
+    });
+  });
+
+  /* ---------- 5bis. Sélecteur de sujet (carte du Hero) ---------- */
+  const heroTabs = document.querySelectorAll(".hero-tab");
+
+  heroTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      heroTabs.forEach((t) => {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
+    });
+  });
+
+  /* ---------- 6. Année du footer ---------- */
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+});
+
+</script>
+</body>
+</html>
