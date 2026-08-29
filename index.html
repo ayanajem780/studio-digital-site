@@ -63,76 +63,80 @@
   </svg>
 
   <div class="container hero-inner">
-    <p class="section-kicker section-kicker--onDark" data-reveal>
-      <svg class="kicker-mark" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-        <path d="M4 12h13M12 6l7 6-7 6" fill="none" class="svg-stroke-pink" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Agence digitale — Agadir, Maroc
-    </p>
-
-    <h1 class="hero-title" data-reveal>
-      <span class="hero-title-line hero-title-line--accent">Agence digitale Agadir</span>
-      <span class="hero-title-line">Sites web, marketing digital</span>
-      <span class="hero-title-line">et <span class="hero-title-highlight">réseaux sociaux</span> sur-mesure</span>
-    </h1>
-
     <div class="hero-split">
-      <div class="hero-media" data-reveal data-reveal-delay="1">
-        <svg class="signal-graphic signal-graphic--framed" viewBox="0 0 520 420" role="img" aria-label="Illustration représentant une présence digitale qui rayonne vers plusieurs canaux : site, réseaux sociaux, publicité, SEO et branding.">
-          <circle cx="240" cy="210" r="130" fill="none" class="svg-stroke-ink-soft-onDark" stroke-width="1" stroke-dasharray="1 7" stroke-linecap="round"/>
-          <path d="M240 210 Q 240 110 245 46" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
-          <path d="M240 210 Q 330 190 400 130" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
-          <path d="M240 210 Q 330 260 390 330" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
-          <path d="M240 210 Q 210 310 196 374" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
-          <path d="M240 210 Q 150 200 80 174" fill="none" class="svg-stroke-green-soft signal-line" stroke-width="1.4"/>
-          <circle cx="240" cy="210" r="18" fill="none" class="svg-stroke-green signal-pulse" stroke-width="1.4"/>
-          <circle cx="240" cy="210" r="18" fill="none" class="svg-stroke-green signal-pulse signal-pulse--delay" stroke-width="1.4"/>
-          <circle cx="240" cy="210" r="7" class="svg-fill-green"/>
-          <circle cx="245" cy="46" r="5" class="svg-fill-green"/>
-          <circle cx="400" cy="130" r="6" class="svg-fill-pink"/>
-          <circle cx="390" cy="330" r="5" class="svg-fill-green"/>
-          <circle cx="196" cy="374" r="6" class="svg-fill-yellow"/>
-          <circle cx="80" cy="174" r="5" class="svg-fill-green"/>
-        </svg>
-        <div class="hero-media-caption">
-          <span>Studio Digital — Agadir, Maroc</span>
+
+      <!-- Gauche — pile de cartes interactive (les 8 expertises) -->
+      <div class="hero-collage" data-reveal>
+        <div class="collage-stack" id="collageStack" role="button" tabindex="0" aria-label="Voir l'expertise suivante">
+          <figure class="stack-card" data-slot="2"><img alt=""><figcaption></figcaption></figure>
+          <figure class="stack-card" data-slot="1"><img alt=""><figcaption></figcaption></figure>
+          <figure class="stack-card" data-slot="0"><img alt=""><figcaption></figcaption></figure>
         </div>
+        <div class="collage-dots" id="collageDots" aria-hidden="true"></div>
+        <p class="collage-hint">Survolez ou touchez la pile pour découvrir chaque expertise <span aria-hidden="true">→</span></p>
       </div>
 
-      <div class="hero-card" data-reveal data-reveal-delay="2">
-        <h2 class="hero-card-title">Parlez-nous de votre projet</h2>
+      <!-- Droite — texte + carte de contact -->
+      <div class="hero-copy">
+        <p class="section-kicker section-kicker--onDark" data-reveal>
+          <svg class="kicker-mark" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M4 12h13M12 6l7 6-7 6" fill="none" class="svg-stroke-pink" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Agence digitale — Agadir, Maroc
+        </p>
 
-        <div class="hero-card-tabs" role="tablist" aria-label="Sujet de votre message">
-          <button type="button" class="hero-tab is-active" role="tab" aria-selected="true">Devis</button>
-          <button type="button" class="hero-tab" role="tab" aria-selected="false">Collaboration</button>
-          <button type="button" class="hero-tab" role="tab" aria-selected="false">Autre</button>
+        <h1 class="hero-title" data-reveal>
+          Vous différencier, vous lancer et transformer le digital en véritable avantage pour votre entreprise&nbsp;: c'est ma mission.
+        </h1>
+
+        <div class="hero-card" data-reveal data-reveal-delay="1">
+          <h2 class="hero-card-title">Parlez-nous de votre projet</h2>
+
+          <div class="hero-card-tabs" role="tablist" aria-label="Sujet de votre message">
+            <button type="button" class="hero-tab is-active" role="tab" aria-selected="true">Devis</button>
+            <button type="button" class="hero-tab" role="tab" aria-selected="false">Collaboration</button>
+            <button type="button" class="hero-tab" role="tab" aria-selected="false">Autre</button>
+          </div>
+
+          <form class="contact-form contact-form--compact">
+            <label>
+              <span class="sr-only">Nom</span>
+              <input type="text" name="name" placeholder="Nom" required>
+            </label>
+            <label>
+              <span class="sr-only">Email</span>
+              <input type="email" name="email" placeholder="Email" required>
+            </label>
+            <label class="hero-phone-field">
+              <span class="sr-only">Téléphone</span>
+              <span class="hero-phone-code">🇲🇦 +212</span>
+              <input type="tel" name="phone" placeholder="Téléphone">
+            </label>
+            <label>
+              <span class="sr-only">Votre projet</span>
+              <textarea name="message" rows="3" placeholder="Décrivez votre projet en quelques mots…"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--full">
+              Envoyer
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
         </div>
-
-        <form class="contact-form contact-form--compact">
-          <label>
-            <span class="sr-only">Nom</span>
-            <input type="text" name="name" placeholder="Nom" required>
-          </label>
-          <label>
-            <span class="sr-only">Email</span>
-            <input type="email" name="email" placeholder="Email" required>
-          </label>
-          <label class="hero-phone-field">
-            <span class="sr-only">Téléphone</span>
-            <span class="hero-phone-code">🇲🇦 +212</span>
-            <input type="tel" name="phone" placeholder="Téléphone">
-          </label>
-          <label>
-            <span class="sr-only">Votre projet</span>
-            <textarea name="message" rows="3" placeholder="Décrivez votre projet en quelques mots…"></textarea>
-          </label>
-          <button type="submit" class="btn btn--primary btn--full">
-            Envoyer
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </form>
       </div>
     </div>
+  </div>
+
+  <!-- Texture réseau décorative — prolonge le motif "signal" en arrière-plan -->
+  <svg class="hero-network" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
+    <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
+    <circle cx="360" cy="480" r="3" class="svg-fill-green"/>
+    <circle cx="760" cy="560" r="3" class="svg-fill-green"/>
+    <circle cx="1100" cy="340" r="4" class="svg-fill-pink"/>
+    <circle cx="520" cy="700" r="3" class="svg-fill-green"/>
+    <circle cx="900" cy="780" r="4" class="svg-fill-yellow"/>
+    <circle cx="1440" cy="260" r="3" class="svg-fill-green"/>
+  </svg>
   </div>
 
   <!-- Bandeau défilant — texture de conversion, sans faux logos clients -->
@@ -162,29 +166,83 @@
 <!-- 01 — LE CONSTAT                                 -->
 <!-- ============================================= -->
 <section class="statement" id="constat">
-  <div class="container">
-    <p class="section-kicker section-kicker--num" data-reveal><span>01</span> Le constat</p>
-    <p class="statement-lead" data-reveal>
-      Être invisible en ligne, c'est fermer boutique sans le savoir.<br>
-      <em>Je vous installe sur le boulevard le plus fréquenté du web.</em>
-    </p>
+  <div class="container statement-inner">
 
-    <div class="problems-grid">
-      <div class="problem-card" data-reveal>
-        <p class="problem-issue">« Vous n'avez pas encore de site web. »</p>
-        <p class="problem-solution"><span>→</span> Je crée une présence professionnelle.</p>
+    <div class="statement-copy">
+      <p class="section-kicker section-kicker--num" data-reveal><span>01</span> Le constat</p>
+      <p class="statement-lead" data-reveal>
+        Être invisible en ligne, c'est fermer boutique sans le savoir.<br>
+        <em>Je vous installe sur le boulevard le plus fréquenté du web.</em>
+      </p>
+
+      <div class="problems-grid">
+        <div class="problem-card" data-reveal>
+          <p class="problem-issue">« Vous n'avez pas encore de site web. »</p>
+          <p class="problem-solution"><span>→</span> Je crée une présence professionnelle.</p>
+        </div>
+        <div class="problem-card" data-reveal>
+          <p class="problem-issue">« Vos réseaux sociaux ne sont pas réguliers. »</p>
+          <p class="problem-solution"><span>→</span> Je crée et organise votre contenu.</p>
+        </div>
+        <div class="problem-card" data-reveal>
+          <p class="problem-issue">« Vous avez du mal à attirer des clients en ligne. »</p>
+          <p class="problem-solution"><span>→</span> Je construis une stratégie d'acquisition.</p>
+        </div>
+        <div class="problem-card" data-reveal>
+          <p class="problem-issue">« Vous ne savez pas par où commencer. »</p>
+          <p class="problem-solution"><span>→</span> Je vous accompagne étape par étape.</p>
+        </div>
       </div>
-      <div class="problem-card" data-reveal>
-        <p class="problem-issue">« Vos réseaux sociaux ne sont pas réguliers. »</p>
-        <p class="problem-solution"><span>→</span> Je crée et organise votre contenu.</p>
-      </div>
-      <div class="problem-card" data-reveal>
-        <p class="problem-issue">« Vous avez du mal à attirer des clients en ligne. »</p>
-        <p class="problem-solution"><span>→</span> Je construis une stratégie d'acquisition.</p>
-      </div>
-      <div class="problem-card" data-reveal>
-        <p class="problem-issue">« Vous ne savez pas par où commencer. »</p>
-        <p class="problem-solution"><span>→</span> Je vous accompagne étape par étape.</p>
+    </div>
+
+    <!-- Composition photo — emplacements prêts à recevoir vos images.
+         Desktop : la pile reste groupée puis se déplie progressivement pendant le scroll.
+         Mobile : empilement statique simplifié (voir media query). -->
+    <div class="statement-photos-stage" id="statementPhotosStage">
+      <div class="statement-photos-pin">
+        <div class="statement-photos" id="statementPhotos">
+
+          <svg class="statement-photos-accent" id="statementAccent" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="70" fill="none" class="svg-stroke-green-soft" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round"/>
+            <circle cx="170" cy="40" r="4" class="svg-fill-pink"/>
+          </svg>
+
+          <figure class="photo-slot photo-slot--1" data-idx="0">
+            <span class="photo-slot-placeholder">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+              <span>Photo 1 — portrait</span>
+            </span>
+          </figure>
+
+          <figure class="photo-slot photo-slot--2" data-idx="1">
+            <span class="photo-slot-placeholder">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+              <span>Photo 2 — paysage</span>
+            </span>
+          </figure>
+
+          <figure class="photo-slot photo-slot--3" data-idx="2">
+            <span class="photo-slot-placeholder">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+              <span>Photo 3 — carré</span>
+            </span>
+          </figure>
+
+          <figure class="photo-slot photo-slot--4" data-idx="3">
+            <span class="photo-slot-placeholder">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+              <span>Photo 4 — portrait</span>
+            </span>
+          </figure>
+
+          <figure class="photo-slot photo-slot--5" data-idx="4">
+            <span class="photo-slot-placeholder">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+              <span>Photo 5 — paysage</span>
+            </span>
+          </figure>
+
+        </div>
       </div>
     </div>
   </div>
