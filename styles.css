@@ -266,14 +266,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: relative;
   overflow: hidden;
   padding: clamp(120px, 15vw, 168px) 0 var(--section-pad);
-  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  background: var(--ink);
+}
+.scrolly-bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(160deg, rgba(15,26,20,0.88) 0%, rgba(15,42,32,0.82) 55%, rgba(15,26,20,0.92) 100%),
+    url("assets/services/aya-canva-pro.jpg");
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
 }
 .hero-network{
   position: absolute;
   inset: 0;
   width: 100%; height: 100%;
-  z-index: 0;
-  opacity: .7;
+  z-index: 1;
+  opacity: .5;
 }
 
 /* Utilitaire d'accessibilité : masque visuellement, garde pour les lecteurs d'écran */
@@ -301,11 +312,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .scrolly-grid{
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 44px;
-  align-items: start;
+  z-index: 2;
+  display: block;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 /* Colonne épinglée — la pile de photos reste visible pendant tout le scroll */
@@ -333,41 +343,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-top: 8px;
 }
 .scrolly-block--constat{ padding-bottom: 8px; }
-
-/* Cartes de la pile — reçoivent chacune une vraie photo */
-.photo-slot{
-  position: absolute;
-  margin: 0;
-  border-radius: var(--radius-m);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 24px 50px -20px rgba(0,0,0,0.6);
-  will-change: transform;
-  background: rgba(255,255,255,0.04);
-}
-.photo-slot img{ width: 100%; height: 100%; object-fit: cover; display: block; }
-.photo-slot figcaption{
-  position: absolute;
-  left: 14px; bottom: 14px;
-  padding: 6px 14px;
-  border-radius: 100px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.photo-slot--solo{ top: 4%; left: 10%; width: 80%; aspect-ratio: 3 / 4; z-index: 3; }
-
-.statement-photos-accent{
-  position: absolute;
-  top: -8%; right: -6%;
-  width: 140px; height: 140px;
-  z-index: 0;
-  pointer-events: none;
-}
 
 /* Carte flottante — formulaire rapide */
 .hero-card{
@@ -1033,17 +1008,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .main-nav .btn{ margin-top: 10px; }
   .nav-toggle{ display: flex; }
 
-  .scrolly-grid{ grid-template-columns: 1fr; }
-  .scrolly-visual{
-    position: relative;
-    height: 400px;
-    order: -1;
-    margin-bottom: 8px;
-  }
-  .scrolly-visual-inner{ max-width: 320px; }
   .scrolly-content{ gap: 56px; }
-  .statement-photos-accent{ display: none; }
-  .photo-slot{ transform: none !important; }
   [data-reveal-anim]{ transform: translateY(24px); }
 
   .problems-grid{ grid-template-columns: 1fr; }

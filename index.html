@@ -50,6 +50,8 @@
 <!-- ============================================= -->
 <section class="scrolly" id="accueil">
 
+  <div class="scrolly-bg" aria-hidden="true"></div>
+
   <svg class="hero-network" viewBox="0 0 1440 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
     <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
@@ -63,23 +65,7 @@
 
   <div class="container scrolly-grid">
 
-    <!-- Colonne épinglée — la pile de photos, unique, qui traverse tout le scroll -->
-    <div class="scrolly-visual" id="scrollyVisual">
-      <div class="scrolly-visual-inner" id="scrollyVisualInner">
-
-        <svg class="statement-photos-accent" viewBox="0 0 200 200" aria-hidden="true">
-          <circle cx="100" cy="100" r="70" fill="none" class="svg-stroke-green-soft" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round"/>
-          <circle cx="170" cy="40" r="4" class="svg-fill-pink"/>
-        </svg>
-
-        <figure class="photo-slot photo-slot--solo" data-idx="0">
-          <img src="assets/services/aya-canva-pro.jpg" alt="Aya Najem">
-        </figure>
-
-      </div>
-    </div>
-
-    <!-- Colonne de contenu — défile normalement, entraîne l'animation de la pile -->
+    <!-- Colonne de contenu — texte + formulaire, superposés à la photo de fond -->
     <div class="scrolly-content">
 
       <div class="scrolly-block" id="constat">
