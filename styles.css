@@ -26,8 +26,8 @@
   --white: #FFFFFF;
 
   /* Typographie */
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Lora", "Georgia", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "Space Grotesk", var(--font-body);
 
   /* Rayons & ombres */
