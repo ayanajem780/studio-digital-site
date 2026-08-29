@@ -313,16 +313,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: sticky;
   top: 96px;
   height: calc(100vh - 96px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: visible;
 }
 .scrolly-visual-inner{
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 420px;
   aspect-ratio: 4 / 5;
-  margin: 0 auto;
 }
 
 /* Colonne de contenu — défile normalement, pilote l'animation de la pile */
@@ -1039,8 +1039,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   .scrolly-grid{ grid-template-columns: 1fr; }
   .scrolly-visual{
-    position: static;
-    height: auto;
+    position: relative;
+    height: 400px;
     order: -1;
     margin-bottom: 8px;
   }
