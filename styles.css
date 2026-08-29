@@ -260,12 +260,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
 /* -----------------------------------------------------------------
-   5. HERO — fond sombre, texture réseau, bloc média + carte contact
+   5. SCROLLY — Hero + "Le constat" fusionnés, pile de photos épinglée
    ----------------------------------------------------------------- */
-.hero{
+.scrolly{
   position: relative;
   overflow: hidden;
-  padding: clamp(120px, 15vw, 168px) 0 0;
+  padding: clamp(120px, 15vw, 168px) 0 var(--section-pad);
   background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
 }
 .hero-network{
@@ -274,11 +274,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   width: 100%; height: 100%;
   z-index: 0;
   opacity: .7;
-}
-.hero-inner{
-  position: relative;
-  z-index: 1;
-  padding-bottom: 64px;
 }
 
 /* Utilitaire d'accessibilité : masque visuellement, garde pour les lecteurs d'écran */
@@ -304,83 +299,81 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--white);
 }
 
-.hero-split{
-  margin-top: 0;
+.scrolly-grid{
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 44px;
   align-items: start;
 }
 
-.hero-copy{ padding-top: 8px; }
-
-/* Pile de cartes interactive (gauche) — présente les 8 expertises une à une */
-.hero-collage{ display: flex; flex-direction: column; align-items: center; }
-.collage-stack{
+/* Colonne épinglée — la pile de photos reste visible pendant tout le scroll */
+.scrolly-visual{
+  position: sticky;
+  top: 96px;
+  height: calc(100vh - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scrolly-visual-inner{
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   aspect-ratio: 4 / 5;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  margin: 0 auto;
 }
-.stack-card{
+
+/* Colonne de contenu — défile normalement, pilote l'animation de la pile */
+.scrolly-content{
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding-top: 8px;
+}
+.scrolly-block--constat{ padding-bottom: 8px; }
+
+/* Cartes de la pile — reçoivent chacune une vraie photo */
+.photo-slot{
   position: absolute;
-  inset: 0;
   margin: 0;
-  border-radius: var(--radius-l);
+  border-radius: var(--radius-m);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 24px 50px -20px rgba(0,0,0,0.6);
-  transition: transform .45s var(--ease), opacity .45s var(--ease);
+  will-change: transform;
   background: rgba(255,255,255,0.04);
 }
-.stack-card img{
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.stack-card figcaption{
+.photo-slot img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-slot figcaption{
   position: absolute;
-  left: 16px; bottom: 16px;
-  padding: 7px 15px;
+  left: 14px; bottom: 14px;
+  padding: 6px 14px;
   border-radius: 100px;
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
   color: var(--white);
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.stack-card[data-slot="0"]{ z-index: 3; transform: none; opacity: 1; }
-.stack-card[data-slot="1"]{ z-index: 2; transform: translate(16px, -14px) rotate(4deg) scale(.96); opacity: .9; }
-.stack-card[data-slot="2"]{ z-index: 1; transform: translate(30px, -26px) rotate(-5deg) scale(.92); opacity: .7; }
-.stack-card.is-leaving{ transform: translate(-60px, 50px) rotate(-14deg) scale(.94); opacity: 0; z-index: 4; }
-.collage-stack:hover .stack-card[data-slot="0"]{ transform: translateY(-4px); }
+.photo-slot--1{ top: 0; left: 6%; width: 40%; aspect-ratio: 3 / 4; z-index: 3; }
+.photo-slot--2{ top: 4%; left: 50%; width: 44%; aspect-ratio: 4 / 3; z-index: 2; }
+.photo-slot--3{ top: 48%; left: 0; width: 24%; aspect-ratio: 1 / 1; z-index: 2; }
+.photo-slot--4{ top: 38%; left: 28%; width: 32%; aspect-ratio: 3 / 4; z-index: 4; }
+.photo-slot--5{ top: 66%; left: 64%; width: 32%; aspect-ratio: 4 / 3; z-index: 1; }
 
-.collage-dots{
-  display: flex;
-  gap: 6px;
-  margin-top: 22px;
-}
-.collage-dot{
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  transition: background .3s ease, transform .3s ease;
-}
-.collage-dot.is-active{ background: var(--pink); transform: scale(1.3); }
-
-.collage-hint{
-  margin-top: 14px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
+.statement-photos-accent{
+  position: absolute;
+  top: -8%; right: -6%;
+  width: 140px; height: 140px;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Carte flottante (droite) — formulaire rapide */
+/* Carte flottante — formulaire rapide */
 .hero-card{
   margin-top: 32px;
   background: var(--white);
@@ -478,152 +471,45 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* -----------------------------------------------------------------
-   6. TICKER — bandeau défilant sous le Hero
+   6. "LE CONSTAT" — déclaration + problèmes/solutions (sur fond sombre)
    ----------------------------------------------------------------- */
-.ticker{
-  position: relative;
-  z-index: 1;
-  border-top: 1px solid rgba(23,32,28,0.08);
-  overflow: hidden;
-  padding: 18px 0;
-  background: var(--bg-alt);
-}
-.ticker-track{
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  animation: ticker-scroll 32s linear infinite;
-}
-.ticker-sep{ color: var(--pink); margin: 0 20px; }
-@keyframes ticker-scroll{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce){
-  .ticker-track{ animation: none; }
-}
-
-/* -----------------------------------------------------------------
-   7. LE CONSTAT — déclaration + problèmes/solutions
-   ----------------------------------------------------------------- */
-.statement{ padding: var(--section-pad) 0; overflow: hidden; }
-.statement-inner{
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
-  align-items: start;
-}
 .statement-lead{
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(24px, 3.2vw, 38px);
+  font-size: clamp(24px, 3.2vw, 36px);
   line-height: 1.35;
-  color: var(--ink);
-  max-width: 18ch;
-  margin-bottom: 56px;
+  color: var(--white);
+  max-width: 20ch;
+  margin-bottom: 44px;
 }
 .statement-lead em{ font-style: italic; color: var(--green); }
 
 .problems-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
-
-/* -----------------------------------------------------------------
-   Composition photo animée — remplace bientôt les emplacements
-   par vos vraies photos (portrait / paysage / carré, sans déformation)
-   ----------------------------------------------------------------- */
-.statement-photos-stage{
-  position: relative;
-  height: 260vh;
-}
-.statement-photos-pin{
-  position: sticky;
-  top: 96px;
-  height: calc(100vh - 96px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-.statement-photos{
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.statement-photos-accent{
-  position: absolute;
-  top: -6%; right: -4%;
-  width: 220px; height: 220px;
-  z-index: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.photo-slot{
-  position: absolute;
-  margin: 0;
-  will-change: transform;
-  transition: box-shadow .3s ease;
-  border-radius: var(--radius-m);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  background: var(--bg-alt);
-  border: 1.5px dashed rgba(23,32,28,0.16);
-}
-.photo-slot img{ width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.photo-slot-placeholder{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%; height: 100%;
-  color: var(--ink-faint);
-}
-.photo-slot-placeholder span{
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-align: center;
-  padding: 0 10px;
-}
-
-.photo-slot--1{ top: 0; left: 6%; width: 40%; aspect-ratio: 3 / 4; z-index: 3; }
-.photo-slot--2{ top: 4%; left: 50%; width: 44%; aspect-ratio: 4 / 3; z-index: 2; }
-.photo-slot--3{ top: 48%; left: 0; width: 24%; aspect-ratio: 1 / 1; z-index: 2; }
-.photo-slot--4{ top: 38%; left: 28%; width: 32%; aspect-ratio: 3 / 4; z-index: 4; }
-.photo-slot--5{ top: 66%; left: 64%; width: 32%; aspect-ratio: 4 / 3; z-index: 1; }
 .problem-card{
-  background: var(--white);
-  border: 1.5px solid rgba(23,32,28,0.08);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: var(--radius-m);
-  padding: 28px 30px;
+  padding: 24px 26px;
   transition: border-color .35s ease, transform .35s var(--ease);
 }
-.problem-card:hover{ border-color: var(--green); transform: translateY(-4px); }
+.problem-card:hover{ border-color: rgba(255,255,255,0.25); transform: translateY(-4px); }
 .problem-issue{
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 18px;
-  color: var(--ink-soft);
+  font-size: 17px;
+  color: rgba(255,255,255,0.62);
   margin-bottom: 12px;
 }
 .problem-solution{
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--white);
 }
-.problem-solution span{ color: var(--pink); margin-right: 8px; }
+.problem-solution span{ color: var(--yellow); margin-right: 8px; }
 
 /* Kicker numéroté ("01 — Le constat") */
 .section-kicker--num{ gap: 12px; }
@@ -1151,29 +1037,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .main-nav .btn{ margin-top: 10px; }
   .nav-toggle{ display: flex; }
 
-  .hero-split{ grid-template-columns: 1fr; }
-  .hero-collage{ order: -1; }
-
-  .statement-inner{ grid-template-columns: 1fr; }
-  .statement-photos-stage{ height: auto; }
-  .statement-photos-pin{
+  .scrolly-grid{ grid-template-columns: 1fr; }
+  .scrolly-visual{
     position: static;
     height: auto;
-    display: block;
+    order: -1;
+    margin-bottom: 8px;
   }
-  .statement-photos{
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 8px;
-  }
+  .scrolly-visual-inner{ max-width: 320px; }
+  .scrolly-content{ gap: 56px; }
   .statement-photos-accent{ display: none; }
-  .photo-slot{
-    position: static;
-    width: 100% !important;
-    transform: none !important;
-  }
+  .photo-slot{ transform: none !important; }
   [data-reveal-anim]{ transform: translateY(24px); }
 
   .problems-grid{ grid-template-columns: 1fr; }

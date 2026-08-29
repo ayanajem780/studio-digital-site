@@ -46,12 +46,11 @@
 <main>
 
 <!-- ============================================= -->
-<!-- HERO                                           -->
+<!-- HERO + LE CONSTAT — une seule séquence de scroll                -->
 <!-- ============================================= -->
-<section class="hero" id="accueil">
+<section class="scrolly" id="accueil">
 
-  <!-- Texture réseau décorative — prolonge le motif "signal" en arrière-plan -->
-  <svg class="hero-network" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <svg class="hero-network" viewBox="0 0 1440 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
     <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
     <circle cx="360" cy="480" r="3" class="svg-fill-green"/>
@@ -62,22 +61,45 @@
     <circle cx="1440" cy="260" r="3" class="svg-fill-green"/>
   </svg>
 
-  <div class="container hero-inner">
-    <div class="hero-split">
+  <div class="container scrolly-grid">
 
-      <!-- Gauche — pile de cartes interactive (les 8 expertises) -->
-      <div class="hero-collage" data-reveal>
-        <div class="collage-stack" id="collageStack" role="button" tabindex="0" aria-label="Voir l'expertise suivante">
-          <figure class="stack-card" data-slot="2"><img alt=""><figcaption></figcaption></figure>
-          <figure class="stack-card" data-slot="1"><img alt=""><figcaption></figcaption></figure>
-          <figure class="stack-card" data-slot="0"><img alt=""><figcaption></figcaption></figure>
-        </div>
-        <div class="collage-dots" id="collageDots" aria-hidden="true"></div>
-        <p class="collage-hint">Survolez ou touchez la pile pour découvrir chaque expertise <span aria-hidden="true">→</span></p>
+    <!-- Colonne épinglée — la pile de photos, unique, qui traverse tout le scroll -->
+    <div class="scrolly-visual" id="scrollyVisual">
+      <div class="scrolly-visual-inner" id="scrollyVisualInner">
+
+        <svg class="statement-photos-accent" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="70" fill="none" class="svg-stroke-green-soft" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round"/>
+          <circle cx="170" cy="40" r="4" class="svg-fill-pink"/>
+        </svg>
+
+        <figure class="photo-slot photo-slot--1" data-idx="0">
+          <img src="assets/services/strategie-de-marque.jpg" alt="Stratégie de marque">
+          <figcaption>Stratégie de marque</figcaption>
+        </figure>
+        <figure class="photo-slot photo-slot--2" data-idx="1">
+          <img src="assets/services/identite-visuelle.png" alt="Identité visuelle">
+          <figcaption>Identité visuelle</figcaption>
+        </figure>
+        <figure class="photo-slot photo-slot--3" data-idx="2">
+          <img src="assets/services/refonte-graphique.png" alt="Refonte graphique">
+          <figcaption>Refonte graphique</figcaption>
+        </figure>
+        <figure class="photo-slot photo-slot--4" data-idx="3">
+          <img src="assets/services/brand-content.png" alt="Brand content">
+          <figcaption>Brand content</figcaption>
+        </figure>
+        <figure class="photo-slot photo-slot--5" data-idx="4">
+          <img src="assets/services/photographie.png" alt="Photographie">
+          <figcaption>Photographie</figcaption>
+        </figure>
+
       </div>
+    </div>
 
-      <!-- Droite — texte + carte de contact -->
-      <div class="hero-copy">
+    <!-- Colonne de contenu — défile normalement, entraîne l'animation de la pile -->
+    <div class="scrolly-content">
+
+      <div class="scrolly-block scrolly-block--hero">
         <p class="section-kicker section-kicker--onDark" data-reveal>
           <svg class="kicker-mark" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
             <path d="M4 12h13M12 6l7 6-7 6" fill="none" class="svg-stroke-pink" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,127 +145,34 @@
           </form>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Texture réseau décorative — prolonge le motif "signal" en arrière-plan -->
-  <svg class="hero-network" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
-    <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
-    <circle cx="360" cy="480" r="3" class="svg-fill-green"/>
-    <circle cx="760" cy="560" r="3" class="svg-fill-green"/>
-    <circle cx="1100" cy="340" r="4" class="svg-fill-pink"/>
-    <circle cx="520" cy="700" r="3" class="svg-fill-green"/>
-    <circle cx="900" cy="780" r="4" class="svg-fill-yellow"/>
-    <circle cx="1440" cy="260" r="3" class="svg-fill-green"/>
-  </svg>
-  </div>
+      <div class="scrolly-block scrolly-block--constat" id="constat">
+        <p class="section-kicker section-kicker--num section-kicker--light" data-reveal><span>01</span> Le constat</p>
+        <p class="statement-lead" data-reveal>
+          Être invisible en ligne, c'est fermer boutique sans le savoir.<br>
+          <em>Je vous installe sur le boulevard le plus fréquenté du web.</em>
+        </p>
 
-  <!-- Bandeau défilant — texture de conversion, sans faux logos clients -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Sites web</span><span class="ticker-sep">·</span>
-      <span>Réseaux sociaux</span><span class="ticker-sep">·</span>
-      <span>Publicité digitale</span><span class="ticker-sep">·</span>
-      <span>SEO &amp; visibilité</span><span class="ticker-sep">·</span>
-      <span>Branding</span><span class="ticker-sep">·</span>
-      <span>Agadir</span><span class="ticker-sep">·</span>
-      <span>Marrakech</span><span class="ticker-sep">·</span>
-      <span>Casablanca</span><span class="ticker-sep">·</span>
-      <span>Sites web</span><span class="ticker-sep">·</span>
-      <span>Réseaux sociaux</span><span class="ticker-sep">·</span>
-      <span>Publicité digitale</span><span class="ticker-sep">·</span>
-      <span>SEO &amp; visibilité</span><span class="ticker-sep">·</span>
-      <span>Branding</span><span class="ticker-sep">·</span>
-      <span>Agadir</span><span class="ticker-sep">·</span>
-      <span>Marrakech</span><span class="ticker-sep">·</span>
-      <span>Casablanca</span><span class="ticker-sep">·</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 01 — LE CONSTAT                                 -->
-<!-- ============================================= -->
-<section class="statement" id="constat">
-  <div class="container statement-inner">
-
-    <div class="statement-copy">
-      <p class="section-kicker section-kicker--num" data-reveal><span>01</span> Le constat</p>
-      <p class="statement-lead" data-reveal>
-        Être invisible en ligne, c'est fermer boutique sans le savoir.<br>
-        <em>Je vous installe sur le boulevard le plus fréquenté du web.</em>
-      </p>
-
-      <div class="problems-grid">
-        <div class="problem-card" data-reveal>
-          <p class="problem-issue">« Vous n'avez pas encore de site web. »</p>
-          <p class="problem-solution"><span>→</span> Je crée une présence professionnelle.</p>
-        </div>
-        <div class="problem-card" data-reveal>
-          <p class="problem-issue">« Vos réseaux sociaux ne sont pas réguliers. »</p>
-          <p class="problem-solution"><span>→</span> Je crée et organise votre contenu.</p>
-        </div>
-        <div class="problem-card" data-reveal>
-          <p class="problem-issue">« Vous avez du mal à attirer des clients en ligne. »</p>
-          <p class="problem-solution"><span>→</span> Je construis une stratégie d'acquisition.</p>
-        </div>
-        <div class="problem-card" data-reveal>
-          <p class="problem-issue">« Vous ne savez pas par où commencer. »</p>
-          <p class="problem-solution"><span>→</span> Je vous accompagne étape par étape.</p>
+        <div class="problems-grid">
+          <div class="problem-card" data-reveal>
+            <p class="problem-issue">« Vous n'avez pas encore de site web. »</p>
+            <p class="problem-solution"><span>→</span> Je crée une présence professionnelle.</p>
+          </div>
+          <div class="problem-card" data-reveal>
+            <p class="problem-issue">« Vos réseaux sociaux ne sont pas réguliers. »</p>
+            <p class="problem-solution"><span>→</span> Je crée et organise votre contenu.</p>
+          </div>
+          <div class="problem-card" data-reveal>
+            <p class="problem-issue">« Vous avez du mal à attirer des clients en ligne. »</p>
+            <p class="problem-solution"><span>→</span> Je construis une stratégie d'acquisition.</p>
+          </div>
+          <div class="problem-card" data-reveal>
+            <p class="problem-issue">« Vous ne savez pas par où commencer. »</p>
+            <p class="problem-solution"><span>→</span> Je vous accompagne étape par étape.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Composition photo — emplacements prêts à recevoir vos images.
-         Desktop : la pile reste groupée puis se déplie progressivement pendant le scroll.
-         Mobile : empilement statique simplifié (voir media query). -->
-    <div class="statement-photos-stage" id="statementPhotosStage">
-      <div class="statement-photos-pin">
-        <div class="statement-photos" id="statementPhotos">
-
-          <svg class="statement-photos-accent" id="statementAccent" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="70" fill="none" class="svg-stroke-green-soft" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round"/>
-            <circle cx="170" cy="40" r="4" class="svg-fill-pink"/>
-          </svg>
-
-          <figure class="photo-slot photo-slot--1" data-idx="0">
-            <span class="photo-slot-placeholder">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-              <span>Photo 1 — portrait</span>
-            </span>
-          </figure>
-
-          <figure class="photo-slot photo-slot--2" data-idx="1">
-            <span class="photo-slot-placeholder">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-              <span>Photo 2 — paysage</span>
-            </span>
-          </figure>
-
-          <figure class="photo-slot photo-slot--3" data-idx="2">
-            <span class="photo-slot-placeholder">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-              <span>Photo 3 — carré</span>
-            </span>
-          </figure>
-
-          <figure class="photo-slot photo-slot--4" data-idx="3">
-            <span class="photo-slot-placeholder">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-              <span>Photo 4 — portrait</span>
-            </span>
-          </figure>
-
-          <figure class="photo-slot photo-slot--5" data-idx="4">
-            <span class="photo-slot-placeholder">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-              <span>Photo 5 — paysage</span>
-            </span>
-          </figure>
-
-        </div>
-      </div>
     </div>
   </div>
 </section>
