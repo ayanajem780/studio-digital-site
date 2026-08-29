@@ -359,11 +359,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.photo-slot--1{ top: 0; left: 6%; width: 40%; aspect-ratio: 3 / 4; z-index: 3; }
-.photo-slot--2{ top: 4%; left: 50%; width: 44%; aspect-ratio: 4 / 3; z-index: 2; }
-.photo-slot--3{ top: 48%; left: 0; width: 24%; aspect-ratio: 1 / 1; z-index: 2; }
-.photo-slot--4{ top: 38%; left: 28%; width: 32%; aspect-ratio: 3 / 4; z-index: 4; }
-.photo-slot--5{ top: 66%; left: 64%; width: 32%; aspect-ratio: 4 / 3; z-index: 1; }
+.photo-slot--solo{ top: 4%; left: 10%; width: 80%; aspect-ratio: 3 / 4; z-index: 3; }
 
 .statement-photos-accent{
   position: absolute;
