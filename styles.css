@@ -1332,7 +1332,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* TEXTE CIRCULAIRE AUTOUR DU BALLON */
 .hero-orbit-text {
     position: absolute;
-    left: 50%;
+    left: 58%;
     top: 50%;
 
     width: 440px;
