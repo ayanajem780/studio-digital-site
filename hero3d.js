@@ -195,27 +195,39 @@ if (orbitText) {
         span.textContent = char === " " ? "\u00A0" : char;
 
         const angle = (index / text.length) * Math.PI * 2;
-        const radius = 220;
+        const radius = 145;
 
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
 
         span.style.transform =
-            `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+    `translate(-50%, -50%) translate(${x}px, ${y}px)`;
 
         ring.appendChild(span);
     });
 
     let rotation = 0;
 
-    function animateOrbit() {
-        rotation += 0.15;
+function animateOrbit() {
+    rotation += 0.08;
 
-        ring.style.transform =
-            `rotateX(65deg) rotateZ(${rotation}deg)`;
+    const chars = ring.querySelectorAll(".orbit-char");
 
-        requestAnimationFrame(animateOrbit);
-    }
+    chars.forEach((char, index) => {
+        const angle =
+            (index / text.length) * Math.PI * 2 +
+            rotation * Math.PI / 180;
 
-    animateOrbit();
+        const radius = 180;
+
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        char.style.transform =
+            `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+    });
+
+    requestAnimationFrame(animateOrbit);
 }
+
+animateOrbit();

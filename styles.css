@@ -1334,22 +1334,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 520px;
-    height: 520px;
+
+    width: 440px;
+    height: 440px;
+
     transform: translate(-50%, -50%);
+
     z-index: 15;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-
     pointer-events: none;
     white-space: nowrap;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 
     perspective: 1000px;
 }
