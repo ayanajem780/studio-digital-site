@@ -175,3 +175,47 @@ if (!container) {
 
   resize();
 }
+// TEXTE CIRCULAIRE AUTOUR DU BALLON
+const orbitText = document.getElementById("heroOrbitText");
+
+if (orbitText) {
+    const text = "NOUS CRÉONS • DES EXPÉRIENCES • DIGITALES •";
+
+    orbitText.textContent = "";
+
+    const ring = document.createElement("div");
+    ring.className = "hero-orbit-ring";
+
+    orbitText.appendChild(ring);
+
+    [...text].forEach((char, index) => {
+        const span = document.createElement("span");
+
+        span.className = "orbit-char";
+        span.textContent = char === " " ? "\u00A0" : char;
+
+        const angle = (index / text.length) * Math.PI * 2;
+        const radius = 220;
+
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        span.style.transform =
+            `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+
+        ring.appendChild(span);
+    });
+
+    let rotation = 0;
+
+    function animateOrbit() {
+        rotation += 0.15;
+
+        ring.style.transform =
+            `rotateX(65deg) rotateZ(${rotation}deg)`;
+
+        requestAnimationFrame(animateOrbit);
+    }
+
+    animateOrbit();
+}

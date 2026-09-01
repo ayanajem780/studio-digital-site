@@ -1329,3 +1329,56 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         font-size: 11px;
     }
 }
+/* TEXTE CIRCULAIRE AUTOUR DU BALLON */
+.hero-orbit-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 520px;
+    height: 520px;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    pointer-events: none;
+    white-space: nowrap;
+
+    perspective: 1000px;
+}
+.hero-orbit-ring {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+.orbit-char {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+
+    white-space: pre;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.25);
+}
