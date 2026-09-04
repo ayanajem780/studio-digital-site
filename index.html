@@ -9,7 +9,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,7 +38,15 @@
 <!-- ============================================= -->
 <!-- HERO + LE CONSTAT — une seule séquence de scroll                -->
 <!-- ============================================= -->
- <section class="hero-3d" id="home">
+ <section class="hero-premium" id="home">
+
+    <!-- Couches graphiques (grille, halos, texte fantôme) -->
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow--green"></div>
+      <div class="hero-glow hero-glow--pink"></div>
+      <span class="hero-ghost">A→Z</span>
+    </div>
 
     <!-- Navigation -->
     <nav class="hero-nav">
@@ -53,34 +61,60 @@
         </a>
     </nav>
 
+    <div class="hero-inner">
 
-    <!-- Texte principal -->
-    <div class="hero-copy">
+      <!-- Texte principal -->
+      <div class="hero-copy">
 
-        <div class="hero-label">
-          ANDIGITAL· AGADIR. MOROCCO
-        </div>
+          <div class="hero-label" data-reveal-hero style="--reveal-delay:.05s">
+            <span class="hero-label-dot" aria-hidden="true"></span>
+            ANDIGITAL· AGADIR. MOROCCO
+          </div>
 
-           <h1 class="hero-orbit-text" id="heroOrbitText">
-    Nous créons des expériences digitales.
-</h1>
+          <h1 class="hero-title" data-reveal-hero style="--reveal-delay:.15s">Lancer votre marque de A à Z</h1>
 
-        <p>
-            Stratégie, création et technologie pour construire
-            des marques qui se démarquent.
-        </p>
+          <p data-reveal-hero style="--reveal-delay:.3s">
+              Stratégie, création et technologie pour construire
+              des marques qui se démarquent.
+          </p>
 
-        <a href="#contact" class="hero-cta">
-            Démarrer un projet
-            <span>↗</span>
-        </a>
+          <a href="#contact" class="hero-cta" data-reveal-hero data-magnetic style="--reveal-delay:.42s">
+              Démarrer un projet
+              <span>↗</span>
+          </a>
+
+      </div>
+
+      <!-- Composition graphique -->
+      <div class="hero-visual" data-reveal-hero style="--reveal-delay:.2s">
+
+        <svg class="hero-visual-lines" viewBox="0 0 460 460" aria-hidden="true">
+          <circle class="hero-ring" cx="230" cy="230" r="170" fill="none" stroke-width="1"/>
+          <circle class="hero-ring hero-ring--inner" cx="230" cy="230" r="120" fill="none" stroke-width="1"/>
+          <path class="hero-connector" d="M230 60 L 95 150" fill="none" stroke-width="1"/>
+          <path class="hero-connector" d="M400 240 L 320 305" fill="none" stroke-width="1"/>
+          <path class="hero-connector" d="M215 400 L 150 340" fill="none" stroke-width="1"/>
+          <circle class="hero-node" cx="230" cy="60" r="3"/>
+          <circle class="hero-node" cx="400" cy="240" r="3"/>
+          <circle class="hero-node" cx="215" cy="400" r="3"/>
+        </svg>
+
+        <div class="hero-chip hero-chip--1"><span>Branding</span></div>
+        <div class="hero-chip hero-chip--2"><span>Web Design</span></div>
+        <div class="hero-chip hero-chip--3"><span>Stratégie</span></div>
+        <div class="hero-chip hero-chip--4"><span>Marketing</span></div>
+
+      </div>
 
     </div>
 
-
-    <!-- Zone 3D -->
-    <div id="andigital-3d"></div>
-
+    <!-- Bande défilante -->
+    <div class="hero-marquee">
+      <div class="hero-marquee-track">
+        <span>Sites web</span><span>Marketing digital</span><span>Réseaux sociaux</span><span>Branding</span><span>Stratégie</span>
+        <span>Sites web</span><span>Marketing digital</span><span>Réseaux sociaux</span><span>Branding</span><span>Stratégie</span>
+      </div>
+    </div>
 
     <!-- Indication scroll -->
     <div class="scroll-indicator">
@@ -732,6 +766,6 @@
   <a href="#brief" class="mobile-cta mobile-cta--primary">Audit gratuit</a>
 </div>
 
-<script type="module" src="./hero3d.js"></script>
+<script src="./hero-experience.js" defer></script>
 </body>
 </html>
