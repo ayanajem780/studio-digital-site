@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andigital — Sites web, marketing &amp; contenu</title>
-<meta name="description" content="Création de sites web, marketing digital, réseaux sociaux, publicité et branding pour entrepreneurs, TPE et PME. Basée à Agadir, Maroc.">
+<title>ANDIGITAL — Agence de marketing, branding &amp; création digitale à Agadir</title>
+<meta name="description" content="ANDIGITAL est une agence de marketing, branding, création digitale et acquisition basée à Agadir. Stratégie, identité de marque, sites web, contenu et publicité, pour lancer et développer votre marque de A à Z.">
+<link rel="canonical" href="https://studio-digital-site.vercel.app/index.html">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +21,25 @@
 <!-- ============================================= -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="#accueil" class="brand">
+    <a href="index.html" class="brand">
       <svg class="brand-mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
         <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
         <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
       </svg>
       <span class="brand-name">AN<em>DIGITAL</em></span>
     </a>
- <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link is-active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="btn btn--primary btn--small">Start a Project</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -51,12 +63,12 @@
     <!-- Navigation -->
     <nav class="hero-nav">
         <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#projects">Projets</a>
-            <a href="#contact">Contact</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
         </div>
 
-        <a href="#contact" class="nav-button">
+        <a href="contact.html" class="nav-button">
             Démarrer un projet
         </a>
     </nav>
@@ -78,7 +90,7 @@
               des marques qui se démarquent.
           </p>
 
-          <a href="#contact" class="hero-cta" data-reveal-hero data-magnetic style="--reveal-delay:.42s">
+          <a href="contact.html" class="hero-cta" data-reveal-hero data-magnetic style="--reveal-delay:.42s">
               Démarrer un projet
               <span>↗</span>
           </a>
@@ -145,8 +157,8 @@
 
       <div class="scrolly-block" id="constat">
         <p class="statement-lead" data-reveal>
-          Ne laissez pas vos clients vous chercher. Faites en sorte qu'ils vous trouvent.<br>
-          <em>Je vous aide à être visible, crédible et mémorable là où vos clients vous cherchent.</em>
+          Une marque qui n'est pas pilotée devient invisible.<br>
+          <em>ANDIGITAL prend en charge stratégie, création et acquisition sous un même toit — pour que chaque décision serve la même direction.</em>
         </p>
 
         <div class="hero-card" data-reveal data-reveal-delay="1">
@@ -194,54 +206,22 @@
 <section class="services" id="services">
   <div class="container">
     <div class="section-head" data-reveal>
-      <p class="section-kicker section-kicker--num"><span>02</span> Ce que je fais</p>
-      <h2 class="section-title">Huit expertises, <em>une seule</em> obsession : votre croissance.</h2>
-      <p class="section-desc">Cliquez sur un service pour en discuter directement — chaque projet combine ce dont vous avez vraiment besoin.</p>
+      <p class="section-kicker section-kicker--num"><span>02</span> Ce que nous faisons</p>
+      <h2 class="section-title">16 expertises, <em>une seule</em> agence à piloter.</h2>
+      <p class="section-desc">Stratégie, création, acquisition : chaque expertise est disponible seule ou combinée dans un plan cohérent — vous ne gérez qu'un seul interlocuteur.</p>
     </div>
 
     <ol class="service-rows">
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-marketing-strategy.html" class="service-row-link">
           <span class="service-row-num">01</span>
-          <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><path d="M8 13l2.5 2.5L8 18M14 13l2.5 2.5L14 18"/></svg>
-          </span>
-          <span class="service-row-body">
-            <span class="service-row-title">Création de sites web</span>
-            <span class="service-row-desc">Site vitrine, landing page, site professionnel ou e-commerce, pensé pour convertir.</span>
-          </span>
-          <span class="service-row-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-      </li>
-
-      <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
-          <span class="service-row-num">02</span>
-          <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></svg>
-          </span>
-          <span class="service-row-body">
-            <span class="service-row-title">Gestion des réseaux sociaux</span>
-            <span class="service-row-desc">Instagram, Facebook, TikTok, LinkedIn : un calendrier éditorial et une présence régulière.</span>
-          </span>
-          <span class="service-row-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-      </li>
-
-      <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
-          <span class="service-row-num">03</span>
           <span class="service-row-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">Marketing digital</span>
-            <span class="service-row-desc">Stratégie, acquisition, génération de leads et tunnel de conversion.</span>
+            <span class="service-row-title">Marketing Strategy</span>
+            <span class="service-row-desc">Positionnement, cible, acquisition : la direction qui rend chaque action rentable.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -250,14 +230,46 @@
       </li>
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-branding-identity.html" class="service-row-link">
+          <span class="service-row-num">02</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l3 6 6 1-4.5 4.3L17.5 21 12 17.8 6.5 21l1-6.7L3 10l6-1z"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Branding &amp; Identity</span>
+            <span class="service-row-desc">Logo, identité visuelle, charte graphique : une marque qu'on reconnaît avant de la lire.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="service-web-design-development.html" class="service-row-link">
+          <span class="service-row-num">03</span>
+          <span class="service-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><path d="M8 13l2.5 2.5L8 18M14 13l2.5 2.5L14 18"/></svg>
+          </span>
+          <span class="service-row-body">
+            <span class="service-row-title">Web Design &amp; Development</span>
+            <span class="service-row-desc">Sites vitrines, landing pages et e-commerce, pensés pour convertir.</span>
+          </span>
+          <span class="service-row-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="service-row" data-reveal>
+        <a href="service-social-media-management.html" class="service-row-link">
           <span class="service-row-num">04</span>
           <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">Création de contenu</span>
-            <span class="service-row-desc">Posts, carrousels, reels, vidéos promotionnelles et visuels publicitaires.</span>
+            <span class="service-row-title">Social Media Management</span>
+            <span class="service-row-desc">Calendrier éditorial, publications, community management et reporting.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -266,14 +278,14 @@
       </li>
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-advertising-paid-media.html" class="service-row-link">
           <span class="service-row-num">05</span>
           <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10v4h3l6 4V6l-6 4H3z"/><path d="M16 9a4 4 0 010 6"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">Publicité digitale</span>
-            <span class="service-row-desc">Meta Ads, Google Ads : campagnes ciblées, suivies et optimisées.</span>
+            <span class="service-row-title">Advertising &amp; Paid Media</span>
+            <span class="service-row-desc">Meta, Google, TikTok Ads : des campagnes qui rapportent plus qu'elles ne coûtent.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -282,14 +294,14 @@
       </li>
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-seo-web-visibility.html" class="service-row-link">
           <span class="service-row-num">06</span>
           <span class="service-row-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">SEO &amp; visibilité Google</span>
-            <span class="service-row-desc">SEO local, Google Business Profile, mots-clés, suivi de visibilité.</span>
+            <span class="service-row-title">SEO &amp; Web Visibility</span>
+            <span class="service-row-desc">SEO technique, local et de contenu, pour être trouvé au bon moment.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -298,14 +310,14 @@
       </li>
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-content-creation.html" class="service-row-link">
           <span class="service-row-num">07</span>
           <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l3 6 6 1-4.5 4.3L17.5 21 12 17.8 6.5 21l1-6.7L3 10l6-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">Branding</span>
-            <span class="service-row-desc">Identité visuelle, logo, palette, typographie et supports de communication.</span>
+            <span class="service-row-title">Content Creation</span>
+            <span class="service-row-desc">Concepts, visuels et rédaction pensés pour arrêter le scroll.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -314,14 +326,14 @@
       </li>
 
       <li class="service-row" data-reveal>
-        <a href="#brief" class="service-row-link">
+        <a href="service-lead-generation-sales.html" class="service-row-link">
           <span class="service-row-num">08</span>
           <span class="service-row-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h18l-7 9v6l-4 2v-8z"/></svg>
           </span>
           <span class="service-row-body">
-            <span class="service-row-title">Accompagnement digital</span>
-            <span class="service-row-desc">De l'idée à la mise en ligne, un suivi personnalisé étape par étape.</span>
+            <span class="service-row-title">Lead Generation &amp; Sales</span>
+            <span class="service-row-desc">Tunnels, qualification et suivi CRM jusqu'à la signature.</span>
           </span>
           <span class="service-row-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -330,6 +342,8 @@
       </li>
 
     </ol>
+
+    <a href="services.html" class="portfolio-see-all" data-reveal>Voir les 16 expertises <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -338,41 +352,43 @@
 <!-- ============================================= -->
 <section class="method" id="methode">
   <div class="container">
-    <p class="section-kicker section-kicker--num section-kicker--light" data-reveal><span>03</span> Comment ça fonctionne</p>
+    <p class="section-kicker section-kicker--num section-kicker--light" data-reveal><span>03</span> Notre approche</p>
     <h2 class="section-title section-title--light" data-reveal>Un processus clair. Zéro blabla.</h2>
 
     <ol class="process-list">
       <li class="process-row" data-reveal>
         <span class="process-num">n°01</span>
-        <h3 class="process-title">Échange</h3>
-        <p class="process-desc">Nous discutons de votre activité, vos besoins et vos objectifs.</p>
+        <h3 class="process-title">Discover</h3>
+        <p class="process-desc">Nous cartographions votre marché, votre cible et votre position actuelle.</p>
       </li>
       <li class="process-row" data-reveal>
         <span class="process-num">n°02</span>
-        <h3 class="process-title">Analyse</h3>
-        <p class="process-desc">J'analyse votre présence digitale actuelle et vos opportunités.</p>
+        <h3 class="process-title">Strategize</h3>
+        <p class="process-desc">Nous construisons un plan priorisé, chiffré et adapté à votre budget.</p>
       </li>
       <li class="process-row" data-reveal>
         <span class="process-num">n°03</span>
-        <h3 class="process-title">Stratégie</h3>
-        <p class="process-desc">Je construis une solution adaptée à votre activité et votre budget.</p>
+        <h3 class="process-title">Create</h3>
+        <p class="process-desc">Identité, site, contenu, campagnes : nous produisons ce que la stratégie exige.</p>
       </li>
       <li class="process-row" data-reveal>
         <span class="process-num">n°04</span>
-        <h3 class="process-title">Création</h3>
-        <p class="process-desc">Je crée les éléments nécessaires : site, contenu, réseaux sociaux, campagnes.</p>
+        <h3 class="process-title">Launch</h3>
+        <p class="process-desc">Votre marque est mise en ligne, diffusée et prête à être mesurée.</p>
       </li>
       <li class="process-row" data-reveal>
         <span class="process-num">n°05</span>
-        <h3 class="process-title">Mise en ligne</h3>
-        <p class="process-desc">Votre présence digitale est prête et visible.</p>
+        <h3 class="process-title">Optimize</h3>
+        <p class="process-desc">Nous suivons les données réelles et ajustons ce qui doit l'être.</p>
       </li>
       <li class="process-row" data-reveal>
         <span class="process-num">n°06</span>
-        <h3 class="process-title">Optimisation</h3>
-        <p class="process-desc">Nous analysons les résultats et améliorons progressivement la stratégie.</p>
+        <h3 class="process-title">Grow</h3>
+        <p class="process-desc">Le budget se déplace vers ce qui fonctionne, et l'échelle suit.</p>
       </li>
     </ol>
+
+    <a href="process.html" class="portfolio-see-all portfolio-see-all--light" data-reveal>Découvrir notre méthode en détail <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -383,54 +399,54 @@
   <div class="container">
     <div class="section-head" data-reveal>
       <p class="section-kicker section-kicker--num"><span>04</span> Réalisations</p>
-      <h2 class="section-title">Mes preuves parlent mieux que mes mots.</h2>
-      <p class="section-desc">Quelques exemples de projets — à remplacer par vos futures réalisations.</p>
+      <h2 class="section-title">Six catégories, un seul standard d'exigence.</h2>
+      <p class="section-desc">Notre portfolio se construit projet après projet. Chaque catégorie ci-dessous reçoit nos réalisations réelles au fur et à mesure des livraisons clients.</p>
     </div>
 
     <div class="portfolio-grid">
       <article class="portfolio-card portfolio-card--large" data-reveal>
         <div class="portfolio-media portfolio-media--green"></div>
         <div class="portfolio-info">
-          <span class="portfolio-cat">Site web</span>
-          <h3 class="portfolio-title">Site vitrine — Maison Atlas</h3>
-          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+          <span class="portfolio-cat">Branding</span>
+          <h3 class="portfolio-title">Identités de marque en cours de publication</h3>
+          <a href="work.html" class="portfolio-link">Voir la catégorie <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="portfolio-card" data-reveal>
         <div class="portfolio-media portfolio-media--pink"></div>
         <div class="portfolio-info">
-          <span class="portfolio-cat">Réseaux sociaux</span>
-          <h3 class="portfolio-title">Stratégie Instagram — Nour Café</h3>
-          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+          <span class="portfolio-cat">Websites</span>
+          <h3 class="portfolio-title">Sites livrés bientôt documentés</h3>
+          <a href="work.html" class="portfolio-link">Voir la catégorie <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="portfolio-card" data-reveal>
         <div class="portfolio-media portfolio-media--yellow"></div>
         <div class="portfolio-info">
-          <span class="portfolio-cat">Branding</span>
-          <h3 class="portfolio-title">Identité visuelle — Lumière Studio</h3>
-          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+          <span class="portfolio-cat">Social Media</span>
+          <h3 class="portfolio-title">Comptes gérés, résultats à venir</h3>
+          <a href="work.html" class="portfolio-link">Voir la catégorie <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="portfolio-card" data-reveal>
         <div class="portfolio-media portfolio-media--dark"></div>
         <div class="portfolio-info">
-          <span class="portfolio-cat">Campagne marketing</span>
-          <h3 class="portfolio-title">Lancement produit — Ora Cosmetics</h3>
-          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+          <span class="portfolio-cat">Advertising</span>
+          <h3 class="portfolio-title">Campagnes en cours d'analyse</h3>
+          <a href="work.html" class="portfolio-link">Voir la catégorie <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="portfolio-card" data-reveal>
         <div class="portfolio-media portfolio-media--green-light"></div>
         <div class="portfolio-info">
-          <span class="portfolio-cat">E-commerce</span>
-          <h3 class="portfolio-title">Boutique en ligne — Terra Argan</h3>
-          <a href="#" class="portfolio-link">Voir le projet <span aria-hidden="true">→</span></a>
+          <span class="portfolio-cat">Photography &amp; Video</span>
+          <h3 class="portfolio-title">Productions à paraître</h3>
+          <a href="work.html" class="portfolio-link">Voir la catégorie <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </div>
 
-    <a href="#portfolio" class="portfolio-see-all">Voir tout le portfolio <span aria-hidden="true">→</span></a>
+    <a href="work.html" class="portfolio-see-all">Voir tout le portfolio <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -442,48 +458,48 @@
     <div class="section-head" data-reveal>
       <p class="section-kicker section-kicker--num"><span>05</span> Les offres</p>
       <h2 class="section-title">Des formules adaptées à chaque étape</h2>
-      <p class="section-desc">Chaque accompagnement est personnalisé selon votre activité — voici les trois grandes formules de départ.</p>
+      <p class="section-desc">Chaque accompagnement est chiffré sur devis, selon vos objectifs et vos priorités — voici les trois points de départ les plus fréquents.</p>
     </div>
 
     <div class="pricing-grid">
       <article class="pricing-card" data-reveal>
-        <h3 class="pricing-name">Pack Starter</h3>
-        <p class="pricing-for">Pour les entreprises qui veulent commencer leur présence digitale.</p>
-        <p class="pricing-price">À partir de <span>...</span></p>
+        <h3 class="pricing-name">Foundation</h3>
+        <p class="pricing-for">Poser des bases solides : identité, site et présence sociale.</p>
+        <p class="pricing-price">Sur devis</p>
         <ul class="pricing-features">
+          <li>Branding &amp; identité visuelle</li>
           <li>Site vitrine one-page</li>
-          <li>Identité visuelle simple</li>
-          <li>Mise en place réseaux sociaux</li>
+          <li>Mise en place des réseaux sociaux</li>
           <li>Accompagnement au lancement</li>
         </ul>
-        <a href="#brief" class="btn btn--outline btn--full">Demander un devis</a>
+        <a href="contact.html" class="btn btn--outline btn--full">Demander un devis</a>
       </article>
 
       <article class="pricing-card pricing-card--featured" data-reveal>
-        <span class="pricing-badge">Le plus choisi</span>
-        <h3 class="pricing-name">Pack Growth</h3>
-        <p class="pricing-for">Pour les entreprises qui souhaitent développer leur visibilité.</p>
-        <p class="pricing-price">À partir de <span>...</span></p>
+        <span class="pricing-badge">Le plus demandé</span>
+        <h3 class="pricing-name">Growth</h3>
+        <p class="pricing-for">Construire une acquisition régulière et mesurable.</p>
+        <p class="pricing-price">Sur devis</p>
         <ul class="pricing-features">
           <li>Site professionnel complet</li>
-          <li>Gestion des réseaux sociaux</li>
-          <li>Création de contenu mensuelle</li>
-          <li>SEO de base &amp; suivi des résultats</li>
+          <li>Social Media Management &amp; contenu mensuel</li>
+          <li>Publicité digitale (Meta &amp; Google Ads)</li>
+          <li>SEO &amp; reporting de performance</li>
         </ul>
-        <a href="#brief" class="btn btn--primary btn--full">Demander un devis</a>
+        <a href="contact.html" class="btn btn--primary btn--full">Demander un devis</a>
       </article>
 
       <article class="pricing-card" data-reveal>
-        <h3 class="pricing-name">Pack Premium</h3>
-        <p class="pricing-for">Pour les entreprises qui souhaitent une prise en charge digitale complète.</p>
+        <h3 class="pricing-name">Full Scale</h3>
+        <p class="pricing-for">Une prise en charge complète, du positionnement à la croissance.</p>
         <p class="pricing-price">Sur devis</p>
         <ul class="pricing-features">
-          <li>Site web sur mesure</li>
-          <li>Stratégie marketing complète</li>
-          <li>Publicité digitale &amp; SEO avancé</li>
-          <li>Accompagnement continu</li>
+          <li>Stratégie marketing &amp; direction créative</li>
+          <li>Production complète (web, contenu, vidéo, photo)</li>
+          <li>Media buying &amp; génération de leads</li>
+          <li>Analytics, reporting et optimisation continue</li>
         </ul>
-        <a href="#brief" class="btn btn--outline btn--full">Demander un devis</a>
+        <a href="contact.html" class="btn btn--outline btn--full">Demander un devis</a>
       </article>
     </div>
   </div>
@@ -495,9 +511,9 @@
 <section class="why">
   <div class="container why-inner">
     <div class="why-copy" data-reveal>
-      <p class="section-kicker section-kicker--num"><span>06</span> Pourquoi travailler avec moi</p>
-      <h2 class="section-title">Une présence digitale qui a du sens</h2>
-      <p class="section-desc">Mon objectif n'est pas seulement de créer quelque chose de joli. Je veux créer une présence digitale qui a du sens pour votre activité et qui vous aide à atteindre vos objectifs.</p>
+      <p class="section-kicker section-kicker--num"><span>06</span> Pourquoi ANDIGITAL</p>
+      <h2 class="section-title">Une agence, pas une addition de prestataires</h2>
+      <p class="section-desc">Séparer branding, site, contenu et publicité entre plusieurs prestataires crée des incohérences. Nous pilotons les 16 expertises sous une seule stratégie, avec un seul interlocuteur responsable du résultat.</p>
     </div>
 
     <div class="why-grid">
@@ -505,29 +521,29 @@
         <span class="why-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
         </span>
-        <h3>Créativité</h3>
-        <p>Des solutions visuelles qui sortent des modèles tout faits.</p>
+        <h3>Direction créative intégrée</h3>
+        <p>Une seule ligne artistique, du logo jusqu'à la dernière publicité diffusée.</p>
       </div>
       <div class="why-card" data-reveal>
         <span class="why-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
         </span>
-        <h3>Stratégie</h3>
-        <p>Chaque action est reliée à un objectif business concret.</p>
+        <h3>Stratégie avant exécution</h3>
+        <p>Chaque livrable répond à un objectif business défini en amont, jamais à une mode.</p>
       </div>
       <div class="why-card" data-reveal>
         <span class="why-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
         </span>
-        <h3>Personnalisation</h3>
-        <p>Rien n'est standard : tout est pensé pour votre activité.</p>
+        <h3>Aucun standard générique</h3>
+        <p>Chaque plan est construit pour votre marché, votre budget et votre marque — jamais copié-collé.</p>
       </div>
       <div class="why-card" data-reveal>
         <span class="why-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/><circle cx="12" cy="7" r="4"/></svg>
         </span>
-        <h3>Accompagnement</h3>
-        <p>Un suivi réel, pas juste une livraison ponctuelle.</p>
+        <h3>Suivi continu, pas une livraison ponctuelle</h3>
+        <p>Nous restons sur les résultats après le lancement : optimisation, reporting, ajustement.</p>
       </div>
     </div>
   </div>
@@ -546,38 +562,38 @@
     <div class="faq-list" data-reveal>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Combien coûte la création d'un site ?</span>
+          <span>Combien coûte un projet avec ANDIGITAL ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Cela dépend de vos besoins : une landing page simple n'a pas le même coût qu'un site e-commerce complet. Chaque devis est établi sur mesure, après un premier échange gratuit.</p>
+          <p>Chaque devis est établi sur mesure : un site vitrine, une identité de marque ou une stratégie d'acquisition complète n'ont pas le même périmètre. Le premier échange, lui, est toujours gratuit.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Combien de temps faut-il pour créer un site ?</span>
+          <span>Combien de temps prend un projet ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>En général entre 1 et 3 semaines selon la complexité du projet et la rapidité des retours. Un calendrier précis est défini ensemble dès le début.</p>
+          <p>Un site vitrine prend généralement 1 à 3 semaines ; une stratégie de marque complète, plusieurs semaines. Un calendrier précis est fixé ensemble dès le brief.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Est-ce que vous gérez les réseaux sociaux sur le long terme ?</span>
+          <span>Gérez-vous les réseaux sociaux sur le long terme ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Oui, c'est même une part importante de mon accompagnement : calendrier éditorial, publications régulières et suivi des performances mois après mois.</p>
+          <p>Oui — calendrier éditorial, publications régulières, community management et reporting mensuel font partie de notre offre Social Media Management.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Est-ce que je dois fournir les photos et vidéos ?</span>
+          <span>Faut-il fournir vos propres photos et vidéos ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Ce n'est pas obligatoire. Si vous avez déjà des visuels, on les utilise avec plaisir ; sinon, je peux vous accompagner pour en produire de nouveaux.</p>
+          <p>Non. Si vous avez déjà des visuels, nous les intégrons ; sinon, notre pôle Photography &amp; Videography peut les produire pour vous.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -586,28 +602,30 @@
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Oui, j'accompagne aussi bien des entrepreneurs individuels que des TPE et des PME, avec des formules adaptées à chaque taille de projet.</p>
+          <p>Oui — entrepreneurs individuels, TPE et PME, avec des formules adaptées à chaque taille de projet et de budget.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Peut-on commencer avec un petit budget ?</span>
+          <span>Peut-on démarrer avec un budget limité ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Oui, le Pack Starter est justement conçu pour poser des bases solides avec un budget maîtrisé, avec la possibilité d'évoluer ensuite.</p>
+          <p>Oui. L'offre Foundation est justement conçue pour poser des bases solides avec un budget maîtrisé, avec la possibilité de monter en puissance ensuite.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          <span>Proposez-vous des services sur mesure ?</span>
+          <span>Proposez-vous des projets sur mesure, hors formules ?</span>
           <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p>Bien sûr. Les packs sont des points de départ : chaque accompagnement est ajusté à votre activité, vos objectifs et votre budget.</p>
+          <p>Bien sûr. Les formules sont des points de départ : chaque accompagnement est ajusté à votre activité, vos objectifs et votre budget réel.</p>
         </div>
       </div>
     </div>
+
+    <a href="faq.html" class="portfolio-see-all" data-reveal>Voir toutes les questions <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -619,7 +637,7 @@
     <div class="brief-copy" data-reveal>
       <p class="section-kicker section-kicker--num section-kicker--light"><span>08</span> Le brief express</p>
       <h2 class="section-title section-title--light">60 secondes pour lancer votre projet.</h2>
-      <p class="brief-desc">Remplissez le brief ci-contre : je regarde votre présence en ligne et je vous recontacte avec un premier avis concret.</p>
+      <p class="brief-desc">Remplissez le brief ci-contre : nous regardons votre présence actuelle et revenons vers vous avec un premier avis concret.</p>
 
       <ul class="brief-benefits">
         <li>
@@ -632,7 +650,7 @@
           <span class="brief-benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg>
           </span>
-          <div><strong>Réponse sous 24h ouvrées</strong><span>Par moi directement, pas par un formulaire automatique.</span></div>
+          <div><strong>Réponse sous 24h ouvrées</strong><span>Traité directement par l'agence, jamais par un formulaire automatique.</span></div>
         </li>
         <li>
           <span class="brief-benefit-icon" aria-hidden="true">
@@ -679,23 +697,45 @@
           <input type="text" name="company" placeholder="Nom de votre entreprise">
         </label>
       </div>
-      <label>
-        <span>Service souhaité</span>
-        <select name="service">
-          <option value="">Sélectionnez un service</option>
-          <option>Création de site web</option>
-          <option>Gestion des réseaux sociaux</option>
-          <option>Marketing digital</option>
-          <option>Création de contenu</option>
-          <option>Publicité digitale</option>
-          <option>SEO &amp; visibilité</option>
-          <option>Branding</option>
-          <option>Accompagnement digital</option>
-        </select>
-      </label>
+      <div class="form-row">
+        <label>
+          <span>Service souhaité</span>
+          <select name="service">
+            <option value="">Sélectionnez un service</option>
+            <option>Marketing Strategy</option>
+            <option>Branding &amp; Identity</option>
+            <option>Web Design &amp; Development</option>
+            <option>Social Media Management</option>
+            <option>Content Creation</option>
+            <option>Photography</option>
+            <option>Videography &amp; Video Editing</option>
+            <option>Advertising &amp; Paid Media</option>
+            <option>Media Buying</option>
+            <option>SEO &amp; Web Visibility</option>
+            <option>Copywriting</option>
+            <option>Lead Generation &amp; Sales</option>
+            <option>Creative Direction</option>
+            <option>Influencer Marketing</option>
+            <option>Analytics &amp; Performance</option>
+            <option>Corporate Communication</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </label>
+        <label>
+          <span>Budget approximatif</span>
+          <select name="budget">
+            <option value="">Sélectionnez une fourchette</option>
+            <option>Moins de 5 000 MAD</option>
+            <option>5 000 – 15 000 MAD</option>
+            <option>15 000 – 40 000 MAD</option>
+            <option>Plus de 40 000 MAD</option>
+            <option>À définir ensemble</option>
+          </select>
+        </label>
+      </div>
       <label>
         <span>Votre projet en une phrase</span>
-        <textarea name="message" rows="4" placeholder="Parlez-moi de votre projet..."></textarea>
+        <textarea name="message" rows="4" placeholder="Parlez-nous de votre projet..."></textarea>
       </label>
       <button type="submit" class="btn btn--primary btn--full">Lancer mon audit gratuit</button>
       <p class="brief-privacy">Vos données restent entre nous. Jamais revendues, jamais de spam.</p>
@@ -709,7 +749,7 @@
 <section class="closing-cta">
   <div class="container closing-cta-inner" data-reveal>
     <h2 class="closing-cta-title">Pendant que vous hésitez,<br>vos concurrents avancent.</h2>
-    <a href="#brief" class="btn btn--primary btn--large">Réclamer mon audit gratuit</a>
+    <a href="contact.html" class="btn btn--primary btn--large">Réclamer mon audit gratuit</a>
   </div>
 </section>
 
@@ -721,14 +761,14 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <a href="#accueil" class="brand">
+      <a href="index.html" class="brand">
         <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
           <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
           <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
         </svg>
         <span class="brand-name">AN<em>DIGITAL</em></span>
       </a>
-      <p class="footer-tagline">Agence digitale à Agadir — sites web, marketing digital et création de contenu pour entrepreneurs et PME.</p>
+      <p class="footer-tagline">Agence de marketing, branding et création digitale basée à Agadir — 16 expertises, un seul interlocuteur, une stratégie cohérente du positionnement jusqu'à la croissance.</p>
     </div>
 
     <div class="footer-col">
@@ -739,33 +779,31 @@
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-col-title">Navigation</h4>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Réalisations</a>
-      <a href="#offres">Offres</a>
-      <a href="#faq">FAQ</a>
-      <a href="#brief">Contact</a>
+      <h4 class="footer-col-title">Agence</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="process.html">Process</a>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-col-title">Suivez-moi</h4>
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="LinkedIn">LinkedIn</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-      <a href="#" aria-label="TikTok">TikTok</a>
+      <h4 class="footer-col-title">Ressources</h4>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; <span id="year"></span> Andigital. Tous droits réservés.</p>
+    <p>&copy; <span id="year"></span> ANDIGITAL. Tous droits réservés.</p>
   </div>
 </footer>
 
 <!-- Barre CTA sticky mobile -->
 <div class="mobile-cta-bar">
   <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="mobile-cta mobile-cta--ghost">WhatsApp</a>
-  <a href="#brief" class="mobile-cta mobile-cta--primary">Audit gratuit</a>
+  <a href="contact.html" class="mobile-cta mobile-cta--primary">Start a Project</a>
 </div>
 
+<script src="./main.js" defer></script>
 <script src="./hero-experience.js" defer></script>
 </body>
 </html>

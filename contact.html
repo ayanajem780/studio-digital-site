@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Démarrer un projet | ANDIGITAL</title>
+<meta name="description" content="Contactez ANDIGITAL pour votre projet de marketing, branding ou création digitale à Agadir. Premier échange gratuit, réponse sous 24h ouvrées.">
+<link rel="canonical" href="https://studio-digital-site.vercel.app/contact.html">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+        <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
+      </svg>
+      <span class="brand-name">AN<em>DIGITAL</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="btn btn--primary btn--small">Start a Project</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero page-hero--compact">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow--green"></div>
+      <div class="hero-glow hero-glow--pink"></div>
+    </div>
+
+    <div class="container page-hero-inner">
+      <p class="page-hero-kicker" data-reveal>Contact</p>
+      <h1 data-reveal>Parlez-nous de votre projet — nous nous occupons du reste.</h1>
+      <p class="page-hero-lead" data-reveal>Que vous ayez déjà un cahier des charges précis ou seulement une intuition à clarifier, décrivez-nous votre situation actuelle et ce que vous cherchez à obtenir : nous revenons vers vous avec un premier avis concret, sous 24h ouvrées.</p>
+    </div>
+</section>
+
+<section class="split-section">
+  <div class="container contact-page-grid">
+    <div data-reveal>
+      <p class="section-kicker section-kicker--num"><span>01</span> Nos coordonnées</p>
+      <h2 class="split-grid-title">Trois façons de nous joindre</h2>
+      <p>Le premier échange est toujours gratuit et sans engagement. Nous répondons personnellement, jamais par formulaire automatique.</p>
+
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <span class="contact-info-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/></svg>
+          </span>
+          <div><strong>WhatsApp</strong><a href="https://wa.me/212600000000" target="_blank" rel="noopener">+212 6 00 00 00 00</a></div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          <div><strong>Email</strong><a href="mailto:contact@studio-digital.com">contact@studio-digital.com</a></div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <div><strong>Agence</strong><span>Agadir, Maroc</span></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form contact-page-form" data-reveal>
+      <div class="form-row">
+        <label>
+          <span>Nom</span>
+          <input type="text" name="name" placeholder="Votre nom" required>
+        </label>
+        <label>
+          <span>Entreprise</span>
+          <input type="text" name="company" placeholder="Nom de votre entreprise">
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="vous@exemple.com" required>
+        </label>
+        <label>
+          <span>Téléphone</span>
+          <input type="tel" name="phone" placeholder="+212 6 00 00 00 00">
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Service recherché</span>
+          <select name="service">
+            <option value="">Sélectionnez un service</option>
+              <option>Marketing Strategy</option>
+              <option>Branding & Identity</option>
+              <option>Web Design & Development</option>
+              <option>Social Media Management</option>
+              <option>Content Creation</option>
+              <option>Photography</option>
+              <option>Videography & Video Editing</option>
+              <option>Advertising & Paid Media</option>
+              <option>Media Buying</option>
+              <option>SEO & Web Visibility</option>
+              <option>Copywriting</option>
+              <option>Lead Generation & Sales</option>
+              <option>Creative Direction</option>
+              <option>Influencer Marketing</option>
+              <option>Analytics & Performance</option>
+              <option>Corporate Communication</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </label>
+        <label>
+          <span>Budget approximatif</span>
+          <select name="budget">
+            <option value="">Sélectionnez une fourchette</option>
+            <option>Moins de 5 000 MAD</option>
+            <option>5 000 – 15 000 MAD</option>
+            <option>15 000 – 40 000 MAD</option>
+            <option>Plus de 40 000 MAD</option>
+            <option>À définir ensemble</option>
+          </select>
+        </label>
+      </div>
+      <label>
+        <span>Expliquez-nous votre projet</span>
+        <textarea name="message" rows="5" placeholder="D'où partez-vous, où voulez-vous aller, et qu'est-ce qui vous a amené jusqu'ici aujourd'hui ?" required></textarea>
+      </label>
+      <button type="submit" class="btn btn--primary btn--full">Discuss Your Project</button>
+      <p class="brief-privacy">Vos données restent entre nous. Jamais revendues, jamais de spam.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
+        </svg>
+        <span class="brand-name">AN<em>DIGITAL</em></span>
+      </a>
+      <p class="footer-tagline">Agence de marketing, branding et création digitale basée à Agadir — 16 expertises, un seul interlocuteur, une stratégie cohérente du positionnement jusqu'à la croissance.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Contact</h4>
+      <a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:contact@studio-digital.com">contact@studio-digital.com</a>
+      <span class="footer-static">Agadir, Maroc</span>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Agence</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="process.html">Process</a>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Ressources</h4>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> ANDIGITAL. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Barre CTA sticky mobile -->
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="mobile-cta mobile-cta--ghost">WhatsApp</a>
+  <a href="contact.html" class="mobile-cta mobile-cta--primary">Start a Project</a>
+</div>
+
+<script src="./main.js" defer></script>
+</body>
+</html>
