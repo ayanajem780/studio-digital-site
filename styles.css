@@ -2304,24 +2304,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   object-fit: cover;
   background: #333133;
 }
-.video-hero-sound{
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #FFFFFF;
-  backdrop-filter: blur(6px);
-  transition: background .25s ease;
-}
-.video-hero-sound:hover{ background: rgba(255,255,255,0.28); }
-.video-hero-sound .icon-sound{ display: none; }
-.video-hero-sound[aria-pressed="true"] .icon-sound{ display: block; }
-.video-hero-sound[aria-pressed="true"] .icon-muted{ display: none; }
 @media (max-width: 900px){
   .video-hero{ padding-top: var(--header-h, 69px); }
-  .video-hero-sound{ left: 12px; bottom: 12px; width: 36px; height: 36px; }
 }
