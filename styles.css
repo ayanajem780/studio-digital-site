@@ -2315,3 +2315,48 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 900px){
   .video-hero{ padding-top: var(--header-h, 69px); }
 }
+
+/* =================================================================
+   ACCUEIL — « Une marque qui n'est pas pilotée… »
+   Texte + formulaire à gauche, photo de tournage à droite
+   ================================================================= */
+.scrolly .scrolly-grid{
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+.scrolly-bg, .scrolly .hero-network{ display: none; }
+.scrolly-split{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "texte photo"
+    "form  photo";
+  column-gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+.scrolly-split .statement-lead{ grid-area: texte; max-width: 22ch; }
+.scrolly-split .hero-card{ grid-area: form; margin-top: 0; box-shadow: var(--shadow-soft); border: 1px solid rgba(23,32,28,0.08); }
+.scrolly-photo{
+  grid-area: photo;
+  position: sticky;
+  top: 110px;
+  margin: 0;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 2544 / 3496;
+  background: #E9ECEE;
+}
+.scrolly-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 900px){
+  .scrolly-split{
+    grid-template-columns: 1fr;
+    grid-template-areas: "texte" "photo" "form";
+  }
+  .scrolly-split .statement-lead{ max-width: none; margin-bottom: 28px; }
+  .scrolly-photo{ position: relative; top: 0; margin-bottom: 32px; }
+}
