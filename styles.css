@@ -18,8 +18,8 @@
   --yellow-light: #FEF6DE;
 
   /* Fond & texte */
-  --bg: #FFFDF8;
-  --bg-alt: #FBF7EF;
+  --bg: #FFFFFF;
+  --bg-alt: #FFFFFF;
   --ink: #17201C;
   --ink-soft: #4B564F;
   --ink-faint: #8A9089;
@@ -2159,3 +2159,132 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 900px){
     .process-detail-row{ grid-template-columns: 1fr; gap: 20px; }
 }
+
+/* =================================================================
+   THÈME BLANC — toutes les pages sur fond blanc
+   Ce bloc remplace les anciennes sections sombres (header, hero,
+   bannières de page, méthode, brief, CTA, footer...).
+   Pour revenir au thème sombre : supprimez tout ce bloc.
+   ================================================================= */
+
+/* ---- Header / navigation ---- */
+.site-header{ background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(23,32,28,0.08); }
+.site-header.is-scrolled{ box-shadow: 0 12px 30px -20px rgba(23,32,28,0.25); }
+.brand-name{ color: var(--ink); }
+.nav-link{ color: var(--ink-soft); }
+.nav-link:hover, .nav-link.is-active{ color: var(--ink); }
+.nav-toggle span{ background: var(--ink); }
+@media (max-width: 900px){
+  .main-nav{ background: #FFFFFF; border: 1px solid rgba(23,32,28,0.08); }
+  .nav-link{ border-bottom-color: rgba(23,32,28,0.08); }
+}
+
+/* ---- Hero d'accueil ---- */
+.hero-premium{ background: #FFFFFF; color: var(--ink); }
+.hero-nav .nav-links a{ color: var(--ink-faint); }
+.hero-nav .nav-links a:hover{ color: var(--ink); }
+.hero-nav .nav-button{ color: var(--ink); border-color: rgba(23,32,28,0.2); }
+.hero-nav .nav-button:hover{ background: var(--ink); color: #FFFFFF; }
+.hero-grid{
+  background-image:
+    linear-gradient(to right, rgba(23,32,28,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23,32,28,0.06) 1px, transparent 1px);
+}
+.hero-glow{ opacity: .22; }
+.hero-ghost{ color: rgba(23,32,28,0.04); -webkit-text-stroke: 1px rgba(23,32,28,0.10); }
+@supports (-webkit-text-stroke: 1px black){ .hero-ghost{ color: transparent; } }
+.hero-label{ color: var(--ink-faint); }
+.hero-title{ color: var(--ink); }
+.hero-copy p{ color: var(--ink-soft); }
+.hero-cta{ color: var(--ink); border-color: rgba(23,32,28,0.25); }
+.hero-cta:hover{ background: var(--ink); color: #FFFFFF; border-color: var(--ink); }
+.hero-ring{ stroke: rgba(23,32,28,0.16); }
+.hero-ring--inner{ stroke: rgba(23,32,28,0.10); }
+.hero-connector{ stroke: rgba(23,32,28,0.16); }
+.hero-chip span{ background: rgba(255,255,255,0.85); border-color: rgba(23,32,28,0.12); color: var(--ink); box-shadow: var(--shadow-card); }
+.hero-marquee{ border-top-color: rgba(23,32,28,0.08); background: linear-gradient(0deg, rgba(255,255,255,0.9), rgba(255,255,255,0)); }
+.hero-marquee-track span{ color: var(--ink-faint); }
+.scroll-indicator{ color: var(--ink-faint); }
+.scroll-indicator div{ background: linear-gradient(to bottom, var(--ink-faint), transparent); }
+
+/* ---- Bannières des pages intérieures ---- */
+.page-hero{ background: #FFFFFF; color: var(--ink); border-bottom: 1px solid rgba(23,32,28,0.08); }
+.page-hero-kicker, .page-hero-kicker a{ color: var(--ink-faint); }
+.page-hero-kicker a:hover{ color: var(--ink); }
+.page-hero-lead{ color: var(--ink-soft); }
+
+/* ---- Accueil : bloc « Le constat » avec la pile de photos ---- */
+.scrolly{ background: #FFFFFF; }
+.scrolly-bg{
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(31,122,92,0.10), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(232,93,142,0.08), transparent 55%);
+}
+.scrolly-bg::after{ background: linear-gradient(90deg, transparent 60%, #FFFFFF 100%); }
+@media (max-width: 900px){
+  .scrolly-bg::after{ background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, #FFFFFF 70%); }
+}
+.section-title--light{ color: var(--ink); }
+.section-kicker--onDark, .section-kicker--light{ color: var(--ink-faint); }
+.section-kicker--light span{ background: var(--yellow-light); color: #B8860B; }
+.statement-lead{ color: var(--ink); }
+.problem-card{ background: #FFFFFF; border-color: rgba(23,32,28,0.10); box-shadow: var(--shadow-card); }
+.problem-card:hover{ border-color: rgba(23,32,28,0.25); }
+.problem-issue{ color: var(--ink-soft); }
+.problem-solution{ color: var(--ink); }
+.problem-solution span{ color: #B8860B; }
+
+/* ---- Méthode ---- */
+.method{ background: #FFFFFF; color: var(--ink); border-top: 1px solid rgba(23,32,28,0.08); }
+.process-list, .process-row{ border-color: rgba(23,32,28,0.12); }
+.process-num{ color: var(--green); }
+.process-desc{ color: var(--ink-soft); }
+
+/* ---- Réalisations / tarifs ---- */
+.portfolio-see-all--light{ color: var(--ink); }
+.pricing-card--featured{ background: #FFFFFF; color: var(--ink); border: 2px solid var(--green); box-shadow: var(--shadow-soft); }
+.pricing-card--featured .pricing-for{ color: var(--ink-soft); }
+.pricing-card--featured .pricing-price{ color: var(--green); }
+
+/* ---- Brief express + formulaire ---- */
+.brief{ background: #FFFFFF; color: var(--ink); border-top: 1px solid rgba(23,32,28,0.08); }
+.brief-desc, .brief-benefits span{ color: var(--ink-soft); }
+.brief-benefit-icon{ background: var(--yellow-light); color: #B8860B; }
+.contact-channel{ background: #FFFFFF; border-color: rgba(23,32,28,0.14); color: var(--ink); }
+.contact-channel:hover{ background: var(--green-light); border-color: var(--green); }
+.contact-form{ border: 1px solid rgba(23,32,28,0.08); }
+
+/* ---- Cartes et sections « sombres » des pages intérieures ---- */
+.feature-card--onDark{ background: #FFFFFF; border-color: rgba(23,32,28,0.08); box-shadow: var(--shadow-card); }
+.feature-card--onDark .feature-card-num{ color: var(--ink-faint); }
+.feature-card--onDark h3{ color: var(--ink); }
+.feature-card--onDark p{ color: var(--ink-soft); }
+.check-list--onDark li{ color: var(--ink-soft); }
+.check-list--onDark .check-list-icon{ background: var(--green-light); color: var(--green); }
+.split-section--dark{ background: #FFFFFF; color: var(--ink); border-top: 1px solid rgba(23,32,28,0.08); }
+.split-section--dark .split-grid p{ color: var(--ink-soft); }
+.split-section--dark .split-grid-title{ color: var(--ink); }
+
+/* ---- Bandeau CTA ---- */
+.cta-banner{ background: #FFFFFF; color: var(--ink); border-top: 1px solid rgba(23,32,28,0.08); }
+
+/* ---- Page Work ---- */
+.work-card{ background: #FFFFFF; color: var(--ink); border: 1px solid rgba(23,32,28,0.10); box-shadow: var(--shadow-card); }
+.work-card::before{
+  background-image:
+    linear-gradient(to right, rgba(23,32,28,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23,32,28,0.05) 1px, transparent 1px);
+}
+.work-card-cat{ color: var(--ink-faint); }
+.work-card p{ color: var(--ink-soft); }
+
+/* ---- Footer ---- */
+.site-footer{ background: #FFFFFF; color: var(--ink-soft); border-top: 1px solid rgba(23,32,28,0.10); }
+.footer-inner{ border-bottom-color: rgba(23,32,28,0.10); }
+.footer-brand .brand-name{ color: var(--ink); }
+.footer-col-title{ color: var(--ink-faint); }
+.footer-col a:hover{ color: var(--ink); }
+.footer-static{ color: var(--ink-faint); }
+
+/* ---- Barre CTA mobile ---- */
+.mobile-cta-bar{ background: rgba(255,255,255,0.94); }
