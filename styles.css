@@ -2303,6 +2303,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   aspect-ratio: 21 / 9;
   object-fit: cover;
   background: #333133;
+  pointer-events: none;
+}
+/* Calque transparent : empêche le navigateur (Opera, Chrome…) d'afficher
+   ses boutons « fenêtre flottante » / « passer » au survol de la vidéo */
+.video-hero-shield{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 @media (max-width: 900px){
   .video-hero{ padding-top: var(--header-h, 69px); }
