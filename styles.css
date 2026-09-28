@@ -8,10 +8,10 @@
    1. VARIABLES — modifiez ici pour changer toute l'identité visuelle
    ----------------------------------------------------------------- */
 :root{
-  /* Couleurs de marque */
-  --green: #1F7A5C;
-  --green-dark: #14503C;
-  --green-light: #E4F1EC;
+  /* Couleurs de marque — le « vert » est désormais un gris (demande : plus de vert) */
+  --green: #4A4D52;
+  --green-dark: #2E3034;
+  --green-light: #EFF0F2;
   --pink: #E85D8E;
   --pink-light: #FCE7ED;
   --yellow: #F4C542;
@@ -20,9 +20,9 @@
   /* Fond & texte */
   --bg: #FFFFFF;
   --bg-alt: #FFFFFF;
-  --ink: #17201C;
-  --ink-soft: #4B564F;
-  --ink-faint: #8A9089;
+  --ink: #1A1B1E;
+  --ink-soft: #4E5157;
+  --ink-faint: #8B8E93;
   --white: #FFFFFF;
 
   /* Typographie */
@@ -51,7 +51,7 @@
    les variables ci-dessus.
    ----------------------------------------------------------------- */
 .svg-stroke-green{ stroke: var(--green); }
-.svg-stroke-green-soft{ stroke: rgba(31,122,92,0.28); }
+.svg-stroke-green-soft{ stroke: rgba(74,77,82,0.28); }
 .svg-stroke-pink{ stroke: var(--pink); }
 .svg-stroke-ink-soft{ stroke: rgba(23,32,28,0.16); }
 .svg-fill-green{ fill: var(--green); }
@@ -148,9 +148,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .btn--primary{
   background: var(--green);
   color: var(--white);
-  box-shadow: 0 14px 30px -14px rgba(31,122,92,0.55);
+  box-shadow: 0 14px 30px -14px rgba(74,77,82,0.55);
 }
-.btn--primary:hover{ transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(31,122,92,0.6); }
+.btn--primary:hover{ transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(74,77,82,0.6); }
 .btn--ghost{
   background: transparent;
   color: var(--ink);
@@ -200,7 +200,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index: 100;
   padding: 20px 0;
   transition: padding .4s ease, box-shadow .4s ease, background .4s ease;
-  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  background: linear-gradient(160deg, var(--ink) 0%, #26282B 100%);
 }
 .site-header.is-scrolled{
   padding: 12px 0;
@@ -274,9 +274,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   width: 58%;
   z-index: 0;
   background-image:
-    radial-gradient(circle at 30% 20%, rgba(31,122,92,0.35), transparent 55%),
+    radial-gradient(circle at 30% 20%, rgba(74,77,82,0.35), transparent 55%),
     radial-gradient(circle at 80% 80%, rgba(232,93,142,0.18), transparent 55%),
-    linear-gradient(160deg, #12241c 0%, #0c1a14 100%);
+    linear-gradient(160deg, #26282B 0%, #1C1D20 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -285,7 +285,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 60%, rgba(15,26,20,0.95) 100%);
+  background: linear-gradient(90deg, transparent 60%, rgba(28,29,32,0.95) 100%);
 }
 .hero-network{
   position: absolute;
@@ -563,7 +563,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ----------------------------------------------------------------- */
 .method{
   padding: var(--section-pad) 0;
-  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  background: linear-gradient(160deg, var(--ink) 0%, #26282B 100%);
   color: var(--white);
 }
 .method .section-title--light{ margin-bottom: 48px; max-width: 20ch; }
@@ -619,11 +619,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   transition: transform .6s var(--ease);
 }
 .portfolio-card:hover .portfolio-media{ transform: scale(1.06); }
-.portfolio-media--green{ background: linear-gradient(135deg, var(--green), #2E9B75); }
+.portfolio-media--green{ background: linear-gradient(135deg, var(--green), #6E7176); }
 .portfolio-media--pink{ background: linear-gradient(135deg, var(--pink), #F290AF); }
 .portfolio-media--yellow{ background: linear-gradient(135deg, var(--yellow), #F9DD8B); }
-.portfolio-media--dark{ background: linear-gradient(135deg, var(--ink), #38453E); }
-.portfolio-media--green-light{ background: linear-gradient(135deg, #2E9B75, var(--green-light)); }
+.portfolio-media--dark{ background: linear-gradient(135deg, var(--ink), #45484D); }
+.portfolio-media--green-light{ background: linear-gradient(135deg, #6E7176, var(--green-light)); }
 .portfolio-info{
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 24px;
@@ -813,7 +813,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ----------------------------------------------------------------- */
 .brief{
   padding: var(--section-pad) 0;
-  background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+  background: linear-gradient(160deg, var(--ink) 0%, #26282B 100%);
   color: var(--white);
 }
 .brief-inner{
@@ -1000,12 +1000,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 @media (max-width: 900px){
   .scrolly-bg{ width: 100%; }
-  .scrolly-bg::after{ background: linear-gradient(180deg, rgba(15,26,20,0.5) 0%, rgba(15,26,20,0.92) 70%); }
+  .scrolly-bg::after{ background: linear-gradient(180deg, rgba(28,29,32,0.5) 0%, rgba(28,29,32,0.92) 70%); }
 
   .main-nav{
     position: fixed;
     top: 68px; left: 16px; right: 16px;
-    background: linear-gradient(160deg, var(--ink) 0%, #0F2A20 100%);
+    background: linear-gradient(160deg, var(--ink) 0%, #26282B 100%);
     border-radius: var(--radius-m);
     box-shadow: var(--shadow-soft);
     flex-direction: column;
@@ -1167,7 +1167,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-glow--green {
     top: -18%;
     right: -8%;
-    background: radial-gradient(circle at 40% 40%, rgba(31,122,92,0.55), transparent 68%);
+    background: radial-gradient(circle at 40% 40%, rgba(74,77,82,0.55), transparent 68%);
     animation: heroGlowDrift 16s ease-in-out infinite;
 }
 
@@ -1774,8 +1774,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .check-list--onDark .check-list-icon{
-    background: rgba(31,122,92,0.22);
-    color: #6fd6ac;
+    background: rgba(74,77,82,0.22);
+    color: #C3C6CB;
 }
 
 /* ---------- Section split (deux colonnes texte / liste) ---------- */
@@ -2217,7 +2217,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .scrolly{ background: #FFFFFF; }
 .scrolly-bg{
   background-image:
-    radial-gradient(circle at 30% 20%, rgba(31,122,92,0.10), transparent 55%),
+    radial-gradient(circle at 30% 20%, rgba(74,77,82,0.10), transparent 55%),
     radial-gradient(circle at 80% 80%, rgba(232,93,142,0.08), transparent 55%);
 }
 .scrolly-bg::after{ background: linear-gradient(90deg, transparent 60%, #FFFFFF 100%); }
