@@ -158,3 +158,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
+
+/* ---------- Vidéo d'accueil : bouton son ---------- */
+(() => {
+  const video = document.getElementById("heroVideo");
+  const btn = document.getElementById("heroSound");
+  if (!video || !btn) return;
+  btn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    if (!video.muted) video.play();
+    btn.setAttribute("aria-pressed", String(!video.muted));
+    btn.setAttribute("aria-label", video.muted ? "Activer le son" : "Couper le son");
+  });
+})();
