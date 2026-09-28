@@ -2498,3 +2498,144 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .site-header .brand{ column-gap: 5px; }
   .site-header .brand::before{ width: 23px; height: 23px; margin-bottom: -2px; }
 }
+
+/* =================================================================
+   ACCUEIL — Manifeste « Chez ANDIGITAL… » (colonne gauche)
+   Make Noise. With Purpose.
+   ================================================================= */
+.scrolly-split .purpose{ grid-area: texte; margin-bottom: 56px; max-width: 34rem; }
+.purpose-brand{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(38px, 4.3vw, 60px);
+  line-height: 1.02;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.purpose-dot{ color: var(--pink); }
+.purpose-intro{
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(20px, 2.1vw, 25px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.purpose-intro em{
+  font-style: italic;
+  color: var(--green);
+}
+.purpose-intro .purpose-mark{
+  background: linear-gradient(transparent 62%, var(--yellow-light) 62%, var(--yellow-light) 92%, transparent 92%);
+  padding: 0 2px;
+}
+.purpose-rhythm{
+  margin-top: 40px;
+  padding-left: 22px;
+  border-left: 2px solid var(--pink);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.purpose-rhythm span{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 2.8vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.purpose-conclusion{ margin-top: 40px; }
+.purpose-conclusion-label{
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.purpose-conclusion strong{
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.2;
+  color: var(--green);
+}
+@media (max-width: 900px){
+  .scrolly-split .purpose{ margin-bottom: 36px; max-width: none; }
+  .purpose-rhythm, .purpose-conclusion{ margin-top: 30px; }
+  .purpose-rhythm{ padding-left: 16px; }
+}
+
+/* =================================================================
+   TRANSITION — « Strategy. Creativity. Growth. / All in one place. »
+   ================================================================= */
+.transition{
+  padding: clamp(96px, 13vw, 190px) 0 clamp(72px, 9vw, 130px);
+  background: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+.transition-inner{ display: flex; flex-direction: column; align-items: center; }
+.transition-title{
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(44px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.transition-title > span{ display: inline-block; margin: 0 0.1em; white-space: nowrap; }
+.transition-title em{ font-style: italic; font-weight: 500; color: var(--green); }
+.transition-title i{ font-style: normal; color: var(--pink); }
+.transition-sub{
+  margin-top: clamp(22px, 2.6vw, 34px);
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.transition-cue{
+  display: block;
+  margin-top: clamp(44px, 5vw, 64px);
+  width: 24px;
+  height: 64px;
+  position: relative;
+}
+.transition-cue span{
+  position: absolute;
+  left: 50%; top: 0;
+  width: 1px; height: 100%;
+  background: rgba(23,32,28,0.14);
+  overflow: hidden;
+}
+.transition-cue span::after{
+  content: "";
+  position: absolute;
+  left: 0; top: -40%;
+  width: 1px; height: 40%;
+  background: var(--pink);
+  animation: transitionCue 2.2s var(--ease) infinite;
+}
+@keyframes transitionCue{
+  0%{ top: -40%; }
+  100%{ top: 100%; }
+}
+@media (prefers-reduced-motion: reduce){
+  .transition-cue span::after{ animation: none; top: 30%; }
+}
+@media (max-width: 600px){
+  .transition-title > span{ display: block; margin: 0; }
+  .transition-title > span + span{ margin-top: 6px; }
+}
+@media (min-width: 601px) and (max-width: 900px){
+  .scrolly-photo{ justify-self: center; width: 100%; max-width: 520px; }
+}
