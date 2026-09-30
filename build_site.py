@@ -556,16 +556,15 @@ def render_service_page(s):
 
 def render_services_hub():
     cards = []
-    for s in SERVICES:
-        cards.append(f'''      <a href="service-{s["slug"]}.html" class="service-card" data-reveal>
-        <span class="service-card-num">{s["num"]}</span>
-        <span class="service-card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">{s["icon"]}</svg>
-        </span>
-        <h3>{s["title"]}</h3>
-        <p>{s["short"]}</p>
-        <span class="service-card-arrow">En savoir plus <span aria-hidden="true">→</span></span>
-      </a>''')
+    tones = ["blue", "lilac", "cream", "green", "ink"]
+    for i, s in enumerate(SERVICES):
+        cards.append(f'''      <li class="kv-circle kv-circle--{tones[i % 5]}" data-reveal>
+        <a href="service-{s["slug"]}.html">
+          <span class="kv-circle-pix" aria-hidden="true"></span>
+          <span class="kv-circle-label">kréova · {i + 1:02d}</span>
+          <span class="kv-circle-name">{s["title"]}</span>
+        </a>
+      </li>''')
     cards_html = "\n".join(cards)
     body = f'''{page_hero(
         "Nos expertises",
@@ -575,9 +574,9 @@ def render_services_hub():
 
 <section class="split-section">
   <div class="container">
-    <div class="service-grid">
+    <ul class="kv-circles">
 {cards_html}
-    </div>
+    </ul>
   </div>
 </section>
 
