@@ -193,3 +193,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: [0, 0.6, 1] }).observe(media);
   }
 })();
+
