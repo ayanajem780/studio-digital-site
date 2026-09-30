@@ -69,7 +69,7 @@ FOOTER = '''<footer class="site-footer">
 
     <div class="footer-col">
       <h4 class="footer-col-title">Contact</h4>
-      <a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/212660147345" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:contact@studio-digital.com">contact@studio-digital.com</a>
       <span class="footer-static">Agadir, Maroc</span>
     </div>
@@ -95,7 +95,7 @@ FOOTER = '''<footer class="site-footer">
 
 <!-- Barre CTA sticky mobile -->
 <div class="mobile-cta-bar">
-  <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="mobile-cta mobile-cta--ghost">WhatsApp</a>
+  <a href="https://wa.me/212660147345" target="_blank" rel="noopener" class="mobile-cta mobile-cta--ghost">WhatsApp</a>
   <a href="contact.html" class="mobile-cta mobile-cta--primary">Start a Project</a>
 </div>
 
@@ -835,7 +835,7 @@ def render_contact():
           <span class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/></svg>
           </span>
-          <div><strong>WhatsApp</strong><a href="https://wa.me/212600000000" target="_blank" rel="noopener">+212 6 00 00 00 00</a></div>
+          <div><strong>WhatsApp</strong><a href="https://wa.me/212660147345" target="_blank" rel="noopener">+212 6 60 14 73 45</a></div>
         </div>
         <div class="contact-info-item">
           <span class="contact-info-icon" aria-hidden="true">
@@ -870,7 +870,7 @@ def render_contact():
         </label>
         <label>
           <span>Téléphone</span>
-          <input type="tel" name="phone" placeholder="+212 6 00 00 00 00">
+          <input type="tel" name="phone" placeholder="+212 6 60 14 73 45">
         </label>
       </div>
       <div class="form-row">

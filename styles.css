@@ -2824,3 +2824,12 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   .kv-card{ border-radius: 24px; }
   .kv-wa{ right: 16px; bottom: 92px; width: 56px; height: 56px; }
 }
+
+/* ---- Fond : photo du tournage (téléphone) + bulle WhatsApp verte ---- */
+.kv-hero-bg{
+  background:
+    linear-gradient(100deg, rgba(20,21,36,0.88) 0%, rgba(20,21,36,0.62) 45%, rgba(20,21,36,0.25) 100%),
+    url("assets/images/kv-bg.jpg") center 55% / cover no-repeat;
+}
+.kv-wa{ background: #25D366; box-shadow: 0 14px 30px -10px rgba(37,211,102,0.65); }
+.kv-wa-dot{ background: #FF3B30; }

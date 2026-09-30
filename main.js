@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ===== kréova : formulaire -> WhatsApp ===== */
 (function(){
-  var WA_NUMBER = "212600000000"; // <-- ton numéro WhatsApp (sans + ni espaces)
+  var WA_NUMBER = "212660147345"; // <-- ton numéro WhatsApp (sans + ni espaces)
   var wa = document.getElementById("kvWa");
   if (wa) wa.href = "https://wa.me/" + WA_NUMBER;
   var form = document.getElementById("kvForm");
