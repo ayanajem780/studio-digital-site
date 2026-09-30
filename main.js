@@ -158,3 +158,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
+
+
+/* ===== kréova : formulaire -> WhatsApp ===== */
+(function(){
+  var WA_NUMBER = "212600000000"; // <-- ton numéro WhatsApp (sans + ni espaces)
+  var wa = document.getElementById("kvWa");
+  if (wa) wa.href = "https://wa.me/" + WA_NUMBER;
+  var form = document.getElementById("kvForm");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = form.elements;
+    var msg = "Bonjour kréova, je souhaite parler de mon projet.\n\n" +
+      "Nom : " + f.name.value + "\n" +
+      "E-mail : " + f.email.value + "\n" +
+      (f.phone.value ? "Téléphone : " + f.code.value + " " + f.phone.value + "\n" : "") +
+      (f.message.value ? "\nMessage : " + f.message.value : "");
+    window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+    form.reset();
+  });
+})();

@@ -2685,3 +2685,142 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    POLICE UNIQUE DU SITE : Space Mono (identité kréova)
    ================================================================= */
 html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monospace, monospace; }
+
+/* =================================================================
+   ACCUEIL — bloc « kréova, votre agence… » + formulaire (style carte)
+   ================================================================= */
+.kv-hero{
+  position: relative;
+  padding: clamp(64px, 8vw, 120px) 0;
+  overflow: hidden;
+  color: #FFFFFF;
+  isolation: isolate;
+}
+.kv-hero-bg{
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(100deg, rgba(26,27,46,0.92) 0%, rgba(40,44,92,0.78) 45%, rgba(91,110,247,0.55) 100%),
+    url("assets/images/tournage-4k.jpg") center 30% / cover no-repeat;
+}
+.kv-hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.kv-hero-title{
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 36px;
+}
+.kv-dot{ color: #8FD66A; }
+.kv-checks{ list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.kv-checks li{
+  position: relative;
+  padding-left: 38px;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.45;
+  color: rgba(255,255,255,0.88);
+}
+.kv-checks li strong{ color: #FFFFFF; font-weight: 700; }
+.kv-checks li::before{
+  content: "";
+  position: absolute; left: 0; top: 3px;
+  width: 22px; height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12.5l5 5L20 6.5' fill='none' stroke='%238FD66A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.kv-card{
+  background: #FFFFFF;
+  color: #1A1B1E;
+  border-radius: 32px;
+  padding: clamp(28px, 3.5vw, 48px);
+  box-shadow: 0 40px 80px -40px rgba(0,0,0,0.55);
+}
+.kv-card-title{
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+  color: #1A1B1E;
+}
+.kv-form{ display: grid; gap: 16px; }
+.kv-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.kv-form input, .kv-form select, .kv-form textarea{
+  width: 100%;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 15px;
+  color: #1A1B1E;
+  background: #F7F6F2;
+  border: 1px solid #E6E3DC;
+  border-radius: 14px;
+  padding: 16px 18px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.kv-form textarea{ resize: vertical; min-height: 110px; }
+.kv-form input::placeholder, .kv-form textarea::placeholder{ color: #8B8E93; }
+.kv-form input:focus, .kv-form select:focus, .kv-form textarea:focus{
+  border-color: #5B6EF7;
+  box-shadow: 0 0 0 3px rgba(91,110,247,0.18);
+}
+.kv-phone{
+  display: grid; grid-template-columns: auto 1fr;
+  background: #F7F6F2; border: 1px solid #E6E3DC; border-radius: 14px; overflow: hidden;
+}
+.kv-phone select, .kv-phone input{ border: 0; border-radius: 0; background: transparent; box-shadow: none !important; }
+.kv-phone select{ border-right: 1px solid #E6E3DC; padding-right: 10px; cursor: pointer; }
+.kv-submit{
+  margin-top: 8px;
+  width: 100%;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: #5B6EF7;
+  border: 0;
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: transform .2s var(--ease), background .2s;
+}
+.kv-submit::after{
+  content: ""; position: absolute; right: 16px; top: 50%;
+  width: 12px; height: 12px; margin-top: -6px; border-radius: 3px;
+  background: #8FD66A; transform: rotate(14deg);
+}
+.kv-submit:hover{ background: #4557E8; transform: translateY(-2px); }
+.kv-note{ margin: 0; font-size: 12px; color: #8B8E93; text-align: center; }
+
+/* Bulle WhatsApp flottante */
+.kv-wa{
+  position: fixed; right: 24px; bottom: 24px; z-index: 90;
+  width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #5B6EF7; color: #FFFFFF;
+  box-shadow: 0 14px 30px -10px rgba(91,110,247,0.7);
+  transition: transform .25s var(--ease);
+}
+.kv-wa:hover{ transform: scale(1.08); }
+.kv-wa-dot{
+  position: absolute; top: 2px; right: 2px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #8FD66A; border: 3px solid #FFFFFF;
+  animation: kvPulse 2s infinite;
+}
+@keyframes kvPulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.25); } }
+
+@media (max-width: 900px){
+  .kv-hero-grid{ grid-template-columns: 1fr; }
+  .kv-row{ grid-template-columns: 1fr; }
+  .kv-card{ border-radius: 24px; }
+  .kv-wa{ right: 16px; bottom: 92px; width: 56px; height: 56px; }
+}

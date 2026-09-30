@@ -56,85 +56,61 @@
   <video class="video-hero-media" id="heroVideo" src="assets/video/hero-21x9.mp4" poster="assets/video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" aria-hidden="true" tabindex="-1"></video>
   <div class="video-hero-shield" aria-hidden="true"></div>
 </section>
-<section class="scrolly" id="accueil">
+<section class="kv-hero" id="accueil">
+  <div class="kv-hero-bg" aria-hidden="true"></div>
+  <div class="container kv-hero-grid">
 
-  <div class="scrolly-bg" aria-hidden="true"></div>
-
-  <svg class="hero-network" viewBox="0 0 1440 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M0 620 L360 480 L760 560 L1100 340 L1440 260" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
-    <path d="M180 900 L520 700 L900 780 L1440 560" fill="none" class="svg-stroke-green-soft" stroke-width="1"/>
-    <circle cx="360" cy="480" r="3" class="svg-fill-green"/>
-    <circle cx="760" cy="560" r="3" class="svg-fill-green"/>
-    <circle cx="1100" cy="340" r="4" class="svg-fill-pink"/>
-    <circle cx="520" cy="700" r="3" class="svg-fill-green"/>
-    <circle cx="900" cy="780" r="4" class="svg-fill-yellow"/>
-    <circle cx="1440" cy="260" r="3" class="svg-fill-green"/>
-  </svg>
-
-  <div class="container scrolly-grid">
-
-    <!-- Texte à gauche + formulaire, photo à droite -->
-    <div class="scrolly-content">
-
-      <div class="scrolly-block scrolly-split" id="constat">
-        <div class="purpose">
-          <p class="purpose-brand" data-reveal>Chez ANDIGITAL<span class="purpose-dot">,</span></p>
-          <p class="purpose-intro" data-reveal data-reveal-delay="1">
-            nous transformons les idées en <em>identités fortes</em>, les stratégies en <em>actions</em> et la <em>créativité</em> en <em class="purpose-mark">résultats</em>.
-          </p>
-          <p class="purpose-rhythm">
-            <span data-reveal data-reveal-delay="2">Chaque contenu.</span>
-            <span data-reveal data-reveal-delay="3">Chaque campagne.</span>
-            <span data-reveal data-reveal-delay="4">Chaque décision.</span>
-          </p>
-          <p class="purpose-conclusion" data-reveal data-reveal-delay="5">
-            <span class="purpose-conclusion-label">Avec une intention :</span>
-            <strong>faire grandir votre marque.</strong>
-          </p>
-        </div>
-
-        <figure class="scrolly-photo" data-reveal data-reveal-delay="1">
-          <img src="assets/images/tournage-4k.jpg" width="2544" height="3496" alt="L'équipe ANDIGITAL en plein tournage, caméra sur trépied" loading="lazy" decoding="async">
-        </figure>
-
-        <div class="hero-card" data-reveal data-reveal-delay="1">
-          <h2 class="hero-card-title">Parlez-nous de votre projet</h2>
-
-          <div class="hero-card-tabs" role="tablist" aria-label="Sujet de votre message">
-            <button type="button" class="hero-tab is-active" role="tab" aria-selected="true">Devis</button>
-            <button type="button" class="hero-tab" role="tab" aria-selected="false">Collaboration</button>
-            <button type="button" class="hero-tab" role="tab" aria-selected="false">Autre</button>
-          </div>
-
-          <form class="contact-form contact-form--compact">
-            <label>
-              <span class="sr-only">Nom</span>
-              <input type="text" name="name" placeholder="Nom" required>
-            </label>
-            <label>
-              <span class="sr-only">Email</span>
-              <input type="email" name="email" placeholder="Email" required>
-            </label>
-            <label class="hero-phone-field">
-              <span class="sr-only">Téléphone</span>
-              <span class="hero-phone-code">🇲🇦 +212</span>
-              <input type="tel" name="phone" placeholder="Téléphone">
-            </label>
-            <label>
-              <span class="sr-only">Votre projet</span>
-              <textarea name="message" rows="3" placeholder="Décrivez votre projet en quelques mots…"></textarea>
-            </label>
-            <button type="submit" class="btn btn--primary btn--full">
-              Envoyer
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
-        </div>
-      </div>
-
+    <!-- Texte à gauche -->
+    <div class="kv-hero-text">
+      <h2 class="kv-hero-title" data-reveal>kréova<span class="kv-dot">,</span><br>votre agence de marketing digital &amp; création 360</h2>
+      <ul class="kv-checks" data-reveal data-reveal-delay="1">
+        <li>Basée à <strong>Agadir</strong>, au service de tout le <strong>Maroc</strong></li>
+        <li><strong>Stratégie, contenu, site web et publicité</strong> réunis au même endroit</li>
+        <li>Solutions <strong>sur mesure</strong> adaptées à vos besoins</li>
+        <li>Réponse <strong>rapide</strong> et un seul interlocuteur</li>
+        <li>Engagement <strong>qualité</strong> sur chaque livrable</li>
+        <li>Accompagnement <strong>personnalisé</strong> du brief jusqu'aux résultats</li>
+      </ul>
     </div>
+
+    <!-- Formulaire à droite -->
+    <div class="kv-card" data-reveal data-reveal-delay="1">
+      <h2 class="kv-card-title">Parlez-nous de votre projet.</h2>
+      <form class="kv-form" id="kvForm">
+        <div class="kv-row">
+          <label><span class="sr-only">Nom et Prénom</span>
+            <input type="text" name="name" placeholder="Nom et Prénom" required></label>
+          <label><span class="sr-only">E-mail</span>
+            <input type="email" name="email" placeholder="E-mail" required></label>
+        </div>
+        <div class="kv-phone">
+          <label class="kv-code"><span class="sr-only">Indicatif</span>
+            <select name="code">
+              <option value="+212" selected>🇲🇦 +212</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+32">🇧🇪 +32</option>
+              <option value="+41">🇨🇭 +41</option>
+              <option value="+1">🇨🇦 +1</option>
+              <option value="+34">🇪🇸 +34</option>
+            </select></label>
+          <label class="kv-tel"><span class="sr-only">Téléphone</span>
+            <input type="tel" name="phone" placeholder="6 00 00 00 00"></label>
+        </div>
+        <label><span class="sr-only">Message</span>
+          <textarea name="message" rows="3" placeholder="Message"></textarea></label>
+        <button type="submit" class="kv-submit">Envoyer</button>
+        <p class="kv-note">Votre message s'ouvre directement sur WhatsApp.</p>
+      </form>
+    </div>
+
   </div>
 </section>
+
+<!-- Bulle WhatsApp flottante -->
+<a href="https://wa.me/212600000000" class="kv-wa" id="kvWa" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+  <span class="kv-wa-dot" aria-hidden="true"></span>
+</a>
 
 <!-- ============================================= -->
 <!-- 02 — SERVICES (liste éditoriale numérotée)      -->
