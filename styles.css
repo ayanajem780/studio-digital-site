@@ -26,9 +26,9 @@
   --white: #FFFFFF;
 
   /* Typographie */
-  --font-display: "Lora", "Georgia", serif;
-  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "Space Grotesk", var(--font-body);
+  --font-display: "Space Mono", ui-monospace, monospace;
+  --font-body: "Space Mono", ui-monospace, monospace;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 
   /* Rayons & ombres */
   --radius-s: 10px;
@@ -2680,3 +2680,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 900px){
   .site-header .brand{ width: 36px; height: 40px; }
 }
+
+/* =================================================================
+   POLICE UNIQUE DU SITE : Space Mono (identité kréova)
+   ================================================================= */
+html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monospace, monospace; }
