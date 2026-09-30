@@ -2869,3 +2869,18 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   .kv-story-grid{ grid-template-columns: 1fr; }
   .kv-story-text{ min-height: 200px; }
 }
+
+/* Story : Strategy / Creativity / Growth à droite du logo */
+.kv-story-text{ min-height: 0; }
+.kv-pillars{ list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(14px, 2vw, 26px); }
+.kv-pillars li{ display: flex; align-items: baseline; gap: 18px; }
+.kv-num{ font-size: clamp(14px, 1.2vw, 18px); font-weight: 700; color: #5B6EF7; min-width: 3.2em; }
+.kv-word{ font-weight: 700; font-size: clamp(36px, 5vw, 76px); line-height: 1; letter-spacing: -0.04em; color: #1A1B1E; }
+.kv-word em{ font-style: italic; font-weight: 400; color: #4E5157; }
+.kv-word i{ font-style: normal; color: #8FD66A; }
+.kv-allinone{
+  margin: clamp(22px, 3vw, 36px) 0 0;
+  padding-left: calc(3.2em + 18px);
+  font-size: 13px; letter-spacing: 0.4em; text-transform: uppercase; color: #8B8E93;
+}
+@media (max-width: 900px){ .kv-allinone{ padding-left: 0; } }
