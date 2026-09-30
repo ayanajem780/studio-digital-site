@@ -2659,7 +2659,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* nouveau logo kréova */
 .site-header .brand{
   display: block;
-  width: 46px;
+  width: 50px;
   height: 50px;
   background: url("assets/images/kreova-icon.svg") center / contain no-repeat;
 }
@@ -2678,7 +2678,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .site-header .nav-link:hover,
 .site-header .nav-link.is-active{ color: #5B6EF7; }
 @media (max-width: 900px){
-  .site-header .brand{ width: 36px; height: 40px; }
+  .site-header .brand{ width: 40px; height: 40px; }
 }
 
 /* =================================================================
