@@ -2639,3 +2639,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (min-width: 601px) and (max-width: 900px){
   .scrolly-photo{ justify-self: center; width: 100%; max-width: 520px; }
 }
+
+/* =================================================================
+   BARRE DU HAUT — fond beige + nouveau logo kréova (remplace ANDIGITAL)
+   ================================================================= */
+.site-header{
+  background: #F4F0E8;
+  border-bottom: 1px solid rgba(43,43,58,0.08);
+}
+.site-header.is-scrolled{ box-shadow: 0 12px 30px -20px rgba(43,43,58,0.25); }
+.site-header .header-inner::before{ color: rgba(43,43,58,0.55); }
+/* on cache l'ancien logo (dessin + texte ANDIGITAL + AGENCY) */
+.site-header .brand::before,
+.site-header .brand::after{ display: none; }
+.site-header .brand-name{
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+/* nouveau logo kréova */
+.site-header .brand{
+  display: block;
+  width: 210px;
+  height: 42px;
+  background: url("assets/images/kreova-logo.svg") center / contain no-repeat;
+}
+/* menu ☰ en foncé */
+.site-header .nav-toggle span{ background: #2B2B3A; }
+/* menu déroulant assorti */
+.site-header .main-nav{
+  background: #F4F0E8;
+  border: 1px solid rgba(43,43,58,0.1);
+  box-shadow: 0 30px 60px -25px rgba(43,43,58,0.35);
+}
+.site-header .nav-link{
+  color: rgba(43,43,58,0.7);
+  border-bottom: 1px solid rgba(43,43,58,0.08);
+}
+.site-header .nav-link:hover,
+.site-header .nav-link.is-active{ color: #5B6EF7; }
+@media (max-width: 900px){
+  .site-header .brand{ width: 160px; height: 32px; }
+}
