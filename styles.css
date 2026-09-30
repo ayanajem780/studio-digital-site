@@ -2960,3 +2960,14 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 }
 .kv-method-video video{ display: block; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 600px){ .kv-method-video{ border-radius: 18px; } }
+
+/* ---- Story : nouvelle identité kréova (nuit / bleu électrique / lime) ---- */
+.kv-story-media{ border-radius: 22%; box-shadow: 0 40px 80px -40px rgba(14,15,26,0.5); }
+.kv-why-kicker{ color: #4B5BFF; }
+.kv-why-title{ color: #0E0F1A; }
+.kv-why-title i{ color: #4B5BFF; }
+.kv-why-lead{ color: #0E0F1A; }
+.kv-why-body strong{ color: #0E0F1A; }
+.kv-hl--blue{ color: #FFFFFF; background: #4B5BFF; }
+.kv-hl--lilac{ color: #FFFFFF; background: #0E0F1A; }
+.kv-hl--green{ color: #0E0F1A; background: #C8F45A; }
