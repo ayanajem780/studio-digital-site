@@ -2833,3 +2833,39 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 }
 .kv-wa{ background: #25D366; box-shadow: 0 14px 30px -10px rgba(37,211,102,0.65); }
 .kv-wa-dot{ background: #FF3B30; }
+
+/* =================================================================
+   STORY kréova — logo en noir & blanc, devient coloré au toucher
+   ================================================================= */
+.kv-story{ padding: clamp(40px, 6vw, 96px) 0 clamp(64px, 8vw, 120px); }
+.kv-story-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.kv-story-media{
+  margin: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.kv-story-media img{
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+  transform: scale(1);
+  transition: filter 1.1s var(--ease), transform 1.1s var(--ease);
+}
+.kv-story-media:hover img,
+.kv-story-media.is-color img{
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.03);
+}
+.kv-story-text{ min-height: 320px; font-family: "Space Mono", ui-monospace, monospace; }
+@media (max-width: 900px){
+  .kv-story-grid{ grid-template-columns: 1fr; }
+  .kv-story-text{ min-height: 200px; }
+}

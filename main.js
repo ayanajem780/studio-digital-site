@@ -179,3 +179,17 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 })();
+
+
+/* ===== kréova : story, logo N&B -> couleur (toucher / survol / défilement mobile) ===== */
+(function(){
+  var media = document.getElementById("kvStoryMedia");
+  if (!media) return;
+  media.addEventListener("click", function(){ media.classList.toggle("is-color"); });
+  var touch = window.matchMedia("(hover: none)").matches;
+  if (touch && "IntersectionObserver" in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ media.classList.toggle("is-color", e.intersectionRatio > 0.6); });
+    }, { threshold: [0, 0.6, 1] }).observe(media);
+  }
+})();
