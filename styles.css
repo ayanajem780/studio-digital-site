@@ -2896,3 +2896,52 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-hl--blue{ color: #5B6EF7; background: rgba(91,110,247,0.10); }
 .kv-hl--lilac{ color: #A566C4; background: rgba(220,169,238,0.25); }
 .kv-hl--green{ color: #4E9A2B; background: rgba(143,214,106,0.20); }
+
+/* =================================================================
+   SERVICES — 16 expertises en cercles (couleurs du logo kréova)
+   ================================================================= */
+.kv-circles{
+  list-style: none; margin: clamp(32px, 5vw, 64px) 0 clamp(32px, 4vw, 48px); padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2.4vw, 32px);
+}
+.kv-circle{ aspect-ratio: 1; container-type: inline-size; }
+.kv-circle a{
+  position: relative;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  padding: 16%;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Space Mono", ui-monospace, monospace;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.kv-circle a:hover{ transform: scale(1.05) rotate(-3deg); box-shadow: 0 30px 60px -30px rgba(26,27,46,0.45); }
+.kv-circle-label{ font-size: 5.2cqi; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 4cqi; }
+.kv-circle-name{ font-size: 9cqi; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; }
+.kv-circle-pix{
+  position: absolute; top: 12%; right: 20%;
+  width: 7cqi; height: 7cqi; border-radius: 1.4cqi;
+  transform: rotate(14deg);
+  transition: transform .6s var(--ease);
+}
+.kv-circle a:hover .kv-circle-pix{ transform: rotate(194deg) translateY(-2cqi); }
+
+.kv-circle--blue  a{ background: #5B6EF7; color: #FFFFFF; }
+.kv-circle--blue  .kv-circle-label{ color: #DCA9EE; }
+.kv-circle--blue  .kv-circle-pix{ background: #8FD66A; }
+.kv-circle--lilac a{ background: #DCA9EE; color: #1A1B1E; }
+.kv-circle--lilac .kv-circle-label{ color: #5B6EF7; }
+.kv-circle--lilac .kv-circle-pix{ background: #5B6EF7; }
+.kv-circle--cream a{ background: #F4F0E8; color: #5B6EF7; box-shadow: inset 0 0 0 2px #E6E3DC; }
+.kv-circle--cream .kv-circle-label{ color: #8B8E93; }
+.kv-circle--cream .kv-circle-pix{ background: #B3B3B3; }
+.kv-circle--green a{ background: #8FD66A; color: #1A1B1E; }
+.kv-circle--green .kv-circle-label{ color: #2F6B17; }
+.kv-circle--green .kv-circle-pix{ background: #FFFFFF; }
+.kv-circle--ink   a{ background: #2B2B3A; color: #FFFFFF; }
+.kv-circle--ink   .kv-circle-label{ color: #B3B3B3; }
+.kv-circle--ink   .kv-circle-pix{ background: #DCA9EE; }
+
+@media (max-width: 900px){ .kv-circles{ grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px){ .kv-circles{ grid-template-columns: repeat(2, 1fr); gap: 12px; } }
