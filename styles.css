@@ -2971,3 +2971,22 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-hl--blue{ color: #FFFFFF; background: #4B5BFF; }
 .kv-hl--lilac{ color: #FFFFFF; background: #0E0F1A; }
 .kv-hl--green{ color: #0E0F1A; background: #C8F45A; }
+
+/* ---- Cercles services : nouvelle identité kréova ---- */
+.kv-circle-pix{ border-radius: 1cqi; }
+.kv-circle--blue  a{ background: #4B5BFF; color: #FFFFFF; box-shadow: none; }
+.kv-circle--blue  .kv-circle-label{ color: #C8F45A; }
+.kv-circle--blue  .kv-circle-pix{ background: #C8F45A; }
+.kv-circle--lilac a{ background: #0E0F1A; color: #FFFFFF; box-shadow: none; }
+.kv-circle--lilac .kv-circle-label{ color: #9EA0AE; }
+.kv-circle--lilac .kv-circle-pix{ background: #4B5BFF; }
+.kv-circle--cream a{ background: #FFFFFF; color: #0E0F1A; box-shadow: inset 0 0 0 2px #E3E5EE; }
+.kv-circle--cream .kv-circle-label{ color: #4B5BFF; }
+.kv-circle--cream .kv-circle-pix{ background: #4B5BFF; }
+.kv-circle--green a{ background: #C8F45A; color: #0E0F1A; box-shadow: none; }
+.kv-circle--green .kv-circle-label{ color: #0E0F1A; opacity: .6; }
+.kv-circle--green .kv-circle-pix{ background: #0E0F1A; }
+.kv-circle--ink   a{ background: #EEF0F6; color: #0E0F1A; box-shadow: none; }
+.kv-circle--ink   .kv-circle-label{ color: #9EA0AE; }
+.kv-circle--ink   .kv-circle-pix{ background: #C8F45A; }
+.kv-circle a:hover{ box-shadow: 0 30px 60px -30px rgba(14,15,26,0.45); }
