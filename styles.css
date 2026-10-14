@@ -26,9 +26,9 @@
   --white: #FFFFFF;
 
   /* Typographie */
-  --font-display: "Space Mono", ui-monospace, monospace;
-  --font-body: "Space Mono", ui-monospace, monospace;
-  --font-mono: "Space Mono", ui-monospace, monospace;
+  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Sans", "Helvetica Neue", Arial, sans-serif;
 
   /* Rayons & ombres */
   --radius-s: 10px;
@@ -2682,9 +2682,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* =================================================================
-   POLICE UNIQUE DU SITE : Space Mono (identité kréova)
+   POLICES DU SITE : Bodoni Moda (titres) + DM Sans (textes)
    ================================================================= */
-html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monospace, monospace; }
+html, body, button, input, select, textarea{ font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
 
 /* =================================================================
    ACCUEIL — bloc « kréova, votre agence… » + formulaire (style carte)
@@ -2709,7 +2709,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   align-items: center;
 }
 .kv-hero-title{
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   font-size: clamp(30px, 3.6vw, 52px);
   line-height: 1.08;
@@ -2741,7 +2741,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   box-shadow: 0 40px 80px -40px rgba(0,0,0,0.55);
 }
 .kv-card-title{
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   font-size: clamp(26px, 2.6vw, 38px);
   line-height: 1.1;
@@ -2753,7 +2753,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .kv-form input, .kv-form select, .kv-form textarea{
   width: 100%;
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
   color: #1A1B1E;
   background: #F7F6F2;
@@ -2778,7 +2778,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-submit{
   margin-top: 8px;
   width: 100%;
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 0.14em;
@@ -2864,7 +2864,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   filter: grayscale(0) contrast(1);
   transform: scale(1.03);
 }
-.kv-story-text{ min-height: 320px; font-family: "Space Mono", ui-monospace, monospace; }
+.kv-story-text{ min-height: 320px; font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
 @media (max-width: 900px){
   .kv-story-grid{ grid-template-columns: 1fr; }
   .kv-story-text{ min-height: 200px; }
@@ -2913,7 +2913,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
   padding: 16%;
   text-align: center;
   text-decoration: none;
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   transition: transform .45s var(--ease), box-shadow .45s var(--ease);
 }
 .kv-circle a:hover{ transform: scale(1.05) rotate(-3deg); box-shadow: 0 30px 60px -30px rgba(26,27,46,0.45); }
@@ -2992,7 +2992,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-circle a:hover{ box-shadow: 0 30px 60px -30px rgba(14,15,26,0.45); }
 
 /* =================================================================
-   TEXTE DÉFILANT (style éditorial) — grandes lettres Space Mono
+   TEXTE DÉFILANT (style éditorial) — grandes lettres Bodoni Moda
    ================================================================= */
 .marquee{
   overflow: hidden;
@@ -3009,7 +3009,7 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .marquee--reverse .marquee-track{ animation-direction: reverse; }
 .marquee-group{ display: inline-flex; align-items: center; }
 .marquee-group span{
-  font-family: "Space Mono", ui-monospace, monospace;
+  font-family: "Bodoni Moda", "Didot", Georgia, serif;
   font-size: clamp(44px, 8.5vw, 136px);
   font-weight: 700;
   line-height: 1;
@@ -3047,4 +3047,32 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 }
 @media (prefers-reduced-motion: reduce){
   .marquee-track{ animation: none; }
+}
+
+/* =================================================================
+   TYPOGRAPHIE ÉDITORIALE — titres en Bodoni Moda (serif contrastée),
+   textes en DM Sans. Bloc placé en dernier pour l'emporter partout.
+   ================================================================= */
+h1, h2, h3,
+.section-title, .kv-why-title, .kv-hero-title, .kv-card-title,
+.kv-word, .closing-cta-title, .kv-circle-name,
+.portfolio-title, .pricing-name, .why-card h3, .page-hero h1{
+  font-family: "Bodoni Moda", "Didot", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.section-title, .kv-why-title, .kv-hero-title{ line-height: 1.12; }
+.section-title em, .kv-why-title i, .kv-hero-title em{ font-style: italic; font-weight: 500; }
+.marquee-group span{
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+.marquee--outline .marquee-group span{ -webkit-text-stroke: 1.2px #1A1B1E; }
+/* Petits libellés en capitales espacées (comme « L'AGENCE ») */
+.section-kicker, .kv-why-kicker, .portfolio-cat, .kv-circle-label{
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
