@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Générateur des pages intérieures du site ANDIGITAL.
+Générateur des pages intérieures du site kréova.
 Usage : python3 build_site.py
 Régénère : services.html, les 16 pages service-*.html, about.html,
 work.html, process.html, contact.html, faq.html.
@@ -39,7 +39,7 @@ def header(active):
         <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
         <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
       </svg>
-      <span class="brand-name">AN<em>DIGITAL</em></span>
+      <span class="brand-name">kréova</span>
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -62,7 +62,7 @@ FOOTER = '''<footer class="site-footer">
           <path d="M5 23C5 15 27 17 27 9" fill="none" class="svg-stroke-green" stroke-width="2.2" stroke-linecap="round"/>
           <circle cx="27" cy="9" r="3" class="svg-fill-pink"/>
         </svg>
-        <span class="brand-name">AN<em>DIGITAL</em></span>
+        <span class="brand-name">kréova</span>
       </a>
       <p class="footer-tagline">Agence de marketing, branding et création digitale basée à Agadir — 16 expertises, un seul interlocuteur, une stratégie cohérente du positionnement jusqu'à la croissance.</p>
     </div>
@@ -89,7 +89,7 @@ FOOTER = '''<footer class="site-footer">
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; <span id="year"></span> ANDIGITAL. Tous droits réservés.</p>
+    <p>&copy; <span id="year"></span> kréova. Tous droits réservés.</p>
   </div>
 </footer>
 
@@ -174,7 +174,7 @@ SERVICES = [
             "Une trajectoire de croissance mesurable, pas un coup ponctuel",
         ],
         cta="Construire votre stratégie",
-        meta="Stratégie marketing à Agadir et au Maroc : positionnement, cible, acquisition et plan de croissance construits par ANDIGITAL.",
+        meta="Stratégie marketing à Agadir et au Maroc : positionnement, cible, acquisition et plan de croissance construits par kréova.",
     ),
     dict(
         num="02", slug="branding-identity", title="Branding & Identity",
@@ -194,7 +194,7 @@ SERVICES = [
             "Une base solide pour toute future création — site, publicité, contenu",
         ],
         cta="Construire votre identité",
-        meta="Branding et identité visuelle à Agadir : logo, charte graphique, direction artistique et brand guidelines par ANDIGITAL.",
+        meta="Branding et identité visuelle à Agadir : logo, charte graphique, direction artistique et brand guidelines par kréova.",
     ),
     dict(
         num="03", slug="web-design-development", title="Web Design & Development",
@@ -214,7 +214,7 @@ SERVICES = [
             "Une base technique propre, évolutive et facile à maintenir",
         ],
         cta="Lancer votre site",
-        meta="Création de sites web à Agadir : UX/UI, landing pages, sites vitrines et e-commerce responsives par ANDIGITAL.",
+        meta="Création de sites web à Agadir : UX/UI, landing pages, sites vitrines et e-commerce responsives par kréova.",
     ),
     dict(
         num="04", slug="social-media-management", title="Social Media Management",
@@ -234,7 +234,7 @@ SERVICES = [
             "Des données claires pour ajuster la stratégie chaque mois",
         ],
         cta="Gérer vos réseaux",
-        meta="Gestion des réseaux sociaux à Agadir : stratégie, calendrier éditorial, community management et reporting par ANDIGITAL.",
+        meta="Gestion des réseaux sociaux à Agadir : stratégie, calendrier éditorial, community management et reporting par kréova.",
     ),
     dict(
         num="05", slug="content-creation", title="Content Creation",
@@ -254,7 +254,7 @@ SERVICES = [
             "Moins de temps passé à improviser, plus de temps à décider",
         ],
         cta="Créer vos contenus",
-        meta="Création de contenu digital à Agadir : visuels, carrousels, rédaction et concepts créatifs par ANDIGITAL.",
+        meta="Création de contenu digital à Agadir : visuels, carrousels, rédaction et concepts créatifs par kréova.",
     ),
     dict(
         num="06", slug="photography", title="Photography",
@@ -274,7 +274,7 @@ SERVICES = [
             "Une image de marque perçue comme sérieuse et établie",
         ],
         cta="Réserver un shooting",
-        meta="Photographie professionnelle à Agadir : produit, corporate, lifestyle et événementiel par ANDIGITAL.",
+        meta="Photographie professionnelle à Agadir : produit, corporate, lifestyle et événementiel par kréova.",
     ),
     dict(
         num="07", slug="videography-video-editing", title="Videography & Video Editing",
@@ -294,7 +294,7 @@ SERVICES = [
             "Un contenu réutilisable en publicité, sur le site et en interne",
         ],
         cta="Produire votre vidéo",
-        meta="Vidéographie et montage vidéo à Agadir : publicités, corporate, Reels et TikTok par ANDIGITAL.",
+        meta="Vidéographie et montage vidéo à Agadir : publicités, corporate, Reels et TikTok par kréova.",
     ),
     dict(
         num="08", slug="advertising-paid-media", title="Advertising & Paid Media",
@@ -314,7 +314,7 @@ SERVICES = [
             "Une génération de leads ou de ventes mesurable",
         ],
         cta="Lancer vos campagnes",
-        meta="Publicité digitale à Agadir : Meta Ads, Google Ads et TikTok Ads gérés par ANDIGITAL pour générer des conversions.",
+        meta="Publicité digitale à Agadir : Meta Ads, Google Ads et TikTok Ads gérés par kréova pour générer des conversions.",
     ),
     dict(
         num="09", slug="media-buying", title="Media Buying",
@@ -334,7 +334,7 @@ SERVICES = [
             "Une performance suivie canal par canal, en continu",
         ],
         cta="Optimiser votre budget média",
-        meta="Media buying à Agadir : planification, achat d'espace publicitaire et optimisation des audiences par ANDIGITAL.",
+        meta="Media buying à Agadir : planification, achat d'espace publicitaire et optimisation des audiences par kréova.",
     ),
     dict(
         num="10", slug="seo-web-visibility", title="SEO & Web Visibility",
@@ -354,7 +354,7 @@ SERVICES = [
             "Une présence locale renforcée à Agadir et au Maroc",
         ],
         cta="Améliorer votre visibilité",
-        meta="SEO et visibilité web à Agadir : référencement technique, local et de contenu par ANDIGITAL.",
+        meta="SEO et visibilité web à Agadir : référencement technique, local et de contenu par kréova.",
     ),
     dict(
         num="11", slug="copywriting", title="Copywriting",
@@ -374,7 +374,7 @@ SERVICES = [
             "Une voix de marque reconnaissable, quel que soit le format",
         ],
         cta="Écrire vos messages",
-        meta="Copywriting à Agadir : textes publicitaires, pages de vente et storytelling de marque par ANDIGITAL.",
+        meta="Copywriting à Agadir : textes publicitaires, pages de vente et storytelling de marque par kréova.",
     ),
     dict(
         num="12", slug="lead-generation-sales", title="Lead Generation & Sales",
@@ -394,7 +394,7 @@ SERVICES = [
             "Une visibilité claire sur le coût d'acquisition de chaque client",
         ],
         cta="Générer des leads",
-        meta="Génération de leads et aide à la vente à Agadir : tunnels de conversion et CRM par ANDIGITAL.",
+        meta="Génération de leads et aide à la vente à Agadir : tunnels de conversion et CRM par kréova.",
     ),
     dict(
         num="13", slug="creative-direction", title="Creative Direction",
@@ -414,7 +414,7 @@ SERVICES = [
             "Une direction claire pour chaque nouvelle initiative créative",
         ],
         cta="Cadrer votre direction créative",
-        meta="Direction artistique et direction créative à Agadir : concepts de campagne et supervision créative par ANDIGITAL.",
+        meta="Direction artistique et direction créative à Agadir : concepts de campagne et supervision créative par kréova.",
     ),
     dict(
         num="14", slug="influencer-marketing", title="Influencer Marketing",
@@ -434,7 +434,7 @@ SERVICES = [
             "Une lecture claire du retour de chaque collaboration",
         ],
         cta="Lancer une campagne d'influence",
-        meta="Marketing d'influence à Agadir : sélection de profils, briefs et suivi de campagnes par ANDIGITAL.",
+        meta="Marketing d'influence à Agadir : sélection de profils, briefs et suivi de campagnes par kréova.",
     ),
     dict(
         num="15", slug="analytics-performance", title="Analytics & Performance",
@@ -454,7 +454,7 @@ SERVICES = [
             "Une amélioration continue, pas des décisions au hasard",
         ],
         cta="Analyser votre performance",
-        meta="Analytics et suivi de performance à Agadir : tracking, KPI et reporting par ANDIGITAL.",
+        meta="Analytics et suivi de performance à Agadir : tracking, KPI et reporting par kréova.",
     ),
     dict(
         num="16", slug="corporate-communication", title="Corporate Communication",
@@ -474,7 +474,7 @@ SERVICES = [
             "Une image institutionnelle à la hauteur de vos ambitions",
         ],
         cta="Structurer votre communication",
-        meta="Communication corporate à Agadir : pitch decks, brochures et communication institutionnelle par ANDIGITAL.",
+        meta="Communication corporate à Agadir : pitch decks, brochures et communication institutionnelle par kréova.",
     ),
 ]
 
@@ -546,7 +546,7 @@ def render_service_page(s):
   </div>
 </section>'''
     return page(
-        title=f'{s["title"]} — ANDIGITAL, agence à Agadir',
+        title=f'{s["title"]} — kréova, agence à Agadir',
         description=s["meta"],
         canonical=f'service-{s["slug"]}.html',
         active_nav="services.html",
@@ -587,8 +587,8 @@ def render_services_hub():
   </div>
 </section>'''
     return page(
-        title="Services — Marketing, branding, création digitale | ANDIGITAL",
-        description="Les 16 expertises d'ANDIGITAL : stratégie marketing, branding, web design, réseaux sociaux, publicité, SEO, vidéo, photographie et plus, pour les marques au Maroc.",
+        title="Services — Marketing, branding, création digitale | kréova",
+        description="Les 16 expertises de kréova : stratégie marketing, branding, web design, réseaux sociaux, publicité, SEO, vidéo, photographie et plus, pour les marques au Maroc.",
         canonical="services.html",
         active_nav="services.html",
         body=body,
@@ -597,9 +597,9 @@ def render_services_hub():
 
 def render_about():
     body = f'''{page_hero(
-        "About ANDIGITAL",
+        "About kréova",
         "Une agence construite pour que vos décisions de marque cessent d'être dispersées.",
-        "ANDIGITAL est née d'un constat simple : les entreprises qui grandissent au Maroc jonglent trop souvent entre un designer, un community manager, un développeur et une agence média — sans qu'aucun ne voie l'ensemble. Nous existons pour être ce point de vue d'ensemble.",
+        "kréova est née d'un constat simple : les entreprises qui grandissent au Maroc jonglent trop souvent entre un designer, un community manager, un développeur et une agence média — sans qu'aucun ne voie l'ensemble. Nous existons pour être ce point de vue d'ensemble.",
     )}
 
 <section class="split-section">
@@ -607,7 +607,7 @@ def render_about():
     <div data-reveal>
       <p class="section-kicker section-kicker--num"><span>01</span> Qui nous sommes</p>
       <h2 class="split-grid-title">Une agence de marketing, branding et création digitale</h2>
-      <p>ANDIGITAL accompagne des entrepreneurs, des marques en croissance et des PME marocaines qui veulent construire une présence de marque cohérente — du positionnement stratégique jusqu'à l'acquisition de clients. Nous intégrons 16 expertises sous un même toit pour qu'aucune décision créative ne contredise une décision marketing, et inversement.</p>
+      <p>kréova accompagne des entrepreneurs, des marques en croissance et des PME marocaines qui veulent construire une présence de marque cohérente — du positionnement stratégique jusqu'à l'acquisition de clients. Nous intégrons 16 expertises sous un même toit pour qu'aucune décision créative ne contredise une décision marketing, et inversement.</p>
     </div>
     <div data-reveal>
       <p class="section-kicker section-kicker--num"><span>02</span> Notre vision</p>
@@ -627,7 +627,7 @@ def render_about():
     <div data-reveal>
       <p class="section-kicker section-kicker--num"><span>04</span> Notre ambition</p>
       <h2 class="split-grid-title">Devenir la référence des marques ambitieuses à Agadir et au-delà</h2>
-      <p>Nous construisons ANDIGITAL projet après projet, avec l'objectif de devenir l'agence de référence pour toute entreprise marocaine qui refuse de traiter son image comme une case à cocher.</p>
+      <p>Nous construisons kréova projet après projet, avec l'objectif de devenir l'agence de référence pour toute entreprise marocaine qui refuse de traiter son image comme une case à cocher.</p>
     </div>
   </div>
 </section>
@@ -672,9 +672,9 @@ def render_about():
       <a href="process.html" class="portfolio-see-all portfolio-see-all--light" style="margin-top:8px;">Voir notre méthode en détail <span aria-hidden="true">→</span></a>
     </div>
     <div data-reveal>
-      <p class="section-kicker section-kicker--num section-kicker--light"><span>07</span> Pourquoi ANDIGITAL existe</p>
+      <p class="section-kicker section-kicker--num section-kicker--light"><span>07</span> Pourquoi kréova existe</p>
       <h2 class="split-grid-title">Parce que la dispersion coûte plus cher que la coordination</h2>
-      <p>Chaque prestataire supplémentaire ajoute un point de friction : un brief à répéter, une charte à réexpliquer, une priorité à réaligner. ANDIGITAL existe pour retirer cette friction et remettre la marque, pas les prestataires, au centre des décisions.</p>
+      <p>Chaque prestataire supplémentaire ajoute un point de friction : un brief à répéter, une charte à réexpliquer, une priorité à réaligner. kréova existe pour retirer cette friction et remettre la marque, pas les prestataires, au centre des décisions.</p>
     </div>
   </div>
 </section>
@@ -686,8 +686,8 @@ def render_about():
   </div>
 </section>'''
     return page(
-        title="About — Qui nous sommes | ANDIGITAL, agence à Agadir",
-        description="Découvrez ANDIGITAL : notre vision, notre mission, nos valeurs et notre approche pour construire des marques cohérentes au Maroc, du positionnement à la croissance.",
+        title="About — Qui nous sommes | kréova, agence à Agadir",
+        description="Découvrez kréova : notre vision, notre mission, nos valeurs et notre approche pour construire des marques cohérentes au Maroc, du positionnement à la croissance.",
         canonical="about.html",
         active_nav="about.html",
         body=body,
@@ -753,8 +753,8 @@ def render_process():
   </div>
 </section>'''
     return page(
-        title="Process — Notre méthode de travail | ANDIGITAL",
-        description="Discover, Strategize, Create, Launch, Optimize, Grow : découvrez le processus en six étapes d'ANDIGITAL pour construire et développer votre marque.",
+        title="Process — Notre méthode de travail | kréova",
+        description="Discover, Strategize, Create, Launch, Optimize, Grow : découvrez le processus en six étapes de kréova pour construire et développer votre marque.",
         canonical="process.html",
         active_nav="process.html",
         body=body,
@@ -803,8 +803,8 @@ def render_work():
   </div>
 </section>'''
     return page(
-        title="Work — Portfolio | ANDIGITAL, agence à Agadir",
-        description="Le portfolio ANDIGITAL : branding, sites web, réseaux sociaux, photographie, vidéo et publicité — projets réels, contexte, stratégie et résultats.",
+        title="Work — Portfolio | kréova, agence à Agadir",
+        description="Le portfolio kréova : branding, sites web, réseaux sociaux, photographie, vidéo et publicité — projets réels, contexte, stratégie et résultats.",
         canonical="work.html",
         active_nav="work.html",
         body=body,
@@ -903,8 +903,8 @@ def render_contact():
   </div>
 </section>'''
     return page(
-        title="Contact — Démarrer un projet | ANDIGITAL",
-        description="Contactez ANDIGITAL pour votre projet de marketing, branding ou création digitale à Agadir. Premier échange gratuit, réponse sous 24h ouvrées.",
+        title="Contact — Démarrer un projet | kréova",
+        description="Contactez kréova pour votre projet de marketing, branding ou création digitale à Agadir. Premier échange gratuit, réponse sous 24h ouvrées.",
         canonical="contact.html",
         active_nav="",
         body=body,
@@ -914,7 +914,7 @@ def render_contact():
 def render_faq():
     groups = [
         ("Nos services", [
-            ("Quels services propose ANDIGITAL ?",
+            ("Quels services propose kréova ?",
              "16 expertises couvrant la stratégie marketing, le branding, le web design, les réseaux sociaux, la production de contenu (photo, vidéo, copywriting), la publicité, le SEO, la génération de leads et la communication corporate. Chaque service est disponible seul ou combiné."),
             ("Dois-je prendre tous les services, ou puis-je en choisir un seul ?",
              "Vous pouvez démarrer avec une seule expertise — un site, un branding, une gestion de réseaux sociaux — et l'étendre ensuite. Beaucoup de clients commencent petit et élargissent une fois les premiers résultats visibles."),
@@ -926,7 +926,7 @@ def render_faq():
              "Selon la charge en cours et la nature du projet, oui. Précisez votre contrainte de délai dès le premier échange pour que nous évaluions sa faisabilité."),
         ]),
         ("Budgets", [
-            ("Combien coûte un projet avec ANDIGITAL ?",
+            ("Combien coûte un projet avec kréova ?",
              "Chaque devis est établi sur mesure selon le périmètre réel — un site simple et une stratégie d'acquisition complète n'ont pas le même coût. Le premier échange, pour cadrer votre besoin, est toujours gratuit."),
             ("Peut-on démarrer avec un budget limité ?",
              "Oui. Notre formule Foundation est conçue pour poser des bases solides avec un budget maîtrisé, avec la possibilité de monter en puissance ensuite."),
@@ -966,7 +966,7 @@ def render_faq():
         ("Fonctionnement de l'agence", [
             ("Combien de personnes travaillent sur mon projet ?",
              "Cela dépend du périmètre : certains projets sont pilotés par un interlocuteur unique mobilisant les expertises nécessaires, d'autres impliquent plusieurs pôles en parallèle. Dans tous les cas, un seul point de contact centralise le suivi."),
-            ("Comment démarrer un projet avec ANDIGITAL ?",
+            ("Comment démarrer un projet avec kréova ?",
              "Remplissez le formulaire de la page Contact ou écrivez-nous sur WhatsApp. Nous revenons vers vous sous 24h ouvrées pour cadrer votre besoin et proposer une première direction."),
         ]),
     ]
@@ -1013,8 +1013,8 @@ def render_faq():
   </div>
 </section>'''
     return page(
-        title="FAQ — Questions fréquentes | ANDIGITAL",
-        description="Toutes les réponses sur nos services, délais, budgets, projets sur mesure et fonctionnement, pour bien démarrer votre projet avec ANDIGITAL.",
+        title="FAQ — Questions fréquentes | kréova",
+        description="Toutes les réponses sur nos services, délais, budgets, projets sur mesure et fonctionnement, pour bien démarrer votre projet avec kréova.",
         canonical="faq.html",
         active_nav="faq.html",
         body=body,

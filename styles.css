@@ -2990,3 +2990,61 @@ html, body, button, input, select, textarea{ font-family: "Space Mono", ui-monos
 .kv-circle--ink   .kv-circle-label{ color: #9EA0AE; }
 .kv-circle--ink   .kv-circle-pix{ background: #C8F45A; }
 .kv-circle a:hover{ box-shadow: 0 30px 60px -30px rgba(14,15,26,0.45); }
+
+/* =================================================================
+   TEXTE DÉFILANT (style éditorial) — grandes lettres Space Mono
+   ================================================================= */
+.marquee{
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 0 clamp(36px, 5vw, 72px);
+  margin-top: calc(var(--section-pad) * -0.35);
+  user-select: none;
+}
+.marquee-track{
+  display: inline-flex;
+  width: max-content;
+  animation: kv-defile 38s linear infinite;
+}
+.marquee--reverse .marquee-track{ animation-direction: reverse; }
+.marquee-group{ display: inline-flex; align-items: center; }
+.marquee-group span{
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: clamp(44px, 8.5vw, 136px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #1A1B1E;
+}
+.marquee--outline .marquee-group span{
+  color: transparent;
+  -webkit-text-stroke: 1.5px #1A1B1E;
+}
+.marquee-dot{
+  display: inline-block;
+  flex: none;
+  width: clamp(14px, 1.6vw, 26px);
+  height: clamp(14px, 1.6vw, 26px);
+  margin: 0 clamp(22px, 3vw, 48px);
+  border-radius: 50%;
+  background: #5B6EF7;
+}
+.marquee-group .marquee-dot:nth-of-type(3n+2){ background: #A566C4; }
+.marquee-group .marquee-dot:nth-of-type(3n){ background: #8FD66A; }
+
+/* Grande bande avant le formulaire de contact */
+.marquee-band{
+  padding: clamp(56px, 7vw, 110px) 0;
+  border-top: 1px solid rgba(23,32,28,0.08);
+}
+.marquee-band .marquee{ margin: 0; padding: 0; }
+.marquee--big .marquee-group span{ font-size: clamp(56px, 11vw, 180px); }
+
+@keyframes kv-defile{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .marquee-track{ animation: none; }
+}
