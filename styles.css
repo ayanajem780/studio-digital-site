@@ -3278,18 +3278,13 @@ h1, h2, h3,
 /* =================================================================
    Portfolio — carrousel 3D en anneau (accueil)
    ================================================================= */
+.portfolio{ overflow-x: clip; }
 .ring{
-  position: relative; overflow: hidden; border-radius: 28px;
-  background: radial-gradient(ellipse at 50% 120%, #1F2030 0%, #0E0F1A 60%);
-  padding: clamp(48px, 6vw, 80px) 0 clamp(20px, 3vw, 28px);
-  margin-top: clamp(24px, 4vw, 48px);
+  position: relative; overflow: visible; margin-top: clamp(16px, 3vw, 32px);
+  width: 100vw; margin-left: calc(50% - 50vw);
   user-select: none; -webkit-user-select: none;
 }
-.ring__glow{
-  position: absolute; left: 50%; top: 46%; width: 70%; height: 70%; transform: translate(-50%, -50%);
-  border-radius: 50%; background-color: #4B5BFF; opacity: .38; filter: blur(90px);
-  transition: background-color .9s ease; pointer-events: none;
-}
+.ring__glow{ display: none; }
 .ring__stage{ position: relative; height: var(--ring-h, 440px); perspective: 1500px; perspective-origin: 50% 45%; cursor: grab; touch-action: pan-y; }
 .ring.is-dragging .ring__stage{ cursor: grabbing; }
 .ring__track{ position: absolute; left: 50%; top: 0; width: 0; height: 100%; transform-style: preserve-3d; will-change: transform; }
@@ -3297,24 +3292,26 @@ h1, h2, h3,
   position: absolute; left: calc(var(--card-w, 270px) / -2); top: 0; width: var(--card-w, 270px); aspect-ratio: 3 / 4;
   border-radius: 22px; overflow: hidden; background: #1B1C28; color: #F5F4F1; text-decoration: none;
   backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.08);
+  box-shadow: 0 30px 50px -24px rgba(20,20,30,.45);
   -webkit-tap-highlight-color: transparent;
 }
 .ring__card img{ display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
 .ring__card::after{ content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,14,.88) 0%, rgba(8,8,14,0) 52%); opacity: 0; transition: opacity .4s ease; }
 .ring__info{ position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; gap: 4px; padding: 20px 20px 22px; opacity: 0; transform: translateY(10px); transition: opacity .4s ease, transform .4s ease; }
-.ring__card.is-front::after, .ring__card.is-front .ring__info{ opacity: 1; }
-.ring__card.is-front .ring__info{ transform: none; }
+.ring__card::after, .ring__card .ring__info{ opacity: 1; }
+.ring__card .ring__info{ transform: none; }
+.ring__card .ring__desc{ opacity: 0; transition: opacity .4s ease; }
+.ring__card.is-front .ring__desc{ opacity: 1; }
 .ring__card:focus-visible{ outline: 2px solid #C8F45A; outline-offset: 4px; }
 .ring__cat{ font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #C8F45A; }
 .ring__title{ font-family: var(--font-display); font-size: 26px; line-height: 1.1; }
 .ring__desc{ font-size: 13px; line-height: 1.4; color: rgba(245,244,241,.78); }
-.ring__bar{ position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 clamp(20px, 3vw, 32px); margin-top: 8px; }
-.ring__count{ margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; color: rgba(245,244,241,.6); }
-.ring__now{ color: #F5F4F1; }
+.ring__bar{ position: relative; display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 12px; }
+.ring__count{ margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; color: var(--ink-faint); }
+.ring__now{ color: var(--ink); }
 .ring__nav{ display: flex; gap: 8px; }
-.ring__btn{ width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22); background: transparent; color: #F5F4F1; font-size: 18px; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
-.ring__btn:hover{ background: #F5F4F1; color: #0E0F1A; border-color: #F5F4F1; }
+.ring__btn{ width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(26,27,30,.2); background: transparent; color: var(--ink); font-size: 18px; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.ring__btn:hover{ background: var(--ink); color: #F5F4F1; border-color: var(--ink); }
 .ring__btn:focus-visible{ outline: 2px solid #C8F45A; outline-offset: 2px; }
 @media (max-width: 700px){
   .ring__title{ font-size: 21px; }

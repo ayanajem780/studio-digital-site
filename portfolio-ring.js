@@ -7,8 +7,10 @@
   var cards = Array.prototype.slice.call(ring.querySelectorAll('.ring__card'));
   var total = cards.length;
   // On double l’anneau pour qu’il remplisse toute la largeur (les copies sont décoratives)
-  if (total < 16) {
-    cards.slice().forEach(function (c) {
+  var copies = Math.max(0, Math.ceil(19 / total) - 1);
+  var originals = cards.slice();
+  for (var r = 0; r < copies; r++) {
+    originals.forEach(function (c) {
       var k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.setAttribute('data-clone', '');
       track.appendChild(k); cards.push(k);
     });
@@ -23,7 +25,7 @@
   var drag = null, moved = false;
 
   function layout() {
-    var w = Math.min(260, Math.max(170, ring.clientWidth * 0.2));
+    var w = Math.min(290, Math.max(180, ring.clientWidth * 0.19));
     var h = w * 4 / 3;
     ring.style.setProperty('--card-w', w + 'px');
     ring.style.setProperty('--ring-h', Math.round(h + 40) + 'px');
@@ -39,14 +41,14 @@
       var rel = norm(i * step - rot), abs = Math.abs(rel);
       if (abs < bestAbs) { bestAbs = abs; best = i; }
       var k = Math.max(0, Math.cos(rel * Math.PI / 180));
-      c.style.filter = 'brightness(' + (0.35 + 0.65 * Math.pow(k, 2)).toFixed(3) + ')';
+      c.style.filter = 'brightness(' + (0.6 + 0.4 * k).toFixed(3) + ')';
+      c.style.opacity = (0.35 + 0.65 * k).toFixed(3);
       c.style.pointerEvents = abs > 80 ? 'none' : '';
       c.tabIndex = (abs > 80 || c.hasAttribute('data-clone')) ? -1 : 0;
     });
     if (best !== front) {
       if (front >= 0) cards[front].classList.remove('is-front');
       front = best; cards[front].classList.add('is-front');
-      if (glow) glow.style.backgroundColor = cards[front].getAttribute('data-glow') || '#4B5BFF';
       var idx = front % total + 1;
       if (now) now.textContent = (idx < 10 ? '0' : '') + idx;
     }
