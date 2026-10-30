@@ -3264,3 +3264,13 @@ h1, h2, h3,
 }
 @media (max-width: 560px){ .mfc-features{ grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce){ .mfc-phone__screen > img.mfc-phone__scroll{ animation: none; } }
+
+/* Brand book ARCH : noir atelier + aluminium */
+.bb--arch{ background: #141414; }
+.bb--arch .bb-slide{ background: #1E1E1E; }
+.bb--arch .bb-label{ color: #A8ABAF; }
+.bb--arch .bb-label span{ color: #F5F4F1; }
+.bb--arch .bb-btn{ border-color: #3A3A3A; color: #F5F4F1; }
+.bb--arch .bb-btn:hover{ background: #F5F4F1; border-color: #F5F4F1; color: #141414; }
+.bb--arch .bb-btn[disabled]{ background: transparent; border-color: #3A3A3A; color: #F5F4F1; }
+.bb--arch .bb-track:focus-visible{ box-shadow: 0 0 0 2px #A8ABAF; }
