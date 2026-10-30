@@ -98,8 +98,20 @@
         <figure class="case-img case-img--half"><img src="assets/work/vtc/vtc-symbole.jpg" alt="Symbole VTC sur fond bleu" loading="lazy" decoding="async"></figure>
         <figure class="case-img case-img--half case-img--contain"><img src="assets/work/vtc/vtc-detail.jpg" alt="Détail du symbole VTC sur papier texturé" loading="lazy" decoding="async"></figure>
         <figure class="case-img case-img--full case-img--natural"><img src="assets/work/vtc/vtc-banniere.jpg" width="1584" height="396" alt="Bannière VTC avec le logo complet" loading="lazy" decoding="async"></figure>
-        <figure class="case-img case-img--half case-img--dark"><img src="assets/work/vtc/vtc-carte-recto.jpg" alt="Visionary Card VTC, recto" loading="lazy" decoding="async"></figure>
-        <figure class="case-img case-img--half case-img--dark"><img src="assets/work/vtc/vtc-carte-verso.jpg" alt="Visionary Card VTC, verso" loading="lazy" decoding="async"></figure>
+        <figure class="case-img case-img--full vcard-scene">
+          <div class="vcard-orb vcard-orb--1" aria-hidden="true"></div>
+          <div class="vcard-orb vcard-orb--2" aria-hidden="true"></div>
+          <div class="vcard-float">
+            <div class="vcard-tilt" id="vcardTilt" tabindex="0" role="button" aria-pressed="false" aria-label="Visionary Card VTC, carte de visite NFC avec QR code au verso. Appuyez pour la retourner.">
+              <div class="vcard-shadow"></div>
+              <div class="vcard" id="vcard">
+                <div class="vcard-face vcard-front" style="background-image:url('assets/work/vtc/vtc-carte-recto.jpg')"><div class="vcard-sheen"></div><div class="vcard-edge"></div></div>
+                <div class="vcard-face vcard-back" style="background-image:url('assets/work/vtc/vtc-carte-verso.jpg')"><div class="vcard-sheen"></div><div class="vcard-edge"></div></div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="vcard-hint">Touchez la carte pour la retourner</figcaption>
+        </figure>
       </div>
     </article>
 
@@ -202,5 +214,6 @@
 </div>
 
 <script src="./main.js" defer></script>
+<script src="./vcard.js" defer></script>
 </body>
 </html>
