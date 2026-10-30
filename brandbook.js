@@ -33,3 +33,19 @@
     update();
   });
 })();
+
+/* Vidéos de démonstration : lecture seulement quand elles sont visibles */
+(function () {
+  var vids = document.querySelectorAll('video[data-autoplay-visible]');
+  if (!vids.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { v.preload = 'auto'; if (!reduce) v.play().catch(function () {}); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; if (!reduce) v.play().catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.25 });
+  vids.forEach(function (v) { io.observe(v); });
+})();

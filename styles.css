@@ -3219,3 +3219,48 @@ h1, h2, h3,
 .bb--amori .bb-btn:hover{ background: #DAACED; border-color: #DAACED; color: #3C6224; }
 .bb--amori .bb-btn[disabled]{ background: transparent; border-color: #6E8F57; color: #FCFCF2; }
 .bb--amori .bb-track:focus-visible{ box-shadow: 0 0 0 2px #DAACED; }
+
+/* =================================================================
+   MFC — Menu digital (page Work) : navigateur, téléphones, points forts
+   ================================================================= */
+.mfc-browser{ background: #1A1416; padding: 0; border-radius: 16px; box-shadow: 0 30px 60px -20px rgba(80,10,20,.35); }
+.mfc-browser__bar{ display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; background: #2A2023; }
+.mfc-browser__bar span{ width: 11px; height: 11px; border-radius: 50%; background: #5A4A4E; }
+.mfc-browser__bar span:first-child{ background: #C43047; }
+.mfc-browser__bar p{ margin: 0 auto; padding-right: 40px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: #B9A9AD; }
+.mfc-browser__video{ display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: #120D0E; }
+
+.mfc-phones{
+  display: flex; justify-content: center; align-items: center; gap: clamp(16px, 4vw, 56px);
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  background: radial-gradient(ellipse at 50% 30%, #D8394F 0%, #C43047 40%, #7E1626 100%);
+  border-radius: 16px; overflow: hidden;
+}
+.mfc-phone{ margin: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; flex: 0 0 auto; }
+.mfc-phone--raised{ transform: translateY(-24px); }
+.mfc-phone__screen{
+  position: relative; width: 240px; height: 519px; overflow: hidden; border-radius: 34px;
+  border: 9px solid #141012; background: #141012;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 40px 70px -20px rgba(40,0,8,.65);
+}
+.mfc-phone__screen video, .mfc-phone__screen > img{ display: block; aspect-ratio: auto; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.mfc-phone__screen > img.mfc-phone__scroll{ height: auto; aspect-ratio: auto; object-fit: initial; animation: mfcScroll 30s ease-in-out infinite alternate; }
+@keyframes mfcScroll{ 0%, 8%{ transform: translateY(0); } 92%, 100%{ transform: translateY(-3199px); } }
+.mfc-phone figcaption{ font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #FDE7EA; }
+
+.mfc-features{
+  list-style: none; margin: 0; padding: clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  background: #FBF4F0; border: 1px solid #F0DCD8;
+}
+.mfc-features li{ display: flex; flex-direction: column; gap: 8px; }
+.mfc-features span{ font-family: var(--font-mono); font-size: 12px; color: #C43047; letter-spacing: .1em; }
+.mfc-features h4{ margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--ink); }
+.mfc-features p{ margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+@media (max-width: 900px){
+  .mfc-features{ grid-template-columns: 1fr 1fr; }
+  .mfc-phones{ justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .mfc-phone{ scroll-snap-align: center; }
+  .mfc-phone--raised{ transform: none; }
+}
+@media (max-width: 560px){ .mfc-features{ grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce){ .mfc-phone__screen > img.mfc-phone__scroll{ animation: none; } }
