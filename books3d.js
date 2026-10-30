@@ -37,14 +37,11 @@
         b.classList.add('is-open');
         return;
       }
-      var t = document.querySelector(link.getAttribute('href'));
-      if (!t) return;
+      // Petite secousse, puis on ouvre la page du brand book
       e.preventDefault();
+      var href = link.getAttribute('href');
       b.classList.add('is-wiggle');
-      setTimeout(function () {
-        b.classList.remove('is-wiggle');
-        t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      }, reduce ? 0 : 350);
+      setTimeout(function () { window.location.href = href; }, reduce ? 0 : 380);
     });
   });
 })();
