@@ -3134,3 +3134,11 @@ h1, h2, h3,
 
 /* Ancre de la section Réalisations (sous le header fixe) */
 #realisations{ scroll-margin-top: 110px; }
+
+/* Carte Branding de l'accueil : photo "Branding with kréova" visible en entier */
+.portfolio-grid{ grid-template-rows: auto; }
+.portfolio-card--photo{ height: auto; aspect-ratio: 1136 / 630; background: #EEEEEE; }
+.portfolio-media--branding{ background: #EEEEEE url('assets/images/branding-kreova-card.jpg') center / cover no-repeat; }
+.portfolio-card--photo .portfolio-info{ opacity: 0; transition: opacity .3s ease; }
+.portfolio-card--photo:hover .portfolio-info,
+.portfolio-card--photo:focus-visible .portfolio-info{ opacity: 1; }
