@@ -3572,3 +3572,13 @@ h1, h2, h3,
   .books__slide *, .books__slide{ animation: none !important; transition: none !important; }
 }
 .books{ scroll-margin-top: var(--header-h, 85px); }
+/* Portfolio Zakaria Habbad (page Work) : variante sombre et chaude des maquettes */
+.zh-browser{ background: #0E0E0E; box-shadow: 0 30px 60px -20px rgba(0,0,0,.45); }
+.zh-browser .mfc-browser__bar{ background: #1A1A1A; }
+.zh-browser .mfc-browser__bar span:first-child{ background: #C9A877; }
+.zh-phones{ background: radial-gradient(ellipse at 50% 30%, #3A2E22 0%, #1B1612 55%, #0B0A09 100%); }
+.zh-phones .mfc-phone figcaption{ color: #E8DCCB; }
+.mfc-phone__screen > img.zh-scroll{ animation-name: zhScroll; animation-duration: 22s; }
+@keyframes zhScroll{ 0%, 8%{ transform: translateY(0); } 92%, 100%{ transform: translateY(-822px); } }
+.zh-features{ background: #F6F2EC; border-color: #E6DED2; }
+.zh-features span{ color: #9A7B4F; }
