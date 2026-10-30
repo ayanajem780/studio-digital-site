@@ -49,3 +49,18 @@
   }, { threshold: 0.25 });
   vids.forEach(function (v) { io.observe(v); });
 })();
+
+/* Bouton son sur les vidéos (ex. mascotte MFC) */
+(function () {
+  document.querySelectorAll('[data-sound-for]').forEach(function (btn) {
+    var v = document.getElementById(btn.getAttribute('data-sound-for'));
+    if (!v) return;
+    btn.addEventListener('click', function () {
+      v.muted = !v.muted;
+      if (!v.muted) { v.currentTime = 0; v.play().catch(function () {}); }
+      btn.setAttribute('aria-pressed', String(!v.muted));
+      btn.setAttribute('aria-label', v.muted ? 'Activer le son' : 'Couper le son');
+      btn.innerHTML = v.muted ? 'Son&nbsp;off' : 'Son&nbsp;on';
+    });
+  });
+})();
