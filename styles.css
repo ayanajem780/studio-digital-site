@@ -3209,3 +3209,13 @@ h1, h2, h3,
 .bb-btn:focus-visible{ outline: 2px solid #719ED9; outline-offset: 2px; }
 .bb-btn[disabled]{ opacity: .35; cursor: default; background: transparent; border-color: #2A4278; }
 @media (prefers-reduced-motion: reduce){ .bb-track{ scroll-behavior: auto; } }
+
+/* Brand book Amori : habillage vert gourmand + lilas */
+.bb--amori{ background: #3C6224; }
+.bb--amori .bb-slide{ background: #DAACED; }
+.bb--amori .bb-label{ color: #F3EAD0; }
+.bb--amori .bb-label span{ color: #FCECA3; }
+.bb--amori .bb-btn{ border-color: #6E8F57; color: #FCFCF2; }
+.bb--amori .bb-btn:hover{ background: #DAACED; border-color: #DAACED; color: #3C6224; }
+.bb--amori .bb-btn[disabled]{ background: transparent; border-color: #6E8F57; color: #FCFCF2; }
+.bb--amori .bb-track:focus-visible{ box-shadow: 0 0 0 2px #DAACED; }
