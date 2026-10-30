@@ -3403,3 +3403,51 @@ h1, h2, h3,
 @media (prefers-reduced-motion: reduce){
   .shelf__item, .shelf__panel, .shelf__panel img, .shelf__info, .shelf__name{ transition: none !important; }
 }
+
+/* =================================================================
+   WORK — ARCH Social Media : profil Instagram, stories à la une, posts
+   ================================================================= */
+#arch-social, #mfc-social{ scroll-margin-top: 110px; }
+.ig-arch{
+  background: #141414; color: #F5F4F1; border-radius: 16px;
+  padding: clamp(24px, 4vw, 56px);
+}
+.ig-arch__profile{ display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); flex-wrap: wrap; }
+.ig-arch__avatar{
+  flex: 0 0 auto; width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center;
+  background: linear-gradient(145deg, #E9E9E7, #A8ABAF); color: #141414;
+  box-shadow: 0 0 0 3px #141414, 0 0 0 4px #5A5A5A;
+}
+.ig-arch__avatar svg{ width: 46px; height: 46px; }
+.ig-arch__id{ flex: 1 1 260px; }
+.ig-arch__handle{ margin: 0 0 6px; font-size: 20px; font-weight: 600; letter-spacing: .02em; }
+.ig-arch__bio{ margin: 0; font-size: 14px; line-height: 1.6; color: #A8ABAF; }
+.ig-arch__follow{
+  padding: 10px 18px; border: 1px solid #3A3A3A; border-radius: 999px; color: #F5F4F1; text-decoration: none;
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase; transition: background .2s, color .2s;
+}
+.ig-arch__follow:hover{ background: #F5F4F1; color: #141414; }
+
+.ig-arch__highlights{
+  list-style: none; margin: clamp(24px, 3vw, 36px) 0; padding: 0 0 clamp(24px, 3vw, 36px);
+  display: flex; gap: clamp(14px, 3vw, 36px); overflow-x: auto; border-bottom: 1px solid #2A2A2A;
+}
+.ig-arch__highlights a{
+  display: flex; flex-direction: column; align-items: center; gap: 10px; width: 84px;
+  color: #D9D9D7; text-decoration: none; font-size: 12px; text-align: center;
+}
+.ig-arch__hl{
+  width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; padding: 6px; box-sizing: border-box;
+  background: radial-gradient(circle at 35% 30%, #2E2E2E, #0E0E0E 75%);
+  box-shadow: 0 0 0 2px #141414, 0 0 0 3px #8E9196;
+  font-family: var(--font-display); font-size: 10.5px; line-height: 1.1; letter-spacing: .04em; color: #E9E9E7;
+  transition: box-shadow .25s, transform .25s;
+}
+.ig-arch__highlights a:hover .ig-arch__hl{ box-shadow: 0 0 0 2px #141414, 0 0 0 3px #F5F4F1; transform: translateY(-2px); }
+
+.ig-arch__grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); align-items: start; }
+.ig-arch__grid .instagram-media{ min-width: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; border-radius: 12px !important; }
+.ig-arch__grid blockquote.instagram-media{ background: #1E1E1E; padding: 24px; box-sizing: border-box; }
+.ig-arch__grid blockquote.instagram-media a{ color: #D9D9D7; font-size: 14px; }
+@media (max-width: 1000px){ .ig-arch__grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px){ .ig-arch__grid{ grid-template-columns: 1fr; } }
