@@ -3573,3 +3573,96 @@ h1, h2, h3,
 .book-page__next a:last-child{ text-align: right; }
 .book-page__next small{ font-family: var(--font-body); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-faint); }
 .book-page__next a:hover{ color: #4B5BFF; }
+
+/* =================================================================
+   WORK — Sites web animés : fenêtre qui rebondit, URL tapée,
+   flash d'allumage, téléphone qui surgit, curseur qui clique
+   ================================================================= */
+.sites3d{ padding: clamp(40px, 6vw, 90px) 0 clamp(56px, 8vw, 110px); overflow: hidden; }
+.sites3d__list{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 6vw, 96px); }
+.site3d{ position: relative; z-index: 1; }
+.site3d:hover, .site3d:focus-within{ z-index: 5; }
+.site3d__link{ display: flex; flex-direction: column; align-items: center; color: inherit; text-decoration: none; outline: none; }
+.site3d__stage{ position: relative; display: block; width: 100%; max-width: 560px; aspect-ratio: 16 / 11; perspective: 1400px; }
+
+/* Fenêtre de navigateur */
+.site3d__win{
+  position: absolute; left: 0; top: 6%; width: 86%; display: block;
+  background: #fff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 30px 60px -24px rgba(20,20,40,.35), 0 0 0 1px rgba(0,0,0,.06);
+  transform-origin: 50% 100%; opacity: 0; transform: translateY(80px) scale(.6) rotate(-6deg);
+  transition: transform .6s cubic-bezier(.3,1.6,.5,1), box-shadow .5s;
+}
+.sites3d.is-in .site3d__win{ animation: siteBounce .9s cubic-bezier(.3,1.5,.5,1) both; animation-delay: calc(var(--i) * .25s); }
+@keyframes siteBounce{
+  0%{ opacity: 0; transform: translateY(120px) scale(.5) rotate(-8deg); }
+  60%{ opacity: 1; transform: translateY(-14px) scale(1.04) rotate(1.5deg); }
+  80%{ transform: translateY(4px) scale(.99) rotate(-.5deg); }
+  100%{ opacity: 1; transform: none; }
+}
+.site3d__bar{ display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; background: #F1EFEA; border-bottom: 1px solid #E4E1DA; }
+.site3d__bar > i{ width: 9px; height: 9px; border-radius: 50%; background: #D8D4CC; }
+.site3d__bar > i:first-child{ background: #FF6058; } .site3d__bar > i:nth-child(2){ background: #FFBD2E; } .site3d__bar > i:nth-child(3){ background: #28C840; }
+.site3d__url{
+  flex: 1; margin-left: 10px; height: 19px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; background: #fff;
+  font-size: 11px; color: #555; letter-spacing: .02em; white-space: nowrap; overflow: hidden;
+}
+.site3d__caret{ width: 1px; height: 12px; margin-left: 1px; background: #333; animation: siteCaret 1s steps(1) infinite; }
+@keyframes siteCaret{ 50%{ opacity: 0; } }
+.site3d__screen{ position: relative; display: block; aspect-ratio: 16 / 10; background: #111; overflow: hidden; }
+.site3d__screen video, .site3d__poster{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.site3d__screen video{ opacity: 0; transition: opacity .6s; }
+.site3d.is-on .site3d__screen video{ opacity: 1; }
+/* « Allumage » de l'écran une fois l'URL tapée */
+.site3d__flash{ position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+.site3d.is-on .site3d__flash{ animation: siteFlash .7s ease-out; }
+@keyframes siteFlash{ 0%{ opacity: .9; transform: scaleY(.02); } 40%{ opacity: .6; transform: scaleY(1); } 100%{ opacity: 0; } }
+
+/* Téléphone qui surgit de derrière la fenêtre */
+.site3d__phone{
+  position: absolute; right: 0; bottom: 0; width: 26%; aspect-ratio: 9 / 19.5; display: block;
+  border-radius: 22px; border: 6px solid #141012; background: #141012; overflow: hidden;
+  box-shadow: 0 24px 44px -16px rgba(20,10,20,.55);
+  opacity: 0; transform: translate(-60%, -10%) rotate(-14deg) scale(.7); z-index: 2;
+  transition: transform .6s cubic-bezier(.3,1.6,.5,1);
+}
+.site3d__phone video{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.site3d__notch{ position: absolute; top: 5px; left: 50%; width: 34%; height: 9px; transform: translateX(-50%); border-radius: 9px; background: #141012; z-index: 2; }
+.site3d.is-on .site3d__phone{ animation: sitePhone .8s cubic-bezier(.3,1.7,.5,1) both; }
+@keyframes sitePhone{
+  0%{ opacity: 0; transform: translate(-60%, -10%) rotate(-14deg) scale(.7); }
+  100%{ opacity: 1; transform: translate(0, 0) rotate(6deg) scale(1); }
+}
+
+/* Curseur qui vient « cliquer » sur l'écran */
+.site3d__cursor{ position: absolute; left: 70%; top: 85%; width: 26px; height: 26px; z-index: 3; opacity: 0; pointer-events: none; }
+.site3d__cursor svg{ width: 100%; height: 100%; filter: drop-shadow(0 3px 4px rgba(0,0,0,.25)); }
+.site3d.is-on .site3d__cursor{ animation: siteCursor 2.2s cubic-bezier(.5,0,.3,1) .5s both; }
+@keyframes siteCursor{
+  0%{ opacity: 0; left: 75%; top: 95%; }
+  15%{ opacity: 1; }
+  55%{ left: 36%; top: 42%; transform: scale(1); }
+  62%{ transform: scale(.75); }
+  70%{ transform: scale(1); }
+  90%{ opacity: 1; left: 36%; top: 42%; }
+  100%{ opacity: 0; left: 36%; top: 42%; }
+}
+
+/* Survol : la fenêtre se soulève et s'incline, le téléphone se redresse */
+.site3d__link:hover .site3d__win, .site3d__link:focus-visible .site3d__win{
+  animation: none; opacity: 1;
+  transform: translateY(-14px) rotateX(6deg) rotateY(calc(var(--rx, 0) * 1deg)) scale(1.03);
+  box-shadow: 0 46px 80px -28px rgba(20,20,40,.45), 0 0 0 2px var(--accent);
+}
+.site3d.is-on .site3d__link:hover .site3d__phone{ animation: none; opacity: 1; transform: translate(10%, -8%) rotate(0) scale(1.08); }
+.site3d.is-wiggle .site3d__win{ animation: siteWiggle .45s ease; }
+@keyframes siteWiggle{ 30%{ transform: rotate(-2deg) scale(1.04); } 65%{ transform: rotate(2deg) scale(1.02); } }
+
+.site3d .book3d__label{ margin-top: 34px; }
+@media (max-width: 860px){
+  .sites3d__list{ grid-template-columns: 1fr; gap: 64px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .site3d__win, .site3d__phone{ opacity: 1; transform: none; animation: none !important; }
+  .site3d__cursor, .site3d__flash{ display: none; }
+}
