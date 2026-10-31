@@ -3828,3 +3828,6 @@ input::placeholder, textarea::placeholder{ color: #85878D; }
   .ph-albums{ grid-template-columns: 1fr; gap: 40px; }
   .ph-lightbox img{ max-width: 100vw; }
 }
+
+/* Étagère : dégradé plus dense sous le texte pour les photos claires */
+.shelf__item--info-strong .shelf__info{ background: linear-gradient(to top, rgba(8,8,12,.94) 0%, rgba(8,8,12,.78) 45%, rgba(8,8,12,0) 100%); padding-top: clamp(90px, 12vw, 170px); }
