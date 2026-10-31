@@ -13,7 +13,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 FONTS_LINK = (
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-    '<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Syne:wght@400..800&display=swap" rel="stylesheet">'
+    '<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,300..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">'
 )
 
 NAV_ITEMS = [

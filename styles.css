@@ -26,9 +26,9 @@
   --white: #FFFFFF;
 
   /* Typographie */
-  --font-display: "Shrikhand", "Syne", Georgia, serif;
-  --font-body: "Syne", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "Syne", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Avenir Next", "Avenir", "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Avenir Next", "Avenir", "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Avenir Next", "Avenir", "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
 
   /* Rayons & ombres */
   --radius-s: 10px;
@@ -2683,7 +2683,7 @@ a.portfolio-card{ display: block; color: inherit; text-decoration: none; cursor:
 /* =================================================================
    POLICES DU SITE : Bodoni Moda (titres) + Syne (textes)
    ================================================================= */
-html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neue", Arial, sans-serif; }
+html, body, button, input, select, textarea{ font-family: var(--font-body); }
 
 /* =================================================================
    ACCUEIL — bloc « kréova, votre agence… » + formulaire (style carte)
@@ -2708,7 +2708,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
   align-items: center;
 }
 .kv-hero-title{
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(30px, 3.6vw, 52px);
   line-height: 1.08;
@@ -2740,7 +2740,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
   box-shadow: 0 40px 80px -40px rgba(0,0,0,0.55);
 }
 .kv-card-title{
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(26px, 2.6vw, 38px);
   line-height: 1.1;
@@ -2752,7 +2752,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
 .kv-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .kv-form input, .kv-form select, .kv-form textarea{
   width: 100%;
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   color: #1A1B1E;
   background: #F7F6F2;
@@ -2777,7 +2777,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
 .kv-submit{
   margin-top: 8px;
   width: 100%;
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 0.14em;
@@ -2863,7 +2863,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
   filter: grayscale(0) contrast(1);
   transform: scale(1.03);
 }
-.kv-story-text{ min-height: 320px; font-family: "Syne", "Helvetica Neue", Arial, sans-serif; }
+.kv-story-text{ min-height: 320px; font-family: var(--font-body); }
 @media (max-width: 900px){
   .kv-story-grid{ grid-template-columns: 1fr; }
   .kv-story-text{ min-height: 200px; }
@@ -2912,7 +2912,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
   padding: 16%;
   text-align: center;
   text-decoration: none;
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   transition: transform .45s var(--ease), box-shadow .45s var(--ease);
 }
 .kv-circle a:hover{ transform: scale(1.05) rotate(-3deg); box-shadow: 0 30px 60px -30px rgba(26,27,46,0.45); }
@@ -3070,7 +3070,7 @@ h1, h2, h3,
 .marquee--outline .marquee-group span{ -webkit-text-stroke: 1.2px #1A1B1E; }
 /* Petits libellés en capitales espacées (comme « L'AGENCE ») */
 .section-kicker, .kv-why-kicker, .portfolio-cat, .kv-circle-label{
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -3098,7 +3098,7 @@ h1, h2, h3,
 /* ---------- Work : études de cas ---------- */
 .case{ margin-bottom: clamp(56px, 8vw, 104px); }
 .case-kicker{
-  font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--ink-faint); margin: 0 0 18px;
   padding-bottom: 14px; border-bottom: 1px solid rgba(23,32,28,0.12);
@@ -3835,8 +3835,6 @@ input::placeholder, textarea::placeholder{ color: #85878D; }
 /* Pied de page : nouvelle icône kréova (pixels) à la place de l'ancien trait + point */
 .footer-brand .brand::before{ background: url("assets/images/kreova-icon-white.svg") center / contain no-repeat; width: 30px; height: 30px; }
 
-/* Police des titres : Shrikhand (une seule graisse, pas de faux gras) */
-html{ font-synthesis-weight: none; }
 
 /* =================================================================
    MENU PLEIN ÉCRAN (inspiré des grands sites d'agence)
@@ -3910,3 +3908,11 @@ html.nav-open, html.nav-open body{ overflow: hidden; }
 @media (prefers-reduced-motion: reduce){
   .site-header .main-nav, .site-header .nav-link, .nav-bar, .site-header .main-nav .btn{ transition: none !important; }
 }
+
+/* =================================================================
+   POLICE DU SITE : Avenir (Mac / iPhone) — Nunito Sans ailleurs
+   Titres fins comme Mediaplus, le nom kréova reste en Syne.
+   ================================================================= */
+h1, h2, h3, .section-title, .shelf__title, .kv-hero-title{ font-weight: 400; letter-spacing: -0.01em; font-style: normal; }
+h1 em, h2 em, h3 em{ font-style: normal; }
+.brand-name{ font-family: "Syne", "Helvetica Neue", Arial, sans-serif; }
