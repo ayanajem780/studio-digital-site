@@ -3837,3 +3837,76 @@ input::placeholder, textarea::placeholder{ color: #85878D; }
 
 /* Police des titres : Shrikhand (une seule graisse, pas de faux gras) */
 html{ font-synthesis-weight: none; }
+
+/* =================================================================
+   MENU PLEIN ÉCRAN (inspiré des grands sites d'agence)
+   Panneau gris foncé, grands liens blancs, bouton fermer carré,
+   barre d'icônes noire en bas.
+   ================================================================= */
+.site-header .main-nav{
+  position: fixed; top: var(--header-h, 72px); left: 0; right: auto; bottom: 0;
+  width: min(460px, 100vw); height: auto;
+  display: flex; flex-direction: column; align-items: stretch; gap: 0;
+  padding: clamp(28px, 6vh, 56px) 36px 96px;
+  background: #343538; border: 0; border-radius: 0;
+  box-shadow: none; overflow-y: auto;
+  transform: translateX(-102%); opacity: 1; pointer-events: none;
+  transition: transform .55s cubic-bezier(.65,0,.2,1), box-shadow .55s ease;
+}
+.site-header .main-nav.is-open{
+  transform: none; pointer-events: auto;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.55);
+  clip-path: inset(0 -100vmax -100vmax 0); /* l'assombrissement ne touche pas la barre du haut */
+}
+.site-header .nav-link{
+  position: relative; display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; border: 0;
+  font-family: var(--font-body); font-size: clamp(24px, 6.4vw, 30px); font-weight: 500; letter-spacing: 0;
+  color: #FFFFFF;
+  opacity: 0; transform: translateX(-24px);
+  transition: opacity .45s ease, transform .45s ease, color .25s ease;
+}
+.site-header .nav-link::after{
+  content: ""; width: 10px; height: 10px; margin-right: 6px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg); opacity: .55; transition: transform .25s ease, opacity .25s ease;
+}
+.site-header .nav-link:hover, .site-header .nav-link:focus-visible{ color: #C8F45A; }
+.site-header .nav-link:hover::after{ opacity: 1; transform: translateX(4px) rotate(-45deg); }
+.site-header .nav-link.is-active{ color: #FFFFFF; }
+.site-header .nav-link.is-active::before{
+  content: ""; position: absolute; left: -20px; top: 50%; width: 8px; height: 8px; margin-top: -4px;
+  border-radius: 2px; background: #C8F45A;
+}
+.site-header .main-nav.is-open .nav-link{ opacity: 1; transform: none; }
+.site-header .main-nav.is-open .nav-link:nth-child(1){ transition-delay: .12s; }
+.site-header .main-nav.is-open .nav-link:nth-child(2){ transition-delay: .17s; }
+.site-header .main-nav.is-open .nav-link:nth-child(3){ transition-delay: .22s; }
+.site-header .main-nav.is-open .nav-link:nth-child(4){ transition-delay: .27s; }
+.site-header .main-nav.is-open .nav-link:nth-child(5){ transition-delay: .32s; }
+.site-header .main-nav.is-open .nav-link:nth-child(6){ transition-delay: .37s; }
+.site-header .main-nav .btn{
+  margin-top: 28px; align-self: flex-start; padding: 14px 26px;
+  background: #4B5BFF; color: #fff; border: 0;
+  opacity: 0; transition: opacity .45s ease .42s, background .25s ease;
+}
+.site-header .main-nav .btn:hover{ background: #3a49f0; }
+.site-header .main-nav.is-open .btn{ opacity: 1; }
+.nav-bar{
+  position: fixed; left: 0; bottom: 0; width: min(460px, 100vw); height: 60px;
+  display: flex; align-items: center; justify-content: space-around;
+  background: #000; color: rgba(255,255,255,.75);
+  transform: translateX(-102%); transition: transform .55s cubic-bezier(.65,0,.2,1);
+}
+.main-nav.is-open .nav-bar{ transform: none; }
+.nav-bar a, .nav-bar span{ display: grid; place-items: center; width: 44px; height: 44px; color: inherit; }
+.nav-bar a:hover{ color: #C8F45A; }
+.nav-bar__lang{ font-family: var(--font-body); font-weight: 700; font-size: 15px; letter-spacing: .04em; }
+/* bouton fermer : carré bleu kréova avec une croix */
+.site-header .nav-toggle{ position: relative; z-index: 2; border-radius: 4px; transition: background .3s ease; }
+.site-header .nav-toggle[aria-expanded="true"]{ background: #4B5BFF; }
+.site-header .nav-toggle[aria-expanded="true"] span{ background: #FFFFFF; }
+html.nav-open, html.nav-open body{ overflow: hidden; }
+@media (prefers-reduced-motion: reduce){
+  .site-header .main-nav, .site-header .nav-link, .nav-bar, .site-header .main-nav .btn{ transition: none !important; }
+}

@@ -31,18 +31,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainNav = document.getElementById("mainNav");
 
   if (navToggle && mainNav) {
+    // Barre d'icônes en bas du menu (style plein écran)
+    if (!mainNav.querySelector(".nav-bar")) {
+      const bar = document.createElement("div");
+      bar.className = "nav-bar";
+      bar.innerHTML =
+        '<a href="https://wa.me/212660147345" target="_blank" rel="noopener" aria-label="WhatsApp">' +
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/></svg></a>' +
+        '<span aria-label="Agadir, Maroc" title="Agadir, Maroc">' +
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></span>' +
+        '<span class="nav-bar__lang">FR</span>' +
+        '<a href="contact.html" aria-label="Contact">' +
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>';
+      mainNav.appendChild(bar);
+    }
+    const setHeaderH = () => { if (header) document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px"); };
+    const closeNav = () => {
+      mainNav.classList.remove("is-open");
+      document.documentElement.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Ouvrir le menu");
+    };
     navToggle.addEventListener("click", () => {
+      setHeaderH();
       const isOpen = mainNav.classList.toggle("is-open");
+      document.documentElement.classList.toggle("nav-open", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       navToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
     });
 
     mainNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
+      link.addEventListener("click", closeNav);
     });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeNav(); });
   }
 
   /* ---------- 3. Apparitions au scroll ---------- */
