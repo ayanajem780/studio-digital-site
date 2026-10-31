@@ -3681,3 +3681,71 @@ h1, h2, h3,
 .argan-phones .mfc-phone figcaption{ color: #F4EBD6; }
 .argan-features{ background: #FAF5EA; border-color: #EADFC8; }
 .argan-features span{ color: #8A6A2E; }
+
+/* =================================================================
+   THÈME NOIR — tout le fond du site en noir (demande oct. 2026)
+   Pour revenir au fond blanc : supprimer ce bloc.
+   ================================================================= */
+:root{
+  --bg: #000000;
+  --bg-alt: #000000;
+  --ink: #F5F4F1;
+  --ink-soft: #B4B6BC;
+  --ink-faint: #85878D;
+  --green: #F5F4F1;          /* boutons/liens « gris » → clairs sur noir */
+  --green-dark: #FFFFFF;
+  --green-light: #1A1B1E;
+  --card-dark: #111214;
+  --line-dark: rgba(255,255,255,0.12);
+}
+html, body{ background: #000; color: var(--ink); }
+
+/* Barre du haut + menu */
+.site-header{ background: #000; border-bottom: 1px solid var(--line-dark); }
+.site-header.is-scrolled{ box-shadow: 0 12px 30px -20px rgba(0,0,0,0.9); }
+.site-header .header-inner::before{ color: rgba(255,255,255,0.55); }
+.site-header .brand{ background-image: url("assets/images/kreova-icon-white.svg"); }
+.site-header .nav-toggle span{ background: #F5F4F1; }
+.site-header .main-nav{ background: #111214; border: 1px solid var(--line-dark); box-shadow: 0 30px 60px -25px rgba(0,0,0,0.9); }
+.site-header .nav-link{ color: rgba(255,255,255,0.72); border-bottom-color: var(--line-dark); }
+.site-header .nav-link:hover{ color: #fff; }
+
+/* Sections : toutes sur fond noir */
+.video-hero, .hero-premium, .page-hero, .scrolly, .method, .brief,
+.split-section--dark, .split-section--alt, .cta-banner, .transition,
+.portfolio, .why, .services, .pricing, .site-footer{ background: #000; color: var(--ink); }
+.page-hero, .method, .brief, .split-section--dark, .cta-banner{ border-color: var(--line-dark); }
+.site-footer{ border-top: 1px solid var(--line-dark); }
+.footer-inner, .footer-bottom{ border-color: var(--line-dark); }
+.footer-brand .brand-name, .footer-col a:hover{ color: #fff; }
+
+/* Cartes */
+.pricing-card, .pricing-card--featured, .why-card, .problem-card, .work-card,
+.feature-card--onDark, .contact-channel, .kv-card{
+  background: var(--card-dark); color: var(--ink); border-color: var(--line-dark);
+  box-shadow: 0 20px 50px -30px rgba(0,0,0,0.9);
+}
+.pricing-card--featured{ border: 2px solid #F5F4F1; }
+.contact-channel:hover{ background: #1A1B1E; border-color: #F5F4F1; }
+
+/* Boutons */
+.btn--primary{ background: #F5F4F1; color: #000; }
+.btn--outline{ border-color: rgba(255,255,255,0.5); color: #F5F4F1; background: transparent; }
+.btn--outline:hover{ background: #F5F4F1; color: #000; }
+.btn--ghost{ border-color: rgba(255,255,255,0.4); color: #F5F4F1; }
+
+/* Formulaires */
+input, select, textarea{ background: #111214; color: #F5F4F1; border-color: var(--line-dark); }
+input::placeholder, textarea::placeholder{ color: #85878D; }
+
+/* Thème noir — textes qui étaient foncés en dur */
+.kv-word, .kv-why-title, .kv-why-lead, .kv-why-body strong, .kv-card-title{ color: #F5F4F1; }
+.kv-hl--lilac{ color: #0E0F1A; background: #F5F4F1; }
+.marquee-group span{ color: #F5F4F1; }
+.marquee--outline .marquee-group span{ color: transparent; -webkit-text-stroke: 1.2px rgba(245,244,241,0.6); }
+.kv-form input, .kv-form select, .kv-form textarea{ background: #1A1B1E; color: #F5F4F1; border-color: rgba(255,255,255,0.12); }
+.kv-form input::placeholder, .kv-form textarea::placeholder{ color: #85878D; }
+.kv-phone{ background: #1A1B1E; border-color: rgba(255,255,255,0.12); }
+.kv-phone select, .kv-phone input{ background: transparent; }
+.kv-phone select{ border-right-color: rgba(255,255,255,0.12); }
+.kv-why-body{ color: #B4B6BC; }
