@@ -3749,3 +3749,32 @@ input::placeholder, textarea::placeholder{ color: #85878D; }
 .kv-phone select, .kv-phone input{ background: transparent; }
 .kv-phone select{ border-right-color: rgba(255,255,255,0.12); }
 .kv-why-body{ color: #B4B6BC; }
+
+/* =================================================================
+   BANDE PHOTOS — remplace la bande « Nos expertises » (accueil)
+   ================================================================= */
+.photo-band{
+  overflow: hidden;
+  margin-top: calc(var(--section-pad) * -0.35);
+  margin-bottom: clamp(36px, 5vw, 72px);
+  padding: 12px 0;
+  background: #0B0C0E;
+}
+.photo-band-track{
+  display: flex;
+  width: max-content;
+  animation: kv-defile 60s linear infinite;
+}
+.photo-band:hover .photo-band-track{ animation-play-state: paused; }
+.photo-band-group{ display: flex; gap: 12px; padding-right: 12px; }
+.photo-band-group img{
+  display: block;
+  height: clamp(200px, 24vw, 340px);
+  width: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce){
+  .photo-band{ overflow-x: auto; }
+  .photo-band-track{ animation: none; }
+}
