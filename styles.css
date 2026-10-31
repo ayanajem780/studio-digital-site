@@ -26,7 +26,7 @@
   --white: #FFFFFF;
 
   /* Typographie */
-  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --font-display: "Shrikhand", "Syne", Georgia, serif;
   --font-body: "Syne", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Syne", "Helvetica Neue", Arial, sans-serif;
 
@@ -3008,7 +3008,7 @@ html, body, button, input, select, textarea{ font-family: "Syne", "Helvetica Neu
 .marquee--reverse .marquee-track{ animation-direction: reverse; }
 .marquee-group{ display: inline-flex; align-items: center; }
 .marquee-group span{
-  font-family: "Bodoni Moda", "Didot", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(44px, 8.5vw, 136px);
   font-weight: 400;
   line-height: 1;
@@ -3056,7 +3056,7 @@ h1, h2, h3,
 .section-title, .kv-why-title, .kv-hero-title, .kv-card-title,
 .kv-word, .closing-cta-title, .kv-circle-name,
 .portfolio-title, .pricing-name, .why-card h3, .page-hero h1{
-  font-family: "Bodoni Moda", "Didot", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -3831,3 +3831,9 @@ input::placeholder, textarea::placeholder{ color: #85878D; }
 
 /* Étagère : dégradé plus dense sous le texte pour les photos claires */
 .shelf__item--info-strong .shelf__info{ background: linear-gradient(to top, rgba(8,8,12,.94) 0%, rgba(8,8,12,.78) 45%, rgba(8,8,12,0) 100%); padding-top: clamp(90px, 12vw, 170px); }
+
+/* Pied de page : nouvelle icône kréova (pixels) à la place de l'ancien trait + point */
+.footer-brand .brand::before{ background: url("assets/images/kreova-icon-white.svg") center / contain no-repeat; width: 30px; height: 30px; }
+
+/* Police des titres : Shrikhand (une seule graisse, pas de faux gras) */
+html{ font-synthesis-weight: none; }
